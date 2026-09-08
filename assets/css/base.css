@@ -1,0 +1,89 @@
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+
+/* Tabular figures on every readout, so numbers do not jitter mid-scroll. */
+.tnum, .font-label-code-sm, .font-label-code-md { font-variant-numeric: tabular-nums; }
+
+/* Language toggle: hide whichever language is not active. */
+html[lang="en"] [data-lang="tr"] { display: none; }
+html[lang="tr"] [data-lang="en"] { display: none; }
+
+/* Reveal-on-scroll, opt-in per element. */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Printing: the CV page is the one people save as a PDF, so flatten the dark
+   surfaces to ink-friendly black on white and drop the chrome. */
+@media print {
+  header, footer, .no-print { display: none !important; }
+  body { background: #fff !important; color: #111 !important; }
+  main { padding-top: 0 !important; }
+  [class*="bg-surface"], [class*="bg-primary"], [class*="bg-secondary"], [class*="bg-tertiary"] {
+    background: transparent !important;
+  }
+  [class*="text-"] { color: #111 !important; }
+  [class*="text-outline"], [class*="text-on-surface-variant"] { color: #555 !important; }
+  [style*="border"], [class*="border-"] { border-color: #ccc !important; }
+  a { color: #111 !important; text-decoration: none; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  section, .avoid-break { break-inside: avoid; }
+}
+
+/* ---- 3D background ------------------------------------------------------
+   A fixed WebGL canvas sits behind the whole page. The page's own ground
+   colour is made transparent so it shows through, while cards keep their
+   translucent surfaces on top -- the glassmorphism the design system asks
+   for. A scrim over the canvas keeps text contrast where content sits. */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 18, 0.34) 0%,
+    rgba(14, 14, 18, 0.17) 42%,
+    rgba(14, 14, 18, 0.26) 74%,
+    rgba(14, 14, 18, 0.48) 100%
+  );
+}
+
+/* The header is already `fixed z-50`; giving it `position: relative` here
+   would override that and drop it out of the viewport on scroll. */
+body > main,
+body > footer { position: relative; z-index: 1; }
+
+body > main { background-color: transparent !important; }
+body > main > div > section,
+body > main > div > header { background-color: transparent !important; }
+
+@media print {
+  #bg-canvas { display: none !important; }
+  body::after { display: none !important; }
+}
+
+/* The mobile nav drawer carries both `hidden` and Tailwind's `flex`; an author
+   `display:flex` beats the UA stylesheet's `[hidden]`, so the drawer stayed
+   open on every viewport under xl. Make the attribute win. */
+[hidden] { display: none !important; }

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects — Ömer Can Atlı</title>
+<meta name="description" content="Four open-source projects with public code and measurements, and the products built in private repositories."/>
+<link href="https://omercanatli.com/projects.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://omercanatli.com/projects.html" property="og:url"/>
+<meta content="Projects — Ömer Can Atlı" property="og:title"/>
+<meta content="Four open-source projects with public code and measurements, and the products behind private repositories." property="og:description"/>
+<meta content="https://omercanatli.com/assets/img/og-card.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Ömer Can Atlı" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Projects — Ömer Can Atlı" name="twitter:title"/>
+<meta content="Four open-source projects with public code and measurements, and the products behind private repositories." name="twitter:description"/>
+<meta content="https://omercanatli.com/assets/img/og-card.jpg" name="twitter:image"/>
+<meta content="#0e0e12" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="assets/css/base.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/js/tw-config.js"></script>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
+<canvas aria-hidden="true" id="bg-canvas"></canvas>
+
+<!-- ============================ HEADER ============================ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-16 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
+<a class="flex items-center gap-space-xs group shrink-0" href="index.html">
+<span class="w-2 h-2 rounded-full bg-primary-container group-hover:scale-125 transition-transform shadow-[0_0_8px_#00f5ff]"></span>
+<span class="font-label-code-md text-label-code-md tracking-wider text-primary font-bold uppercase">OCA.DEV</span>
+<span class="font-label-code-sm text-label-code-sm text-outline hidden sm:inline-block tracking-widest uppercase">// SOFTWARE &amp; AI</span>
+</a>
+<nav class="hidden xl:flex items-center gap-space-xs p-space-3xs bg-surface-container-low/70 rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index.html" href="index.html">01 // ABOUT</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects.html" href="projects.html">02 // PROJECTS</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="architecture.html" href="architecture.html">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv.html" href="cv.html">04 // CV</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact.html" href="contact.html">05 // TERMINAL</a>
+</nav>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-3xs p-space-3xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<button class="px-space-xs py-space-3xs rounded-full font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-lang-btn="en" type="button">EN</button>
+<button class="px-space-xs py-space-3xs rounded-full font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-lang-btn="tr" type="button">TR</button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed-dim"></span></span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">GTU • CLASS OF 2027</span>
+</div>
+<button aria-expanded="false" aria-label="Menu" class="xl:hidden w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center" id="nav-toggle" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">menu</span>
+</button>
+</div>
+</div>
+<div class="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl px-gutter-mobile pb-space-md flex flex-col gap-space-2xs" hidden id="nav-drawer" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index.html" href="index.html">01 // ABOUT</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects.html" href="projects.html">02 // PROJECTS</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="architecture.html" href="architecture.html">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv.html" href="cv.html">04 // CV</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact.html" href="contact.html">05 // TERMINAL</a>
+</div>
+</header>
+
+<main class="w-full pt-16 bg-surface-container-lowest flex-1">
+<div class="flex flex-col w-full text-on-surface">
+
+<!-- ============================ PAGE INTRO ============================ -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop pt-space-3xl pb-space-2xl">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mb-space-md">
+<span>[ 02 // PROJECTS ]</span>
+<span class="h-px w-16 bg-outline-variant"></span>
+</div>
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight max-w-3xl mb-space-md">
+<span data-lang="en">Four open-source projects, and the products behind private repositories.</span>
+<span data-lang="tr">Dört açık kaynak proje, ve özel depolardaki ürünler.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+<span data-lang="en">The code and the numbers of the four open projects are public. Scroll to move between them, or use the dots.</span>
+<span data-lang="tr">Dört açık projenin kodu da sayıları da herkese açık. Aralarında gezmek için kaydır, ya da noktaları kullan.</span>
+</p>
+</section>
+
+<!-- ==================== SCROLLYTELLING (400VH) ==================== -->
+<div class="relative w-full" id="scrollytelling-experience" style="height: 400vh;">
+<div class="sticky top-0 h-screen w-full overflow-hidden bg-[#060609] flex flex-col justify-between" style="border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+
+<!-- Top HUD -->
+<div class="w-full max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop pt-6 flex items-center justify-between text-label-code-sm font-label-code-sm z-30">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-container uppercase tracking-widest font-bold">OPEN SOURCE</span>
+<span class="text-on-surface-variant uppercase tracking-wider hidden sm:inline">GITHUB.COM/BYOMER1021</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="hud-index-display">01</span>
+<span class="text-outline">/ 04</span>
+</div>
+<div class="w-24 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-1/4" id="scrolly-progress-bar"></div>
+</div>
+</div>
+</div>
+
+<!-- Split stage -->
+<div class="relative w-full max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex-1 flex flex-col lg:flex-row items-center justify-between gap-8 py-6 z-20">
+
+<!-- LEFT: visual stage -->
+<div class="relative w-full lg:w-1/2 h-[240px] sm:h-[380px] lg:h-[500px] flex items-center justify-center">
+<div class="absolute inset-0 pointer-events-none rounded-xl" style="border: 1px solid rgba(255,255,255,0.06);">
+<div class="absolute top-2 left-2 text-label-code-sm font-label-code-sm text-outline tracking-wider">[ STAGE_LOCK ]</div>
+<div class="absolute bottom-2 right-2 text-label-code-sm font-label-code-sm text-outline tracking-wider" id="stage-caption">[ OWN DASHCAM FOOTAGE ]</div>
+<div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container/60"></div>
+</div>
+<div class="relative w-[92%] h-[90%] transition-transform duration-300 ease-out" id="project-visual-stage">
+
+<!-- Visual 01: otonomarac -->
+<div class="project-img absolute inset-0 transition-all duration-700 opacity-100 scale-100 pointer-events-auto" data-stage="0">
+<div class="w-full h-full rounded-lg overflow-hidden bg-black flex items-center justify-center" style="border: 1px solid rgba(0,245,255,0.3);">
+<video autoplay class="w-full h-full object-contain" loop muted playsinline poster="assets/img/otonomarac-poster.jpg" preload="metadata">
+<source src="assets/img/otonomarac-demo.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="text-label-code-sm font-label-code-sm text-primary-fixed uppercase tracking-wider">CAMERA + BEV MAP</span>
+<span class="text-label-code-sm font-label-code-sm text-tertiary-container">8 WEEKS • LIVE DEMO</span>
+</div>
+</div>
+
+<!-- Visual 02: trafikisaret -->
+<div class="project-img absolute inset-0 transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-stage="1">
+<div class="w-full h-full rounded-lg overflow-hidden bg-black flex items-center justify-center" style="border: 1px solid rgba(208,188,255,0.3);">
+<img alt="The same traffic-sign model running on day, rain and night frames" class="w-full h-full object-contain" data-alt-en="The same traffic-sign model running on day, rain and night frames" data-alt-tr="Aynı trafik işareti modeli gündüz, yağmur ve gece karelerinde" loading="lazy" src="assets/img/trafikisaret-demo.jpg"/>
+</div>
+<div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="text-label-code-sm font-label-code-sm text-secondary-fixed uppercase tracking-wider">DAY / RAIN / NIGHT</span>
+<span class="text-label-code-sm font-label-code-sm text-primary-container">717 BOXES LABELLED</span>
+</div>
+</div>
+
+<!-- Visual 03: smart-city -->
+<div class="project-img absolute inset-0 transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-stage="2">
+<div class="w-full h-full rounded-lg overflow-hidden bg-[#0b0b0f] flex items-center justify-center" style="border: 1px solid rgba(105,246,185,0.3);">
+<img alt="Geographic map of the New York City taxi network, coloured by community, with JFK Airport as an outlying hub" class="w-full h-full object-contain" data-alt-en="Geographic map of the New York City taxi network, coloured by community, with JFK Airport as an outlying hub" data-alt-tr="New York taksi ağının coğrafi haritası, topluluklara göre renklendirilmiş; JFK Havalimanı dışarıda duran bir merkez" loading="lazy" src="assets/img/smartcity-geomap.png"/>
+</div>
+<div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="text-label-code-sm font-label-code-sm text-tertiary-fixed uppercase tracking-wider">258 ZONES • 3 COMMUNITIES</span>
+<span class="text-label-code-sm font-label-code-sm text-primary-container">38,310,226 TRIPS</span>
+</div>
+</div>
+
+<!-- Visual 04: plakatanima (diagram) -->
+<div class="project-img absolute inset-0 transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-stage="3">
+<div class="w-full h-full rounded-lg overflow-hidden bg-[#0b0b0f] flex items-center justify-center p-4" style="border: 1px solid rgba(0,245,255,0.3);">
+<svg class="w-full h-full" role="img" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+<title>Synthetic plates as the plan assumed them, and as the measurements say they should be</title>
+<defs>
+<linearGradient id="pfade" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#e5e1e7" stop-opacity="0.9"/>
+<stop offset="1" stop-color="#849495" stop-opacity="0.55"/>
+</linearGradient>
+</defs>
+<!-- Row A: as planned -->
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" x="18" y="30">PLANNED — ±35° YAW, WIDTH ~167 px</text>
+<g transform="translate(18,42)">
+<g transform="skewX(-22)">
+<rect fill="#12121a" height="46" rx="4" stroke="#3a494a" width="150" x="26" y="0"/>
+<rect fill="#1d4ed8" height="46" rx="4" width="16" x="26" y="0"/>
+<text fill="#e5e1e7" font-family="JetBrains Mono, monospace" font-size="9" x="30" y="16">TR</text>
+<text fill="url(#pfade)" font-family="Geist, sans-serif" font-size="25" font-weight="600" letter-spacing="1.5" x="50" y="32">34 ABC 12</text>
+</g>
+<g transform="translate(200,0) skewX(24)">
+<rect fill="#12121a" height="46" rx="4" stroke="#3a494a" width="150" x="26" y="0"/>
+<rect fill="#1d4ed8" height="46" rx="4" width="16" x="26" y="0"/>
+<text fill="#e5e1e7" font-family="JetBrains Mono, monospace" font-size="9" x="30" y="16">TR</text>
+<text fill="url(#pfade)" font-family="Geist, sans-serif" font-size="25" font-weight="600" letter-spacing="1.5" x="50" y="32">41 XY 987</text>
+</g>
+</g>
+<line stroke="#3a494a" stroke-dasharray="3 4" x1="18" x2="462" y1="118" y2="118"/>
+<!-- Row B: as measured -->
+<text fill="#00f5ff" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.4" x="18" y="142">MEASURED — ~7° YAW, WIDTH ~105 px</text>
+<g transform="translate(18,154)">
+<g transform="skewX(-5)">
+<rect fill="#12121a" height="30" rx="3" stroke="#3a494a" width="98" x="14" y="0"/>
+<rect fill="#1d4ed8" height="30" rx="3" width="11" x="14" y="0"/>
+<text fill="#e5e1e7" font-family="JetBrains Mono, monospace" font-size="6" x="16" y="11">TR</text>
+<text fill="#b9caca" font-family="Geist, sans-serif" font-size="16" font-weight="600" letter-spacing="1" x="30" y="21">34 ABC 12</text>
+</g>
+<g transform="translate(140,0) skewX(6)">
+<rect fill="#12121a" height="30" rx="3" stroke="#3a494a" width="98" x="14" y="0"/>
+<rect fill="#1d4ed8" height="30" rx="3" width="11" x="14" y="0"/>
+<text fill="#e5e1e7" font-family="JetBrains Mono, monospace" font-size="6" x="16" y="11">TR</text>
+<text fill="#b9caca" font-family="Geist, sans-serif" font-size="16" font-weight="600" letter-spacing="1" x="30" y="21">41 XY 987</text>
+</g>
+<g transform="translate(280,0) skewX(-3)">
+<rect fill="#12121a" height="30" rx="3" stroke="#3a494a" width="98" x="14" y="0"/>
+<rect fill="#1d4ed8" height="30" rx="3" width="11" x="14" y="0"/>
+<text fill="#e5e1e7" font-family="JetBrains Mono, monospace" font-size="6" x="16" y="11">TR</text>
+<text fill="#b9caca" font-family="Geist, sans-serif" font-size="16" font-weight="600" letter-spacing="1" x="30" y="21">06 KLM 45</text>
+</g>
+</g>
+<!-- Footer readout -->
+<g font-family="JetBrains Mono, monospace" font-size="9">
+<text fill="#849495" letter-spacing="1.2" x="18" y="224">CALIBRATED AGAINST</text>
+<text fill="#69f6b9" letter-spacing="1.2" x="18" y="240">690 HAND-LABELLED REAL PLATES</text>
+<text fill="#849495" letter-spacing="1.2" x="18" y="268">SCALE SAMPLING</text>
+<text fill="#63f7ff" letter-spacing="1.2" x="18" y="284">UNIFORM → BOOTSTRAP FROM REAL WIDTHS</text>
+</g>
+<rect fill="none" height="70" rx="4" stroke="#3a494a" stroke-opacity="0.5" width="200" x="252" y="212"/>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.2" x="264" y="234">DIAGRAM — NOT A SCREENSHOT.</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.2" x="264" y="250">THE MODEL IS NOT TRAINED YET,</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.2" x="264" y="266">SO THERE IS NO RESULT TO SHOW.</text>
+</svg>
+</div>
+<div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="text-label-code-sm font-label-code-sm text-primary-fixed uppercase tracking-wider">GENERATOR CALIBRATION</span>
+<span class="text-label-code-sm font-label-code-sm text-primary-fixed-dim">IN PROGRESS</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- RIGHT: text chapters -->
+<div class="relative w-full lg:w-1/2 h-[300px] sm:h-[380px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+
+<!-- Chapter 01 -->
+<div class="project-text-chapter absolute inset-0 flex flex-col justify-center transition-all duration-500 opacity-100 translate-y-0" data-chapter="0">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest">[ 01 / 04 ]</span>
+<span class="h-px w-8 bg-outline-variant"></span>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-container uppercase tracking-wider">COMPLETE • LIVE DEMO</span>
+</div>
+<h2 class="font-headline-xl text-[28px] leading-[34px] lg:text-headline-xl text-on-surface tracking-tight uppercase mb-2">otonomarac</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4 leading-relaxed">
+<span data-lang="en">A perception pipeline that takes a single forward-facing camera and answers: what is in the scene, how it moves between frames, how far away it is, where the drivable area is, and whether a collision is close. The output is a two-panel video — the annotated camera view on the left, a live bird's-eye map on the right. Built over eight weeks and deployed as a public demo.</span>
+<span data-lang="tr">Tek bir ileri bakan kameradan alıp şunu cevaplayan bir algı pipeline'ı: sahnede ne var, kareler arasında nasıl hareket ediyor, ne kadar uzakta, sürülebilir alan nerede ve çarpışma yakın mı. Çıktı iki panelli bir video — solda işaretlenmiş kamera görüntüsü, sağda canlı kuşbakışı harita. Sekiz haftada yapıldı ve herkese açık demo olarak yayına alındı.</span>
+</p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">YOLO</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">ByteTrack</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Depth Anything V2</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Homography</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Gradio</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-white transition-colors" href="https://huggingface.co/spaces/byomer1021/otonomarac" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.3);" target="_blank">
+<span data-lang="en">TRY THE DEMO</span><span data-lang="tr">DEMOYU DENE</span>
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021/otonomarac" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+<span class="material-symbols-outlined text-[14px]">code</span>
+</a>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-2xs mt-space-sm pt-space-sm" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest shrink-0">DOCS</span>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/otonomarac/blob/main/docs/hata-analizi.md" rel="noreferrer" target="_blank"><span data-lang="en">Failure analysis</span><span data-lang="tr">Hata analizi</span> ↗</a>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/otonomarac/blob/main/docs/proje-gunlugu.md" rel="noreferrer" target="_blank"><span data-lang="en">Project journal</span><span data-lang="tr">Proje günlüğü</span> ↗</a>
+</div>
+</div>
+
+<!-- Chapter 02 -->
+<div class="project-text-chapter absolute inset-0 flex flex-col justify-center transition-all duration-500 opacity-0 translate-y-8 pointer-events-none" data-chapter="1">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="font-label-code-sm text-label-code-sm text-secondary-fixed uppercase tracking-widest">[ 02 / 04 ]</span>
+<span class="h-px w-8 bg-outline-variant"></span>
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-wider">OWN DATASET</span>
+</div>
+<h2 class="font-headline-xl text-[28px] leading-[34px] lg:text-headline-xl text-on-surface tracking-tight uppercase mb-2">trafikisaret</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4 leading-relaxed">
+<span data-lang="en">A Turkish traffic-sign dataset labelled from scratch on my own dashcam footage, and a two-stage recogniser trained on it. Stage one finds the boxes without caring about the class; stage two classifies each crop, and says "?" when it is not sure. The split exists because of the data: 717 boxes spread over 23 labels is too thin for one detector, but merged into a single class all 717 feed it.</span>
+<span data-lang="tr">Kendi dashcam kayıtlarımdan sıfırdan etiketlenmiş bir Türk trafik işareti veri seti ve üzerinde eğitilmiş iki aşamalı bir tanıyıcı. Birinci aşama sınıfa bakmadan kutuları buluyor; ikinci aşama her kırpmayı sınıflandırıyor, emin olamadığında "?" diyor. Bölünmenin sebebi veri: 717 kutu 23 etikete dağılınca tek dedektör için fazla ince kalıyor, tek sınıfta toplanınca 717'sinin hepsi dedektörü besliyor.</span>
+</p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">YOLO</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Two-stage</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">717 boxes / 787 frames</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Day / rain / night</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-on-secondary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-secondary-fixed transition-colors" href="https://github.com/Byomer1021/trafikisaret" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.3);" target="_blank">
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+<span class="material-symbols-outlined text-[14px]">code</span>
+</a>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low text-outline font-label-code-sm text-label-code-sm tracking-wider uppercase" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="material-symbols-outlined text-[14px]">visibility_off</span>
+<span data-lang="en">IMAGES WITHHELD — PLATES AND FACES</span><span data-lang="tr">GÖRÜNTÜLER PAYLAŞILMADI — PLAKA VE YÜZ</span>
+</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-2xs mt-space-sm pt-space-sm" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest shrink-0">DOCS</span>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/trafikisaret/blob/main/docs/on-rapor.md" rel="noreferrer" target="_blank"><span data-lang="en">Preliminary report</span><span data-lang="tr">Ön rapor</span> ↗</a>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/trafikisaret/blob/main/docs/dedektor-olcumleri.md" rel="noreferrer" target="_blank"><span data-lang="en">Detector measurements</span><span data-lang="tr">Dedektör ölçümleri</span> ↗</a>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/trafikisaret/blob/main/docs/etiketleme-kilavuzu.md" rel="noreferrer" target="_blank"><span data-lang="en">Labelling guide</span><span data-lang="tr">Etiketleme kılavuzu</span> ↗</a>
+</div>
+</div>
+
+<!-- Chapter 03 -->
+<div class="project-text-chapter absolute inset-0 flex flex-col justify-center transition-all duration-500 opacity-0 translate-y-8 pointer-events-none" data-chapter="2">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed uppercase tracking-widest">[ 03 / 04 ]</span>
+<span class="h-px w-8 bg-outline-variant"></span>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-container uppercase tracking-wider">BIG DATA • GRAPH</span>
+</div>
+<h2 class="font-headline-xl text-[28px] leading-[34px] lg:text-headline-xl text-on-surface tracking-tight uppercase mb-2">smart-city-traffic-analysis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4 leading-relaxed">
+<span data-lang="en">38.3 million New York taxi trips modelled as a single graph to find where the city's traffic actually bottlenecks. PageRank ranks the critical zones, Louvain finds the communities, and a node-removal simulation measures what breaks when they close. Removing the top five zones costs 34.1% of the flow; removing JFK Airport splits the network from one component into sixteen.</span>
+<span data-lang="tr">38,3 milyon New York taksi yolculuğu tek bir graph olarak modellenip şehrin trafiğinin gerçekte nerede tıkandığı bulunuyor. PageRank kritik bölgeleri sıralıyor, Louvain toplulukları çıkarıyor, düğüm silme simülasyonu da bunlar kapandığında neyin bozulduğunu ölçüyor. En kritik beş bölgeyi silmek akışın %34,1'ine mal oluyor; JFK Havalimanı çıkarılınca ağ tek bileşenden on altıya bölünüyor.</span>
+</p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">PySpark</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">GraphFrames</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">NetworkX</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">PageRank / Louvain</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">40.7 s runtime</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-tertiary-container text-on-tertiary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-tertiary-fixed transition-colors" href="https://github.com/Byomer1021/smart-city-traffic-analysis" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.3);" target="_blank">
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+<span class="material-symbols-outlined text-[14px]">code</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/VERIFICATION.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span data-lang="en">VERIFICATION REPORT</span><span data-lang="tr">DOĞRULAMA RAPORU</span>
+<span class="material-symbols-outlined text-[14px]">fact_check</span>
+</a>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-2xs mt-space-sm pt-space-sm" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest shrink-0">DOCS</span>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/FINAL_REPORT.md" rel="noreferrer" target="_blank"><span data-lang="en">Final report</span><span data-lang="tr">Nihai rapor</span> ↗</a>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/MODULES.md" rel="noreferrer" target="_blank"><span data-lang="en">Module map</span><span data-lang="tr">Modül haritası</span> ↗</a>
+</div>
+</div>
+
+<!-- Chapter 04 -->
+<div class="project-text-chapter absolute inset-0 flex flex-col justify-center transition-all duration-500 opacity-0 translate-y-8 pointer-events-none" data-chapter="3">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest">[ 04 / 04 ]</span>
+<span class="h-px w-8 bg-outline-variant"></span>
+<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim uppercase tracking-wider">IN PROGRESS</span>
+</div>
+<h2 class="font-headline-xl text-[28px] leading-[34px] lg:text-headline-xl text-on-surface tracking-tight uppercase mb-2">plakatanima</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-4 leading-relaxed">
+<span data-lang="en">Turkish licence plate recognition: a synthetic data generator and a CTC sequence recogniser. The generator is calibrated against 690 real plates I labelled by hand — the plan assumed ±35° of horizontal angle, the measurement said about 7°, so the plan changed. Phase 0 and the phase 2 skeleton are done; the model has not been trained yet, and the page says so instead of showing a number.</span>
+<span data-lang="tr">Türk plakası tanıma: sentetik veri üreteci ve CTC dizi tanıyıcısı. Üreteç, elle etiketlediğim 690 gerçek plakaya göre kalibre edildi — plan ±35° yatay açı varsayıyordu, ölçüm yaklaşık 7° dedi, plan değişti. Faz 0 ve Faz 2'nin iskeleti hazır; model henüz eğitilmedi ve bu sayfa bir sayı uydurmak yerine bunu yazıyor.</span>
+</p>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">PyTorch</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">CTC</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Synthetic data</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high/80 text-label-code-sm font-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">690 labelled plates</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-white transition-colors" href="https://github.com/Byomer1021/plakatanima" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.3);" target="_blank">
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+<span class="material-symbols-outlined text-[14px]">code</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span data-lang="en">MEASUREMENT NOTES</span><span data-lang="tr">ÖLÇÜM NOTLARI</span>
+<span class="material-symbols-outlined text-[14px]">straighten</span>
+</a>
+</div>
+</div>
+
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-2xs mt-space-sm pt-space-sm" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest shrink-0">DOCS</span>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/on-rapor.md" rel="noreferrer" target="_blank"><span data-lang="en">Preliminary report</span><span data-lang="tr">Ön rapor</span> ↗</a>
+<a class="font-label-code-sm text-label-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" target="_blank"><span data-lang="en">Data measurements</span><span data-lang="tr">Veri ölçümleri</span> ↗</a>
+</div>
+</div>
+
+<!-- Bottom HUD -->
+<div class="w-full max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop pb-6 flex items-center justify-between text-label-code-sm font-label-code-sm z-30">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary-container">mouse</span>
+<span class="uppercase tracking-widest hidden sm:inline" data-lang="en">KEEP SCROLLING TO CHANGE PROJECT</span>
+<span class="uppercase tracking-widest hidden sm:inline" data-lang="tr">PROJE DEĞİŞTİRMEK İÇİN KAYDIRMAYA DEVAM ET</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="otonomarac" class="step-nav-dot w-3 h-3 rounded-full bg-primary-container transition-all cursor-pointer" data-step="0" type="button"></button>
+<button aria-label="trafikisaret" class="step-nav-dot w-2 h-2 rounded-full bg-surface-container-high transition-all cursor-pointer" data-step="1" type="button"></button>
+<button aria-label="smart-city-traffic-analysis" class="step-nav-dot w-2 h-2 rounded-full bg-surface-container-high transition-all cursor-pointer" data-step="2" type="button"></button>
+<button aria-label="plakatanima" class="step-nav-dot w-2 h-2 rounded-full bg-surface-container-high transition-all cursor-pointer" data-step="3" type="button"></button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ==================== FIGURES ==================== -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+
+<div class="mb-space-2xl reveal">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mb-space-sm">
+<span>[ FIGURES &amp; MEASUREMENTS ]</span>
+<span class="h-px w-16 bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight max-w-3xl mb-space-md">
+<span data-lang="en">What the pipelines actually output</span>
+<span data-lang="tr">Pipeline'ların gerçekte ne ürettiği</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl leading-relaxed">
+<span data-lang="en">Real output from the runs, not mock-ups. Click any figure to open it full size. Licence plates in the dashcam frames are pixelated before publishing.</span>
+<span data-lang="tr">Gerçek koşu çıktıları, temsilî görsel değil. Herhangi bir figüre tıklayınca tam boyutta açılır. Dashcam karelerindeki plakalar yayımlamadan önce pikselleştirildi.</span>
+</p>
+</div>
+
+<!-- otonomarac figures -->
+<div class="mb-space-3xl">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm mb-space-lg reveal" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h3 class="font-headline-md text-headline-md text-on-surface">otonomarac</h3>
+<span class="font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase">DETECTION • DEPTH • SEGMENTATION • BEV</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-black" href="assets/img/otonomarac-segmentation.jpg" rel="noreferrer" target="_blank">
+<img alt="Drivable area and lane paint drawn back onto a Maltepe street scene" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-segmentation.jpg"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">Drivable area + lane paint</span>
+<span data-lang="en">The segmentation layer drawn back onto the camera frame. Green is drivable surface, blue is the region the network rejects, and the magenta line is the bonnet edge the projection has to stay above.</span>
+<span data-lang="tr">Segmentasyon katmanı kamera karesine geri çizilmiş hâlde. Yeşil sürülebilir yüzey, mavi ağın reddettiği bölge, macenta çizgi de izdüşümün üstünde kalması gereken kaput kenarı.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-black" href="assets/img/otonomarac-bev-calibration.jpg" rel="noreferrer" target="_blank">
+<img alt="Homography calibration quadrilateral on the road, with the warped bird's-eye result beside it" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-bev-calibration.jpg"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">Bird's-eye calibration</span>
+<span data-lang="en">The yellow quadrilateral marks four ground-plane points; the panel on the right is what the homography turns them into. Map distances are measured from the calibration reference row, not from the car's nose.</span>
+<span data-lang="tr">Sarı dörtgen zemin düzleminde dört noktayı işaretliyor; sağdaki panel homografinin bunları neye çevirdiği. Harita mesafeleri aracın burnundan değil, kalibrasyon referans satırından ölçülüyor.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-black" href="assets/img/otonomarac-bonnet.jpg" rel="noreferrer" target="_blank">
+<img alt="A sweep of candidate calibration reference rows drawn across the bottom of the frame" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-bonnet.jpg"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">The bonnet artefact</span>
+<span data-lang="en">Candidate reference rows swept across the bottom of the frame. The car's own bonnet fills the lower band of every frame, so a row chosen too low projects the bodywork into the map as if it were road.</span>
+<span data-lang="tr">Karenin altında taranan aday referans satırları. Aracın kendi kaputu her karenin alt bandını dolduruyor; fazla aşağıdan seçilen bir satır, kaportayı yolmuş gibi haritaya yansıtıyor.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-black" href="assets/img/otonomarac-night.jpg" rel="noreferrer" target="_blank">
+<img alt="Four night-time dashcam frames at 200, 600, 1000 and 1400 seconds" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-night.jpg"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">Where it degrades</span>
+<span data-lang="en">Night footage sampled at four timestamps. Rain on the glass, headlight bloom and low contrast are where the pipeline loses objects — the repository's failure analysis reports by how much rather than leaving these frames out.</span>
+<span data-lang="tr">Dört zaman damgasından örneklenmiş gece kaydı. Camdaki yağmur, far parlaması ve düşük kontrast pipeline'ın nesne kaybettiği yerler — repo bu kareleri dışarıda bırakmak yerine ne kadar kaybettiğini raporluyor.</span>
+</figcaption>
+</figure>
+
+</div>
+</div>
+
+<!-- trafikisaret figures -->
+<div class="mb-space-3xl">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm mb-space-lg reveal" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h3 class="font-headline-md text-headline-md text-on-surface">trafikisaret</h3>
+<span class="font-label-code-sm text-label-code-sm text-secondary tracking-widest uppercase">TWO-STAGE • TRAINED FROM SCRATCH</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-black" href="assets/img/trafikisaret-predictions.jpg" rel="noreferrer" target="_blank">
+<img alt="A grid of traffic-sign crops with the classifier's predicted label and confidence on each" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/trafikisaret-predictions.jpg"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Stage 2 — classifier output</span>
+<span data-lang="en">Predicted label and confidence on a validation batch. 14 classes, 404 training crops. On the held-out test set: 0.953 recall over 64 crops taken from 52 distinct physical signs.</span>
+<span data-lang="tr">Bir doğrulama yığınında tahmin edilen etiket ve güven. 14 sınıf, 404 eğitim kırpması. Ayrılmış test kümesinde: 52 ayrı fiziksel levhadan alınan 64 kırpmada 0,953 duyarlık.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-[#0b0b0f]" href="assets/img/trafikisaret-confusion.png" rel="noreferrer" target="_blank">
+<img alt="Normalised confusion matrix across the fourteen supported sign classes" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/trafikisaret-confusion.png"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Where the classes bleed</span>
+<span data-lang="en">All three test errors stay inside a colour family: u_donusu_yasak read as hiz_siniri, both red circles; ileri_mecburi read as yonlendirme, both blue. The model learned shape and colour, and struggles with pictogram detail at small sizes.</span>
+<span data-lang="tr">Üç test hatasının üçü de renk ailesi içinde kalıyor: u_donusu_yasak, hiz_siniri okunmuş — ikisi de kırmızı daire; ileri_mecburi, yonlendirme okunmuş — ikisi de mavi. Model şekli ve rengi öğrenmiş, küçük boyutta piktogram detayında zorlanıyor.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<a class="block bg-[#0b0b0f]" href="assets/img/trafikisaret-f1.png" rel="noreferrer" target="_blank">
+<img alt="F1 score against confidence threshold for the class-agnostic sign detector" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/trafikisaret-f1.png"/>
+</a>
+<div class="p-space-lg flex flex-col justify-center gap-space-md" style="border-left: 1px solid rgba(255,255,255,0.06);">
+<div>
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Stage 1 — detector</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">mAP50 is 0.515 across the test set, and the single number hides two different realities.</span>
+<span data-lang="tr">Test kümesinde mAP50 0,515 ve bu tek sayı iki farklı gerçeği gizliyor.</span>
+</p>
+</div>
+<div class="font-label-code-md text-label-code-md">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Daylight</span><span class="text-tertiary-fixed-dim">mAP50 0.608</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Rain + night</span><span class="text-error">mAP50 0.361</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Overall</span><span class="text-on-surface">mAP50 0.515</span></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline leading-relaxed">
+<span data-lang="en">Inference resolution mattered more than training did: running the 640-trained model at 960 px raised recall from 0.379 to 0.724 without retraining anything. At 1280 px it falls back to 0.448 — there is an optimum, and it does not show up without measuring.</span>
+<span data-lang="tr">Çıkarım çözünürlüğü eğitimden daha çok fark yarattı: 640'ta eğitilmiş modeli 960 pikselde çalıştırmak, hiçbir şey eğitmeden duyarlığı 0,379'dan 0,724'e çıkardı. 1280 pikselde 0,448'e düşüyor — bir optimum var ve ölçmeden ortaya çıkmıyor.</span>
+</p>
+</div>
+</div>
+</figure>
+
+</div>
+</div>
+
+<!-- smart-city figures -->
+<div>
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm mb-space-lg reveal" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h3 class="font-headline-md text-headline-md text-on-surface">smart-city-traffic-analysis</h3>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase">NYC TLC 2023 • 38,310,226 TRIPS</span>
+</div>
+<div class="grid grid-cols-1 gap-space-lg">
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-[#0b0b0f]" href="assets/img/smartcity-dashboard.png" rel="noreferrer" target="_blank">
+<img alt="Four-panel dashboard: top zones by PageRank, the removal simulation, PageRank against betweenness, and the community split" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/smartcity-dashboard.png"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-space-2xs">The whole analysis on one sheet</span>
+<span data-lang="en">Upper East Side North leads on PageRank at 0.02573. East Harlem South has the highest betweenness of any zone at 1.00 while ranking only 17th on PageRank — it is a bridge, not a destination, and only one of the two measures sees it.</span>
+<span data-lang="tr">PageRank'te başı Upper East Side North çekiyor: 0,02573. East Harlem South ise 1,00 ile en yüksek arasındalığa sahip ama PageRank'te sadece 17. sırada — bir varış noktası değil köprü, ve bunu iki ölçütten yalnızca biri görüyor.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-[#0b0b0f]" href="assets/img/smartcity-simulation.png" rel="noreferrer" target="_blank">
+<img alt="Flow remaining in the network as the most critical zones are removed one at a time" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/smartcity-simulation.png"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-space-2xs">Closing zones one at a time</span>
+<span data-lang="en">Removing the five most critical zones costs 34.1% of the flow between them. Removing JFK Airport alone does something different in kind: the network stops being one connected component and becomes sixteen.</span>
+<span data-lang="tr">En kritik beş bölgeyi çıkarmak akışın %34,1'ine mal oluyor. JFK Havalimanı'nı tek başına çıkarmak ise cinsi farklı bir şey yapıyor: ağ tek bağlı bileşen olmaktan çıkıp on altıya bölünüyor.</span>
+</figcaption>
+</figure>
+
+</div>
+</div>
+
+</section>
+
+<!-- ==================== PRODUCTS ==================== -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-4xl">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md pb-space-md mb-space-2xl reveal" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-secondary tracking-widest uppercase mb-space-2xs">
+<span>[ PRODUCTS // PRIVATE REPOSITORIES ]</span>
+</div>
+<h2 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight">
+<span data-lang="en">Products, not demos</span>
+<span data-lang="tr">Demo değil, ürün</span>
+</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+<span data-lang="en">These are shipped or shipping products with their own domains and store listings. The code stays closed; the architecture I am happy to walk through.</span>
+<span data-lang="tr">Bunlar kendi alan adı ve mağaza kaydı olan, yayına çıkmış ya da çıkmakta olan ürünler. Kod kapalı; mimarisini anlatmaktan memnuniyet duyarım.</span>
+</p>
+</div>
+
+<!-- ---------- Shorties ecosystem ---------- -->
+<div class="mb-space-3xl">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg mb-space-lg reveal">
+<div class="max-w-2xl">
+<div class="flex flex-wrap items-center gap-space-sm mb-space-2xs">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Shorties</h3>
+<a class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-surface-container-low font-label-code-sm text-label-code-sm text-primary hover:bg-surface-container-high transition-colors" href="https://shorties.tr" rel="noreferrer" style="border: 1px solid rgba(0,245,255,0.25);" target="_blank">
+<span class="material-symbols-outlined text-[14px]">language</span>
+<span>shorties.tr</span>
+</a>
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">CREATOR &amp; LEAD DEVELOPER</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">An exam-preparation ecosystem that turns a question bank into short vertical videos with AI. It is one shared architecture — a .NET backend on a Clean Architecture split, a React Native client, and a Python video engine — but <strong class="text-on-surface font-medium">three separate apps</strong>, one per exam, each with its own question bank, store listing and release track.</span>
+<span data-lang="tr">Bir soru bankasını yapay zekâ ile kısa dikey videolara çeviren bir sınav hazırlık ekosistemi. Tek bir ortak mimari — Clean Architecture ayrımıyla .NET backend, React Native istemci ve Python video motoru — ama <strong class="text-on-surface font-medium">üç ayrı uygulama</strong>; her sınav için biri, kendi soru bankası, mağaza kaydı ve sürüm hattıyla.</span>
+</p>
+</div>
+<div class="flex flex-wrap gap-space-2xs font-label-code-sm text-label-code-sm text-on-surface-variant shrink-0 lg:max-w-xs lg:justify-end">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(208,188,255,0.2);">.NET / Clean Architecture</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">React Native (Expo)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">Python video engine</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">MSSQL</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">RevenueCat</span>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg">
+
+<!-- YKS: live -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(105,246,185,0.25);">
+<div class="flex items-start justify-between gap-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">YKS Shorties</h4>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest shrink-0" style="border: 1px solid rgba(105,246,185,0.3);">LIVE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">University entrance exam (TYT/AYT). The first app of the three and the one the architecture was proven on — currently at version 2, on both stores.</span>
+<span data-lang="tr">Üniversite giriş sınavı (TYT/AYT). Üçünün ilki ve mimarinin üzerinde kanıtlandığı uygulama — şu anda sürüm 2, her iki mağazada da yayında.</span>
+</p>
+<div class="flex flex-col gap-space-2xs mt-auto pt-space-2xs">
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high transition-colors" href="https://apps.apple.com/tr/app/yksshorties-yks-tyt-ayt/id6760202983" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">App Store</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high transition-colors" href="https://play.google.com/store/apps/details?id=tr.shorties.yksshorties" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">Google Play</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</div>
+</div>
+
+<!-- KPSS: in development -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="flex items-start justify-between gap-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">KPSS Shorties</h4>
+<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest shrink-0" style="border: 1px solid rgba(0,245,255,0.25);">IN DEVELOPMENT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Civil service exam. Backend, mobile client and video engine are in place on the shared architecture; the app is not on the stores yet.</span>
+<span data-lang="tr">Kamu personeli seçme sınavı. Backend, mobil istemci ve video motoru ortak mimari üzerinde hazır; uygulama henüz mağazalarda değil.</span>
+</p>
+<div class="mt-auto pt-space-2xs">
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high transition-colors" href="https://shorties.tr/kpss" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">shorties.tr/kpss</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</div>
+</div>
+
+<!-- ALES: in development -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="flex items-start justify-between gap-space-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">ALES Shorties</h4>
+<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest shrink-0" style="border: 1px solid rgba(0,245,255,0.25);">IN DEVELOPMENT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Graduate entrance exam. The third app on the same architecture, with its own web front and question bank in progress.</span>
+<span data-lang="tr">Akademik personel ve lisansüstü eğitim giriş sınavı. Aynı mimari üzerindeki üçüncü uygulama; kendi web yüzü ve soru bankası hazırlanıyor.</span>
+</p>
+<div class="mt-auto pt-space-2xs">
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-lowest hover:bg-surface-container-high transition-colors" href="https://shorties.tr/ales" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">shorties.tr/ales</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</div>
+</div>
+
+</div>
+
+<!-- YKS screenshots -->
+<div class="reveal">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest mb-space-sm">
+<span data-lang="en">YKS SHORTIES — FROM THE STORE LISTING</span>
+<span data-lang="tr">YKS SHORTIES — MAĞAZA KAYDINDAN</span>
+</div>
+<div class="flex gap-space-md overflow-x-auto pb-space-xs">
+<img alt="Arena leaderboard: students ranked against each other by category" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Arena leaderboard: students ranked against each other by category" data-alt-tr="Arena sıralaması: öğrenciler kategoriye göre birbirine karşı sıralanıyor" loading="lazy" src="assets/img/yks-arena.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="The short vertical video feed the video engine produces" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="The short vertical video feed the video engine produces" data-alt-tr="Video motorunun ürettiği kısa dikey video akışı" loading="lazy" src="assets/img/yks-reels.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Topic tracker showing which subjects still have gaps" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Topic tracker showing which subjects still have gaps" data-alt-tr="Hangi konularda eksik kaldığını gösteren konu takibi" loading="lazy" src="assets/img/yks-konular.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Spaced-repetition flashcard screen" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Spaced-repetition flashcard screen" data-alt-tr="Aralıklı tekrar flashcard ekranı" loading="lazy" src="assets/img/yks-flashcard.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Score calculator projecting university placement from practice results" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Score calculator projecting university placement from practice results" data-alt-tr="Deneme sonuçlarından üniversite yerleşimini öngören net hesaplayıcı" loading="lazy" src="assets/img/yks-net.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+</div>
+</div>
+</div>
+
+<!-- ---------- respos ---------- -->
+<div class="mb-space-3xl">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-lg mb-space-lg reveal">
+<div class="max-w-2xl">
+<div class="flex flex-wrap items-center gap-space-sm mb-space-2xs">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">respos</h3>
+<a class="inline-flex items-center gap-space-3xs px-space-sm py-space-3xs rounded-full bg-surface-container-low font-label-code-sm text-label-code-sm text-primary hover:bg-surface-container-high transition-colors" href="https://resposapp.com" rel="noreferrer" style="border: 1px solid rgba(0,245,255,0.25);" target="_blank">
+<span class="material-symbols-outlined text-[14px]">language</span>
+<span>resposapp.com</span>
+</a>
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">BACKEND DEVELOPER</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">A multi-tenant SaaS point-of-sale system for restaurants. One backend serves many restaurants, each with isolated data and self-service sign-up, and module access is granted per restaurant so two tenants on the same deployment can see different features. It runs in the browser on tablets, phones and POS terminals: live table view, kitchen display, recipe-based stock tracking, shift and cash management, and discount authorisation with an audit log.</span>
+<span data-lang="tr">Restoranlar için multi-tenant SaaS satış noktası sistemi. Tek backend birçok restorana hizmet veriyor; her biri kendi izole verisiyle ve kendi kaydını açarak. Modül erişimi restoran bazında verildiği için aynı kurulumdaki iki tenant farklı özellikler görebiliyor. Tarayıcı üzerinden tablet, telefon ve POS terminalinde çalışıyor: canlı masa görünümü, mutfak ekranı, reçete bazlı stok takibi, vardiya ve kasa yönetimi, denetim kayıtlı indirim yetkilendirme.</span>
+</p>
+</div>
+<div class="flex flex-wrap gap-space-2xs font-label-code-sm text-label-code-sm text-on-surface-variant shrink-0 lg:max-w-xs lg:justify-end">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(0,245,255,0.2);">Node.js / Express</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">React</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">Expo</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">JWT auth</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">Multi-tenancy</span>
+</div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<img alt="The respos order screen on a phone, with an open table bill and its total" class="w-full h-auto" data-alt-en="The respos order screen on a phone, with an open table bill and its total" data-alt-tr="respos sipariş ekranı telefonda, açık masa adisyonu ve toplamıyla" loading="lazy" src="assets/img/respos-mobile.jpg"/>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span data-lang="en">Tableside ordering: a server opens the table, adds items and closes the bill without walking back to a terminal.</span>
+<span data-lang="tr">Masa başında sipariş: garson masayı açıyor, ürün ekliyor ve terminale dönmeden adisyonu kapatıyor.</span>
+</figcaption>
+</figure>
+<figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<img alt="The kitchen display system showing incoming orders on a wall-mounted screen" class="w-full h-auto" data-alt-en="The kitchen display system showing incoming orders on a wall-mounted screen" data-alt-tr="Gelen siparişleri duvara monte ekranda gösteren mutfak ekran sistemi" loading="lazy" src="assets/img/respos-kds.jpg"/>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span data-lang="en">Kitchen display: orders land the moment they are taken, so preparation order is decided by the screen and not by shouting.</span>
+<span data-lang="tr">Mutfak ekranı: siparişler alındığı anda düşüyor; hazırlık sırasını bağırış değil ekran belirliyor.</span>
+</figcaption>
+</figure>
+<figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<img alt="Live table plan on a tablet showing which tables are open" class="w-full h-auto" data-alt-en="Live table plan on a tablet showing which tables are open" data-alt-tr="Hangi masaların açık olduğunu gösteren tablet üzerindeki canlı masa planı" loading="lazy" src="assets/img/respos-tables.jpg"/>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span data-lang="en">Live salon view: table state is the shared source of truth every device reads from.</span>
+<span data-lang="tr">Canlı salon görünümü: masa durumu, her cihazın okuduğu ortak doğruluk kaynağı.</span>
+</figcaption>
+</figure>
+<figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<img alt="The POS running in a browser on a counter terminal" class="w-full h-auto" data-alt-en="The POS running in a browser on a counter terminal" data-alt-tr="Tezgâh terminalinde tarayıcı içinde çalışan POS" loading="lazy" src="assets/img/respos-pos.jpg"/>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span data-lang="en">Counter terminal: the same web client, so a venue can use whatever hardware it already owns.</span>
+<span data-lang="tr">Tezgâh terminali: aynı web istemcisi; işletme elindeki donanımı neyse onu kullanabiliyor.</span>
+</figcaption>
+</figure>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-space-md max-w-3xl">
+<span data-lang="en">Product imagery from resposapp.com — the device screens are the real interface, the surroundings are marketing photography.</span>
+<span data-lang="tr">Görseller resposapp.com'dan — cihaz ekranları gerçek arayüz, çevresi tanıtım fotoğrafı.</span>
+</p>
+</div>
+
+<!-- ---------- Fitness tracker ---------- -->
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[22px]">fitness_center</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Mobile Fitness Tracker</h3>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest shrink-0" style="border: 1px solid rgba(255,255,255,0.06);">TEAM PROJECT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-3xl">
+<span data-lang="en">A cross-platform fitness tracking app that builds personalised meal and workout recommendations with AI. Secure authentication, workout logging, and data analytics, designed and shipped as a team.</span>
+<span data-lang="tr">Yapay zekâ ile kişiselleştirilmiş beslenme ve antrenman önerileri üreten çapraz platform bir fitness takip uygulaması. Güvenli kimlik doğrulama, antrenman kaydı ve veri analitiği; ekip olarak tasarlanıp yayına alındı.</span>
+</p>
+<div class="flex flex-wrap gap-space-2xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(105,246,185,0.2);">Flutter</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">.NET</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">MSSQL</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">AI recommendations</span>
+</div>
+</div>
+
+</section>
+
+<!-- ==================== HOW I WORK ==================== -->
+<section class="w-full bg-surface-container-lowest border-t border-white/[0.08] py-space-4xl">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="mb-space-2xl reveal">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mb-space-sm">
+<span>[ HOW I WORK ]</span>
+<span class="h-px w-16 bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight max-w-3xl">
+<span data-lang="en">Four rules these projects taught me</span>
+<span data-lang="tr">Bu projelerin bana öğrettiği dört kural</span>
+</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg">
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Measure before you build</span>
+<span data-lang="tr">Kurmadan önce ölç</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">In plakatanima the plan assumed ±35° of horizontal angle. I labelled 690 real plates and measured about 7°, so I changed the generator instead of the measurement.</span>
+<span data-lang="tr">plakatanima'da plan ±35° yatay açı varsayıyordu. 690 gerçek plaka etiketleyip yaklaşık 7° ölçtüm ve ölçümü değil üreteci değiştirdim.</span>
+</p>
+</div>
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Check the number that flatters you</span>
+<span data-lang="tr">Hoşuna giden sayıyı kontrol et</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">I concluded that sharpness does not predict readability at night. It does, from 1% to 62%. My first sample only covered the flat end of the range.</span>
+<span data-lang="tr">Gecede keskinliğin okunabilirliği öngörmediği sonucuna varmıştım. Öngörüyor, %1'den %62'ye. İlk örneklemim aralığın sadece düz ucunu kapsıyordu.</span>
+</p>
+</div>
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Publish what fails too</span>
+<span data-lang="tr">Bozulanı da yayımla</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Every repository has a section on where it breaks. The trafikisaret demo keeps a night frame with only one sign found, because that is how the model performs there.</span>
+<span data-lang="tr">Her reponun nerede kırıldığını anlatan bir bölümü var. trafikisaret demosunda tek işaretin bulunduğu gece karesi duruyor, çünkü model orada böyle çalışıyor.</span>
+</p>
+</div>
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Write down what you could not do</span>
+<span data-lang="tr">Yapamadığını da yaz</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The plakatanima plan needed a Jetson board I do not have, so the edge-latency phase is marked out of scope rather than estimated.</span>
+<span data-lang="tr">plakatanima planı bende olmayan bir Jetson kartı gerektiriyordu; uç cihaz gecikme fazı tahmin edilmek yerine kapsam dışı işaretlendi.</span>
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ==================== CLOSING ==================== -->
+<section class="w-full bg-surface-container-low border-t border-white/[0.08] py-space-3xl">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg reveal">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-2xs">
+<span data-lang="en">How these systems are put together</span>
+<span data-lang="tr">Bu sistemler nasıl kuruluyor</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+<span data-lang="en">The pipelines, the layers they are made of, and the choices behind them.</span>
+<span data-lang="tr">Pipeline'lar, hangi katmanlardan oluştukları ve arkalarındaki tercihler.</span>
+</p>
+</div>
+<a class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-on-primary font-label-code-md text-label-code-md tracking-wider uppercase hover:bg-white transition-colors shrink-0" href="architecture.html" style="border: 1px solid rgba(255,255,255,0.2);">
+<span data-lang="en">SEE THE ARCHITECTURE</span><span data-lang="tr">MİMARİYE BAK</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</section>
+
+</div>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="w-full bg-surface-container-lowest/90 backdrop-blur-xl py-space-xl" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed-dim">schedule</span>
+<span id="utc-clock">--:--:-- UTC</span>
+</div>
+<div class="hidden sm:inline-block text-outline-variant font-label-code-sm text-label-code-sm">/</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+<span>MALTEPE, İSTANBUL • TR</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">.NET • SPRING BOOT • PYTORCH • FLUTTER</span>
+</div>
+<div class="flex items-center gap-space-lg font-label-code-sm text-label-code-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://github.com/Byomer1021" rel="noreferrer" target="_blank">GITHUB</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://www.linkedin.com/in/%C3%B6mer-can-atl%C4%B1-8a1b491b5/" rel="noreferrer" target="_blank">LINKEDIN</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="contact.html">CONTACT</a>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script>
+/* Scrollytelling: 400vh wrapper drives four pinned chapters. */
+(function () {
+  var scrollyContainer = document.getElementById('scrollytelling-experience');
+  var images = document.querySelectorAll('.project-img');
+  var chapters = document.querySelectorAll('.project-text-chapter');
+  var indexDisplay = document.getElementById('hud-index-display');
+  var progressBar = document.getElementById('scrolly-progress-bar');
+  var stageCaption = document.getElementById('stage-caption');
+  var navDots = document.querySelectorAll('.step-nav-dot');
+  var captions = ['[ OWN DASHCAM FOOTAGE ]', '[ DAY / RAIN / NIGHT ]', '[ NYC TLC 2023 ]', '[ CALIBRATION DIAGRAM ]'];
+  var activeIndex = 0;
+
+  /* Subtle tilt on the visual stage, desktop pointers only. */
+  var stage = document.getElementById('project-visual-stage');
+  if (stage && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    window.addEventListener('mousemove', function (e) {
+      var rect = stage.getBoundingClientRect();
+      var offsetX = (e.clientX - (rect.left + rect.width / 2)) / (window.innerWidth / 2);
+      var offsetY = (e.clientY - (rect.top + rect.height / 2)) / (window.innerHeight / 2);
+      stage.style.transform = 'perspective(1000px) rotateX(' + (-offsetY * 5).toFixed(2) + 'deg) rotateY(' + (offsetX * 5).toFixed(2) + 'deg)';
+    });
+  }
+
+  function updateScrollyState() {
+    if (!scrollyContainer) return;
+    var rect = scrollyContainer.getBoundingClientRect();
+    var totalDist = scrollyContainer.offsetHeight - window.innerHeight;
+    var progress = totalDist > 0 ? Math.max(0, Math.min(1, -rect.top / totalDist)) : 0;
+    var step = Math.min(3, Math.floor(progress * 4));
+
+    if (step !== activeIndex) {
+      activeIndex = step;
+
+      images.forEach(function (img, idx) {
+        if (idx === activeIndex) {
+          img.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+          img.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+        } else {
+          img.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+          img.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        }
+      });
+
+      chapters.forEach(function (ch, idx) {
+        if (idx === activeIndex) {
+          ch.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+          ch.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+          ch.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          ch.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+        }
+      });
+
+      if (indexDisplay) indexDisplay.textContent = '0' + (activeIndex + 1);
+      if (stageCaption) stageCaption.textContent = captions[activeIndex];
+
+      navDots.forEach(function (dot, idx) {
+        if (idx === activeIndex) {
+          dot.classList.remove('w-2', 'h-2', 'bg-surface-container-high');
+          dot.classList.add('w-3', 'h-3', 'bg-primary-container');
+        } else {
+          dot.classList.remove('w-3', 'h-3', 'bg-primary-container');
+          dot.classList.add('w-2', 'h-2', 'bg-surface-container-high');
+        }
+      });
+    }
+
+    if (progressBar) progressBar.style.width = Math.max(10, Math.round(progress * 100)) + '%';
+  }
+
+  window.addEventListener('scroll', updateScrollyState, { passive: true });
+  window.addEventListener('resize', updateScrollyState);
+  updateScrollyState();
+
+  navDots.forEach(function (dot) {
+    dot.addEventListener('click', function (e) {
+      if (!scrollyContainer) return;
+      var step = parseInt(e.currentTarget.getAttribute('data-step') || '0', 10);
+      var containerTop = scrollyContainer.getBoundingClientRect().top + window.scrollY;
+      var totalDist = scrollyContainer.offsetHeight - window.innerHeight;
+      window.scrollTo({ top: containerTop + (step / 3.99) * totalDist, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script defer src="assets/js/bg-three.js"></script>
+</body>
+</html>
