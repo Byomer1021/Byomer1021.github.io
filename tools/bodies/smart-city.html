@@ -1,0 +1,228 @@
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
+<!-- ============================ HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase w-fit" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-tertiary-fixed-dim tracking-tight">smart-city-traffic-analysis</h1>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(105,246,185,0.35);">38,310,226 ROWS</span>
+</div>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">38.3 million New York taxi trips modelled as a single graph to find where the city's traffic actually bottlenecks. PageRank ranks the critical zones, Louvain finds the communities, and a node-removal simulation measures what breaks when they close.</span>
+<span data-lang="tr">38,3 milyon New York taksi yolculuğu tek bir graph olarak modellenip şehrin trafiğinin gerçekte nerede tıkandığı bulunuyor. PageRank kritik bölgeleri sıralıyor, Louvain toplulukları çıkarıyor, düğüm silme simülasyonu da bunlar kapandığında neyin bozulduğunu ölçüyor.</span>
+</p>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-tertiary-container text-on-tertiary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-tertiary-fixed transition-colors" href="https://github.com/Byomer1021/smart-city-traffic-analysis" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.2);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/VERIFICATION.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+<span data-lang="en">VERIFICATION REPORT</span><span data-lang="tr">DOĞRULAMA RAPORU</span>
+</a>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary">38,310,226</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">raw records</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">ham kayıt</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim">97.63%</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">survived cleaning</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">temizlikten geçti</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-secondary">258 / 9,990</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">nodes / edges</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">düğüm / kenar</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim">40.7 s</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">full run, t3.xlarge</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">tam koşu, t3.xlarge</span>
+</div>
+</div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="bg-[#0b0b0f] flex items-center justify-center">
+<img alt="Geographic map of the New York taxi network coloured by community, with JFK Airport as an outlying hub" class="w-full h-auto" loading="lazy" src="/assets/img/smartcity-geomap.png"/>
+</div>
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
+<span data-lang="en">Three communities Louvain found, drawn on their real coordinates. JFK sits far out on its own and still pulls long edges into the Manhattan core — which is exactly why removing it does so much damage.</span>
+<span data-lang="tr">Louvain'in bulduğu üç topluluk, gerçek koordinatlarına çizilmiş. JFK tek başına uzakta duruyor ve buna rağmen Manhattan çekirdeğine uzun kenarlar çekiyor — çıkarılınca bu kadar hasar vermesinin sebebi tam olarak bu.</span>
+</p>
+</div>
+</section>
+
+<!-- ============================ FINDINGS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Three findings</span><span data-lang="tr">Üç bulgu</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-2xs reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-md text-label-code-md text-primary">1 → 16</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">COMPONENTS AFTER REMOVING JFK</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Closing one airport does not slow the network down, it cuts it apart. The graph stops being one connected piece and becomes sixteen.</span>
+<span data-lang="tr">Bir havalimanını kapatmak ağı yavaşlatmıyor, kesip ayırıyor. Graph tek bağlı parça olmaktan çıkıp on altıya bölünüyor.</span>
+</p>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-2xs reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-md text-label-code-md text-error">34.1%</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">FLOW LOST TO THE TOP FIVE ZONES</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Removing the five most critical zones one at a time costs just over a third of the flow between them.</span>
+<span data-lang="tr">En kritik beş bölgeyi teker teker çıkarmak, aralarındaki akışın üçte birinden fazlasına mal oluyor.</span>
+</p>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-2xs reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-md text-label-code-md text-secondary">17th</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">EAST HARLEM SOUTH ON PAGERANK</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">It has the highest betweenness of any zone at 1.00 while ranking 17th on PageRank. It is a bridge, not a destination — and only one of the two measures sees it.</span>
+<span data-lang="tr">1,00 ile en yüksek arasındalığa sahip ama PageRank'te 17. sırada. Bir varış noktası değil köprü — ve bunu iki ölçütten yalnızca biri görüyor.</span>
+</p>
+</div>
+</div>
+</section>
+
+<!-- ============================ FIGURES ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">The analysis</span><span data-lang="tr">Analiz</span>
+</h2>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">NYC TLC 2023</span>
+</div>
+
+<div class="grid grid-cols-1 gap-space-lg">
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-[#0b0b0f]" href="/assets/img/smartcity-dashboard.png" rel="noreferrer" target="_blank">
+<img alt="Four-panel dashboard: top zones by PageRank, the removal simulation, PageRank against betweenness, and the community split" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/smartcity-dashboard.png"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-space-2xs">The whole analysis on one sheet</span>
+<span data-lang="en">Upper East Side North leads on PageRank at 0.02573. The scatter in the lower left is where the two centrality measures disagree, and that disagreement is the interesting part.</span>
+<span data-lang="tr">PageRank'te başı Upper East Side North çekiyor: 0,02573. Sol alttaki dağılım iki merkezilik ölçütünün ayrıştığı yer ve asıl ilginç kısım o ayrışma.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-[#0b0b0f]" href="/assets/img/smartcity-simulation.png" rel="noreferrer" target="_blank">
+<img alt="Flow remaining in the network as the most critical zones are removed one at a time" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/smartcity-simulation.png"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-space-2xs">Closing zones one at a time</span>
+<span data-lang="en">Each step removes the next most critical zone and re-measures. The curve falls steadily rather than off a cliff, which says the network has redundancy — right up until JFK goes.</span>
+<span data-lang="tr">Her adım bir sonraki en kritik bölgeyi çıkarıp yeniden ölçüyor. Eğri uçurumdan düşmüyor, düzenli iniyor; bu da ağda yedeklilik olduğunu söylüyor — JFK gidene kadar.</span>
+</figcaption>
+</figure>
+</div>
+</section>
+
+<!-- ============================ TWO ENGINES ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Laptop scale and cluster scale, same code path</span>
+<span data-lang="tr">Dizüstü ölçeği ve küme ölçeği, aynı kod yolu</span>
+</h2>
+<div class="rounded-xl overflow-hidden reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[640px] text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/60 font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">
+<th class="p-space-md font-medium">Mode</th>
+<th class="p-space-md font-medium">Engine</th>
+<th class="p-space-md font-medium">Data size</th>
+<th class="p-space-md font-medium">Where it runs</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium">Local demo</td>
+<td class="p-space-md text-on-surface-variant">Pandas + NetworkX</td>
+<td class="p-space-md text-on-surface-variant">&lt; 10M rows</td>
+<td class="p-space-md text-on-surface-variant">Laptop / PC</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium">Cloud production</td>
+<td class="p-space-md text-on-surface-variant">PySpark + GraphFrames</td>
+<td class="p-space-md text-on-surface-variant">10M+ rows</td>
+<td class="p-space-md text-on-surface-variant">AWS EMR / Google Dataproc</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="flex flex-col gap-space-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Read further</span><span data-lang="tr">Devamını oku</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/FINAL_REPORT.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Final report</span><span data-lang="tr">Nihai rapor</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">The full write-up: method, results and what each number does and does not support.</span>
+<span data-lang="tr">Tam metin: yöntem, sonuçlar ve her sayının neyi destekleyip neyi desteklemediği.</span>
+</span>
+</a>
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/VERIFICATION.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Verification</span><span data-lang="tr">Doğrulama</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">Every headline number recomputed from the raw data, so the claims can be checked.</span>
+<span data-lang="tr">Bütün ana sayılar ham veriden yeniden hesaplanmış; iddialar kontrol edilebilsin diye.</span>
+</span>
+</a>
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/smart-city-traffic-analysis/blob/main/docs/MODULES.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Module map</span><span data-lang="tr">Modül haritası</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">Which module does what, and where the Pandas and Spark paths diverge.</span>
+<span data-lang="tr">Hangi modül ne yapıyor ve Pandas ile Spark yolları nerede ayrılıyor.</span>
+</span>
+</a>
+</div>
+</section>
+
+<!-- ============================ NEXT ============================ -->
+<nav class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary hover:text-white transition-colors tracking-widest uppercase" href="/projects/plakatanima/">
+<span data-lang="en">NEXT — plakatanima</span><span data-lang="tr">SONRAKİ — plakatanima</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</nav>
+
+</div>

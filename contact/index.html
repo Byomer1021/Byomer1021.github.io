@@ -30,7 +30,6 @@
 <body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
 <canvas aria-hidden="true" id="bg-canvas"></canvas>
 
-<!-- ============================ HEADER ============================ -->
 <header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
 <div class="h-16 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
 <a class="flex items-center gap-space-xs group shrink-0" href="/">
@@ -212,7 +211,6 @@
 </div>
 </main>
 
-<!-- ============================ FOOTER ============================ -->
 <footer class="w-full bg-surface-container-lowest/90 backdrop-blur-xl py-space-xl" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg">
 <div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left">
@@ -233,12 +231,14 @@
 <div class="flex items-center gap-space-lg font-label-code-sm text-label-code-sm">
 <a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://github.com/Byomer1021" rel="noreferrer" target="_blank">GITHUB</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://www.linkedin.com/in/%C3%B6mer-can-atli-8a9b491b5/" rel="noreferrer" target="_blank">LINKEDIN</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="/cv/">CV</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="/contact/">CONTACT</a>
 </div>
 </div>
 </footer>
 
 <script src="/assets/js/site.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script defer src="/assets/js/bg-three.js"></script>
 <script>
 /* A small shell. Every answer below is a fact from the CV or a repository —
    nothing here is decorative filler. */
@@ -555,7 +555,5 @@
   }
 })();
 </script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-<script defer src="/assets/js/bg-three.js"></script>
 </body>
 </html>

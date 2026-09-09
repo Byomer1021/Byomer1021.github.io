@@ -33,14 +33,10 @@
   });
 
   // ---- 2. Navigation active state -----------------------------------------
-  // URLs are extensionless ("/projects"), but be tolerant of "/projects/",
-  // "/projects/index.html" and "/" so the nav highlights correctly anywhere.
-  var here = location.pathname
-    .replace(/\/index\.html$/, '/')
+  // Match on the FIRST path segment, so a detail page like
+  // /projects/otonomarac/ still lights up the Projects tab.
+  var here = location.pathname.replace(/^\/+/, '').split('/')[0]
     .replace(/\.html$/, '')
-    .replace(/\/+$/, '')
-    .split('/')
-    .pop()
     .toLowerCase() || 'index';
   document.querySelectorAll('[data-nav]').forEach(function (a) {
     if (a.getAttribute('data-nav') !== here) return;

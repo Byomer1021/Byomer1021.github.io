@@ -1,0 +1,141 @@
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl flex flex-col gap-space-2xl">
+
+<!-- ============================ PAGE HEADER ============================ -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs font-label-code-sm text-label-code-sm text-primary-fixed-dim">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="tracking-widest uppercase">[ 05 // TERMINAL ]</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant tracking-widest uppercase">MALTEPE, İSTANBUL — UTC+03</span>
+</div>
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight">
+<span data-lang="en">Get in touch</span>
+<span data-lang="tr">İletişime geç</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">Open to internships and new-graduate roles in backend, AI and full-stack development. Email is the fastest route; the terminal below answers the usual questions if you would rather poke around first.</span>
+<span data-lang="tr">Backend, yapay zekâ ve full-stack geliştirme alanlarında staj ve yeni mezun pozisyonlarına açığım. En hızlı yol e-posta; önce kurcalamak istersen aşağıdaki terminal sık sorulanları cevaplıyor.</span>
+</p>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+
+<!-- ============================ TERMINAL ============================ -->
+<div class="lg:col-span-8 flex flex-col bg-surface-container-lowest/80 backdrop-blur-2xl rounded-lg overflow-hidden shadow-2xl" style="border: 1px solid rgba(255,255,255,0.08);">
+
+<div class="px-space-md py-space-xs bg-surface-container-low/90 flex flex-wrap items-center justify-between gap-space-xs" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim/80"></span>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase pl-space-xs">TTY: /dev/pts/oca.term</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-code-sm text-label-code-sm">
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>STATIC SITE • NO TRACKERS</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary-fixed-dim">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span id="term-clock">--:--:--</span>
+</div>
+</div>
+</div>
+
+<div class="px-space-md py-space-2xs bg-surface-container-lowest/60 flex items-center justify-between gap-space-sm overflow-x-auto" style="border-bottom: 1px solid rgba(255,255,255,0.04);">
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="font-label-code-sm text-label-code-sm text-outline-variant uppercase">RUN:</span>
+<button class="cmd-shortcut px-space-xs py-space-3xs font-label-code-sm text-label-code-sm bg-surface-container-high/60 hover:bg-surface-container-high text-primary rounded transition-colors" data-cmd="whoami" style="border: 1px solid rgba(255,255,255,0.05);" type="button">whoami</button>
+<button class="cmd-shortcut px-space-xs py-space-3xs font-label-code-sm text-label-code-sm bg-surface-container-high/60 hover:bg-surface-container-high text-primary rounded transition-colors" data-cmd="contact" style="border: 1px solid rgba(255,255,255,0.05);" type="button">contact</button>
+<button class="cmd-shortcut px-space-xs py-space-3xs font-label-code-sm text-label-code-sm bg-surface-container-high/60 hover:bg-surface-container-high text-primary rounded transition-colors" data-cmd="projects" style="border: 1px solid rgba(255,255,255,0.05);" type="button">projects</button>
+<button class="cmd-shortcut px-space-xs py-space-3xs font-label-code-sm text-label-code-sm bg-surface-container-high/60 hover:bg-surface-container-high text-primary rounded transition-colors" data-cmd="stack" style="border: 1px solid rgba(255,255,255,0.05);" type="button">stack</button>
+<button class="cmd-shortcut px-space-xs py-space-3xs font-label-code-sm text-label-code-sm bg-surface-container-high/60 hover:bg-surface-container-high text-outline rounded transition-colors" data-cmd="clear" style="border: 1px solid rgba(255,255,255,0.05);" type="button">clear</button>
+</div>
+<span class="font-label-code-sm text-label-code-sm text-outline-variant hidden md:inline-block shrink-0">↑ ↓ FOR HISTORY</span>
+</div>
+
+<div aria-live="polite" class="p-space-md h-[420px] overflow-y-auto flex flex-col gap-space-xs font-label-code-md text-label-code-md text-on-surface select-text scroll-smooth" id="cli-output"></div>
+
+<form class="px-space-md py-space-sm bg-surface-container-low/70 flex items-center gap-space-xs" id="cli-form" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim select-none shrink-0">guest@oca.dev:~$</span>
+<input autocomplete="off" class="flex-1 min-w-0 bg-transparent border-none text-primary font-label-code-md text-label-code-md focus:outline-none placeholder:text-outline-variant" id="cli-input" placeholder="help" spellcheck="false" type="text"/>
+<button class="px-space-xs py-space-3xs rounded bg-surface-container-high text-primary font-label-code-sm text-label-code-sm hover:bg-primary-container hover:text-on-primary-container transition-all shrink-0" style="border: 1px solid rgba(255,255,255,0.08);" type="submit">EXEC [⏎]</button>
+</form>
+</div>
+
+<!-- ============================ SIDE COLUMN ============================ -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+
+<div class="bg-surface-container-lowest/80 backdrop-blur-2xl p-space-md rounded-lg flex flex-col gap-space-md" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="flex items-center justify-between pb-space-xs" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-wider font-semibold">
+<span data-lang="en">DIRECT CHANNELS</span><span data-lang="tr">DOĞRUDAN KANALLAR</span>
+</span>
+</div>
+</div>
+
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider">
+<span data-lang="en">[ 01 // EMAIL — FASTEST ]</span><span data-lang="tr">[ 01 // E-POSTA — EN HIZLI ]</span>
+</span>
+<div class="flex items-stretch gap-space-2xs">
+<a class="flex-1 min-w-0 px-space-sm py-space-xs rounded bg-surface-container-low/70 font-label-code-sm text-label-code-sm text-primary hover:text-white hover:bg-surface-container-high transition-colors break-all flex items-center" href="mailto:atli.omercan_2001@hotmail.com" id="email-link" style="border: 1px solid rgba(255,255,255,0.08);">atli.omercan_2001@hotmail.com</a>
+<button aria-label="Copy email address" class="px-space-sm rounded bg-surface-container-low/70 text-outline hover:text-primary hover:bg-surface-container-high transition-colors shrink-0 flex items-center" id="copy-email" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[16px]" id="copy-icon">content_copy</span>
+</button>
+</div>
+</div>
+
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider">[ 02 // ELSEWHERE ]</span>
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-low/70 hover:bg-surface-container-high transition-colors" href="https://www.linkedin.com/in/%C3%B6mer-can-atli-8a9b491b5/" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">LinkedIn</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-low/70 hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">GitHub — Byomer1021</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+<a class="group flex items-center justify-between gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-low/70 hover:bg-surface-container-high transition-colors" href="https://huggingface.co/spaces/byomer1021/otonomarac" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="font-label-code-sm text-label-code-sm text-on-surface group-hover:text-primary transition-colors">Hugging Face — live demo</span>
+<span class="material-symbols-outlined text-[14px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</a>
+</div>
+</div>
+
+<div class="bg-surface-container-lowest/80 backdrop-blur-2xl p-space-md rounded-lg flex flex-col gap-space-sm" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="flex items-center gap-space-xs pb-space-xs" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-wider font-semibold">
+<span data-lang="en">WHAT I AM LOOKING FOR</span><span data-lang="tr">NE ARIYORUM</span>
+</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Internships and new-graduate positions in backend engineering, applied machine learning, or full-stack product work. Comfortable in .NET, Spring Boot, Node.js and Python; equally happy on the model side or the API side.</span>
+<span data-lang="tr">Backend mühendisliği, uygulamalı makine öğrenmesi veya full-stack ürün geliştirme alanlarında staj ve yeni mezun pozisyonları. .NET, Spring Boot, Node.js ve Python ile rahatım; model tarafında da API tarafında da çalışırım.</span>
+</p>
+<div class="flex flex-wrap gap-space-2xs pt-space-2xs">
+<span class="px-2.5 py-1 rounded bg-surface-container-low font-label-code-sm text-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">İstanbul / Kocaeli</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low font-label-code-sm text-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">Remote</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-low font-label-code-sm text-label-code-sm text-on-surface-variant" style="border: 1px solid rgba(255,255,255,0.06);">EN C1</span>
+</div>
+</div>
+
+<div class="bg-surface-container-lowest/80 backdrop-blur-2xl p-space-md rounded-lg flex flex-col gap-space-xs" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider">
+<span data-lang="en">A NOTE ON THE PRIVATE REPOSITORIES</span><span data-lang="tr">ÖZEL REPOLAR HAKKINDA</span>
+</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">respos and the Shorties apps have real users, so their code stays closed. Ask and I will walk you through the architecture, the decisions and the parts that went wrong.</span>
+<span data-lang="tr">respos ve Shorties uygulamalarının gerçek kullanıcıları var, bu yüzden kodları kapalı. İstersen mimarisini, verilen kararları ve ters giden kısımları anlatırım.</span>
+</p>
+</div>
+
+</div>
+</div>
+
+</div>

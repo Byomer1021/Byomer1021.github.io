@@ -1,0 +1,216 @@
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
+<!-- ============================ HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase w-fit" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-primary-container tracking-tight">plakatanima</h1>
+<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(0,245,255,0.3);">IN PROGRESS • NOT TRAINED</span>
+</div>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">Turkish licence plate recognition: a synthetic data generator and a CTC sequence recogniser. The interesting part of this project is not the model — it is that the generator was calibrated against measurements rather than against the plan, and that the plan lost.</span>
+<span data-lang="tr">Türk plakası tanıma: sentetik veri üreteci ve CTC dizi tanıyıcısı. Bu projenin ilginç kısmı model değil — üretecin plana göre değil ölçümlere göre kalibre edilmesi, ve bu çekişmeyi planın kaybetmesi.</span>
+</p>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary text-on-primary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-white transition-colors" href="https://github.com/Byomer1021/plakatanima" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.2);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">straighten</span>
+<span data-lang="en">MEASUREMENT NOTES</span><span data-lang="tr">ÖLÇÜM NOTLARI</span>
+</a>
+</div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="w-full h-10 px-space-md bg-surface-container-low/90 backdrop-blur-md flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-primary tracking-wider uppercase">GENERATOR CALIBRATION</span>
+<span class="font-label-code-sm text-label-code-sm text-outline">DIAGRAM, NOT A SCREENSHOT</span>
+</div>
+<div class="bg-[#0b0b0f] flex items-center justify-center">
+<img alt="Synthetic plates as the plan assumed them, and as the measurements say they should be" class="w-full h-auto" loading="lazy" src="/assets/img/card-plakatanima.jpg"/>
+</div>
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
+<span data-lang="en">The model has not been trained, so there is no accuracy figure to show and this page does not invent one. The diagram shows what the generator produced before and after the measurements.</span>
+<span data-lang="tr">Model eğitilmedi, bu yüzden gösterilecek bir doğruluk sayısı yok ve bu sayfa uydurmuyor. Diyagram, üretecin ölçümlerden önce ve sonra ne ürettiğini gösteriyor.</span>
+</p>
+</div>
+</section>
+
+<!-- ============================ THE CORRECTIONS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Three times the measurement beat the plan</span>
+<span data-lang="tr">Ölçümün planı üç kez yendiği yerler</span>
+</h2>
+
+<div class="flex flex-col gap-space-lg">
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg p-space-xl rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="lg:col-span-1 font-display-hero text-[40px] leading-none text-outline-variant">01</div>
+<div class="lg:col-span-5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+<span data-lang="en">The camera angle</span><span data-lang="tr">Kamera açısı</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The plan assumed ±35° of horizontal perspective. I labelled 690 real plates first and measured about 7° — the dashcam sits behind and above the car ahead, so the left-right angle stays small. Training on ±35° would have taught the model images it will never meet.</span>
+<span data-lang="tr">Plan ±35° yatay perspektif varsayıyordu. Önce 690 gerçek plaka etiketleyip yaklaşık 7° ölçtüm — dashcam öndeki aracın arkasında ve yukarısında duruyor, sağa-sola açı küçük kalıyor. ±35° ile eğitmek modele hiç karşılaşmayacağı görüntüleri öğretmek olurdu.</span>
+</p>
+</div>
+<div class="lg:col-span-6 flex items-center">
+<div class="w-full p-space-md rounded-lg bg-surface-container-lowest font-label-code-md text-label-code-md" style="border: 1px solid rgba(255,255,255,0.06);">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Assumed</span><span class="text-error">±35°</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Measured over 690 plates</span><span class="text-tertiary-fixed-dim">~7°</span></div>
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg p-space-xl rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="lg:col-span-1 font-display-hero text-[40px] leading-none text-outline-variant">02</div>
+<div class="lg:col-span-5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+<span data-lang="en">The plate size</span><span data-lang="tr">Plaka boyutu</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Scale was sampled uniformly between 55 and 280 pixels, median 167. The real median is 105. Synthetic plates were coming out systematically too large and too sharp, so real widths are bootstrapped now instead of guessed.</span>
+<span data-lang="tr">Ölçek 55 ile 280 piksel arasında düzgün örnekleniyordu, ortancası 167. Gerçeğin ortancası 105. Sentetik plakalar sistematik olarak fazla büyük ve fazla keskin çıkıyordu; artık tahmin yerine gerçek genişlikler bootstrap ediliyor.</span>
+</p>
+</div>
+<div class="lg:col-span-6 flex items-center">
+<div class="w-full p-space-md rounded-lg bg-surface-container-lowest font-label-code-md text-label-code-md" style="border: 1px solid rgba(255,255,255,0.06);">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Generated median width</span><span class="text-error">167 px</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Real median width</span><span class="text-tertiary-fixed-dim">105 px</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Sampling</span><span class="text-on-surface text-right">uniform → bootstrap from real</span></div>
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg p-space-xl rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="lg:col-span-1 font-display-hero text-[40px] leading-none text-outline-variant">03</div>
+<div class="lg:col-span-5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
+<span data-lang="en">A conclusion I withdrew</span><span data-lang="tr">Geri çektiğim bir sonuç</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">From 180 crops I concluded that sharpness does not predict readability at night. It does — from 1% to 62% across the full range. The first measurement sampled only the top of a sorted queue, where the curve is flat. The measurement was right; generalising from a truncated range was not.</span>
+<span data-lang="tr">180 kırpmadan "gecede keskinlik okunabilirliği öngörmüyor" sonucuna varmıştım. Öngörüyor — tüm aralıkta %1'den %62'ye. İlk ölçüm sıralı kuyruğun yalnızca üst ucundan geliyordu ve eğri orada düz. Ölçüm doğruydu; kesilmiş aralıktan genelleme yanlıştı.</span>
+</p>
+</div>
+<div class="lg:col-span-6 flex items-center">
+<div class="w-full p-space-md rounded-lg bg-surface-container-lowest font-label-code-md text-label-code-md" style="border: 1px solid rgba(255,255,255,0.06);">
+<div class="text-outline uppercase tracking-wider mb-space-sm text-label-code-sm">Readability across the sharpness range, night set</div>
+<div class="flex items-end gap-1 h-16">
+<div class="flex-1 bg-error-container/60 rounded-sm" style="height: 6%"></div>
+<div class="flex-1 bg-error-container/60 rounded-sm" style="height: 14%"></div>
+<div class="flex-1 bg-secondary-container/60 rounded-sm" style="height: 28%"></div>
+<div class="flex-1 bg-secondary-container/60 rounded-sm" style="height: 45%"></div>
+<div class="flex-1 bg-primary-container/60 rounded-sm" style="height: 62%"></div>
+<div class="flex-1 bg-primary-container/70 rounded-sm" style="height: 78%"></div>
+<div class="flex-1 bg-tertiary-container/70 rounded-sm" style="height: 92%"></div>
+<div class="flex-1 bg-tertiary-container/70 rounded-sm" style="height: 96%"></div>
+</div>
+<div class="flex items-center justify-between gap-space-sm mt-space-sm text-label-code-sm text-outline"><span>1%</span><span class="text-on-surface-variant text-center">first run sampled only the flat end</span><span>62%</span></div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ STATUS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Where it stands</span><span data-lang="tr">Şu anki durum</span>
+</h2>
+<div class="rounded-xl overflow-hidden reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[560px] text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/60 font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">
+<th class="p-space-md font-medium">Phase</th>
+<th class="p-space-md font-medium">Scope</th>
+<th class="p-space-md font-medium">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">0</td><td class="p-space-md text-on-surface-variant">Synthetic generator + real data collection</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">1</td><td class="p-space-md text-on-surface-variant">Detector with corner regression</td><td class="p-space-md text-outline">PENDING</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">2</td><td class="p-space-md text-on-surface-variant">CTC sequence recogniser</td><td class="p-space-md text-primary-fixed-dim font-medium">WRITTEN, NOT TRAINED</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">3</td><td class="p-space-md text-on-surface-variant">Constrained decoding, confidence calibration</td><td class="p-space-md text-outline">PENDING</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">4</td><td class="p-space-md text-on-surface-variant">TensorRT FP16 / INT8</td><td class="p-space-md text-outline">PENDING, CLOUD GPU</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">6</td><td class="p-space-md text-on-surface-variant">Edge-device latency measurements</td><td class="p-space-md text-error font-medium">OUT OF SCOPE — NO HARDWARE</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">The plan wanted a Jetson Orin Nano, a global-shutter camera and IR lighting. I have none of them, so the edge phase is written down as out of scope instead of estimated, and the thesis sentence changed from "30 FPS on device" to "measured on cloud GPU; no device measurement was taken".</span>
+<span data-lang="tr">Plan Jetson Orin Nano, global shutter kamera ve IR aydınlatma istiyordu. Hiçbiri yok; bu yüzden uç cihaz fazı tahmin edilmek yerine kapsam dışı yazıldı ve tez cümlesi "uç cihazda 30 FPS"ten "bulut GPU'da ölçüldü, uç cihaz ölçümü yapılmadı"ya döndü.</span>
+</p>
+</section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="flex flex-col gap-space-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Read further</span><span data-lang="tr">Devamını oku</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/on-rapor.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Preliminary report</span><span data-lang="tr">Ön rapor</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">The plan set against the hardware I actually have, and what got dropped because of it.</span>
+<span data-lang="tr">Planın elimdeki donanımla yüzleşmesi ve bu yüzden neyin düştüğü.</span>
+</span>
+</a>
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Data measurements</span><span data-lang="tr">Veri ölçümleri</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">Every calibration figure on this page, with how it was measured and where it stopped.</span>
+<span data-lang="tr">Bu sayfadaki her kalibrasyon sayısı; nasıl ölçüldüğü ve nerede durulduğuyla.</span>
+</span>
+</a>
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima#readme" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">README</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">Phase table, measurement discipline and the reasoning behind the setup.</span>
+<span data-lang="tr">Faz tablosu, ölçüm disiplini ve kurulumun arkasındaki gerekçe.</span>
+</span>
+</a>
+</div>
+</section>
+
+<!-- ============================ NEXT ============================ -->
+<nav class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary hover:text-white transition-colors tracking-widest uppercase" href="/projects/shorties/">
+<span data-lang="en">NEXT — Shorties</span><span data-lang="tr">SONRAKİ — Shorties</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</nav>
+
+</div>

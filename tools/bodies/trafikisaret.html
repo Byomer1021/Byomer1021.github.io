@@ -1,0 +1,243 @@
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
+<!-- ============================ HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase w-fit" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-secondary tracking-tight">trafikisaret</h1>
+<span class="font-label-code-sm text-label-code-sm text-secondary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(208,188,255,0.35);">DATASET BUILT FROM SCRATCH</span>
+</div>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">A Turkish traffic-sign dataset labelled from scratch on my own dashcam footage, and a two-stage recogniser trained on it. Stage one finds the boxes without caring about the class; stage two classifies each crop, and answers with a question mark when it is not sure.</span>
+<span data-lang="tr">Kendi dashcam kayıtlarımdan sıfırdan etiketlenmiş bir Türk trafik işareti veri seti ve üzerinde eğitilmiş iki aşamalı bir tanıyıcı. Birinci aşama sınıfa bakmadan kutuları buluyor; ikinci aşama her kırpmayı sınıflandırıyor, emin olamadığında soru işaretiyle cevap veriyor.</span>
+</p>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-secondary text-on-secondary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-secondary-fixed transition-colors" href="https://github.com/Byomer1021/trafikisaret" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.2);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+</a>
+<span class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-outline font-label-code-sm text-label-code-sm tracking-wider uppercase" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+<span data-lang="en">IMAGES WITHHELD — PLATES AND FACES</span><span data-lang="tr">GÖRÜNTÜLER PAYLAŞILMADI — PLAKA VE YÜZ</span>
+</span>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-secondary">717</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">boxes labelled by hand</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">elle etiketlenmiş kutu</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary">787</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">frames processed</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">işlenmiş kare</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim">0.953</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">classifier recall, test set</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">sınıflandırıcı duyarlığı, test</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim">3</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">conditions: day, rain, night</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">koşul: gündüz, yağmur, gece</span>
+</div>
+</div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="bg-black flex items-center justify-center">
+<img alt="The same traffic-sign model running on day, rain and night frames" class="w-full h-auto" loading="lazy" src="/assets/img/trafikisaret-demo.jpg"/>
+</div>
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
+<span data-lang="en">The same model on three conditions. The night frame finds exactly one sign, and it stays in the demo on purpose — the model is weak there and hiding it would make the demo a claim rather than a measurement.</span>
+<span data-lang="tr">Aynı model üç koşulda. Gece karesinde tam olarak tek işaret bulunuyor ve bu bilerek demoda duruyor — model orada zayıf ve bunu gizlemek demoyu ölçüm olmaktan çıkarıp iddiaya çevirirdi.</span>
+</p>
+</div>
+</section>
+
+<!-- ============================ WHY TWO STAGES ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">The data decided the architecture</span><span data-lang="tr">Mimariye veri karar verdi</span>
+</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">One detector predicting 23 classes would have to learn each from an average of 31 boxes, and the thinnest class has 3. Collapsing every sign into a single class means all 717 boxes train the detector at once, and telling the classes apart becomes a separate crop-classification problem where each box is a training example in its own right.</span>
+<span data-lang="tr">23 sınıf tahmin eden tek bir dedektör, her sınıfı ortalama 31 kutudan öğrenmek zorunda kalırdı; en ince sınıfta 3 kutu var. Bütün levhaları tek sınıfta toplamak, 717 kutunun tamamının dedektörü aynı anda eğitmesi demek; sınıfları ayırmak da her kutunun başlı başına bir eğitim örneği olduğu ayrı bir kırpma sınıflandırma problemine kalıyor.</span>
+</p>
+<div class="font-label-code-md text-label-code-md">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Labelled boxes</span><span class="text-on-surface">717</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Labels used</span><span class="text-on-surface">23</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Average per class</span><span class="text-error">31</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Thinnest class</span><span class="text-error">3</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Supported in classifier</span><span class="text-tertiary-fixed-dim">14</span></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline leading-relaxed">
+<span data-lang="en">Classes below the threshold were not swept into an "other" bucket. Grouping visually unrelated signs under one label teaches the classifier a contradiction; if a class is unsupported, the repo says so.</span>
+<span data-lang="tr">Eşiğin altında kalan sınıflar bir "diğer" kutusuna doldurulmadı. Görsel olarak alakasız levhaları tek etiket altında toplamak sınıflandırıcıya çelişki öğretir; bir sınıf desteklenmiyorsa repo bunu yazar.</span>
+</p>
+</div>
+
+<div class="p-space-xl rounded-xl bg-surface-container-lowest flex items-center justify-center reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<svg class="w-full h-auto" role="img" viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+<title>The two-stage recogniser: a class-agnostic detector finds boxes, then a classifier labels each crop and answers with a question mark when unsure</title>
+<defs>
+<marker id="arrow2" markerHeight="6" markerWidth="7" orient="auto" refX="6" refY="3">
+<path d="M0,0 L7,3 L0,6 z" fill="#849495"/>
+</marker>
+</defs>
+<g fill="none" marker-end="url(#arrow2)" stroke="#3a494a" stroke-width="1.5">
+<path d="M210,46 L210,64"/>
+<path d="M210,118 L210,136"/>
+<path d="M210,190 L210,208"/>
+</g>
+<g font-family="Geist, sans-serif">
+<rect fill="#1b1b1f" height="36" rx="6" stroke="#849495" width="200" x="110" y="10"/>
+<text fill="#e5e1e7" font-size="13" text-anchor="middle" x="210" y="33">Frame</text>
+<rect fill="#12121a" height="54" rx="6" stroke="#00f5ff" stroke-opacity="0.45" width="300" x="60" y="64"/>
+<text fill="#e5e1e7" font-size="13" font-weight="500" text-anchor="middle" x="210" y="85">Stage 1 — class-agnostic detector</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="210" y="104">all 717 boxes train one class</text>
+<rect fill="#12121a" height="54" rx="6" stroke="#d0bcff" stroke-opacity="0.45" width="300" x="60" y="136"/>
+<text fill="#e5e1e7" font-size="13" font-weight="500" text-anchor="middle" x="210" y="157">Stage 2 — crop classifier</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="210" y="176">14 classes • 404 training crops</text>
+<rect fill="#12121a" height="30" rx="4" stroke="#69f6b9" stroke-opacity="0.45" width="140" x="60" y="208"/>
+<text fill="#69f6b9" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" x="130" y="228">LABEL + CONFIDENCE</text>
+<rect fill="#12121a" height="30" rx="4" stroke="#ffb4ab" stroke-opacity="0.45" width="140" x="220" y="208"/>
+<text fill="#ffb4ab" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" x="290" y="228">" ? " WHEN UNSURE</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="210" y="266">TEST SET: 0.953 RECALL OVER 64 CROPS</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="210" y="282">FROM 52 DISTINCT PHYSICAL SIGNS</text>
+</g>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- ============================ FIGURES ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Measurements</span><span data-lang="tr">Ölçümler</span>
+</h2>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">FROM THE TRAINING RUNS</span>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-black" href="/assets/img/trafikisaret-predictions.jpg" rel="noreferrer" target="_blank">
+<img alt="A grid of traffic-sign crops with the classifier's predicted label and confidence on each" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/trafikisaret-predictions.jpg"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Stage 2 — classifier output</span>
+<span data-lang="en">Predicted label and confidence on a validation batch. 14 classes, 404 training crops. On the held-out test set: 0.953 recall over 64 crops taken from 52 distinct physical signs.</span>
+<span data-lang="tr">Bir doğrulama yığınında tahmin edilen etiket ve güven. 14 sınıf, 404 eğitim kırpması. Ayrılmış test kümesinde: 52 ayrı fiziksel levhadan alınan 64 kırpmada 0,953 duyarlık.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="block bg-[#0b0b0f]" href="/assets/img/trafikisaret-confusion.png" rel="noreferrer" target="_blank">
+<img alt="Normalised confusion matrix across the fourteen supported sign classes" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/trafikisaret-confusion.png"/>
+</a>
+<figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Where the classes bleed</span>
+<span data-lang="en">All three test errors stay inside a colour family: u_donusu_yasak read as hiz_siniri, both red circles; ileri_mecburi read as yonlendirme, both blue. The model learned shape and colour, and struggles with pictogram detail at small sizes.</span>
+<span data-lang="tr">Üç test hatasının üçü de renk ailesi içinde kalıyor: u_donusu_yasak, hiz_siniri okunmuş — ikisi de kırmızı daire; ileri_mecburi, yonlendirme okunmuş — ikisi de mavi. Model şekli ve rengi öğrenmiş, küçük boyutta piktogram detayında zorlanıyor.</span>
+</figcaption>
+</figure>
+
+<figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<a class="block bg-[#0b0b0f]" href="/assets/img/trafikisaret-f1.png" rel="noreferrer" target="_blank">
+<img alt="F1 score against confidence threshold for the class-agnostic sign detector" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/trafikisaret-f1.png"/>
+</a>
+<div class="p-space-lg flex flex-col justify-center gap-space-md" style="border-left: 1px solid rgba(255,255,255,0.06);">
+<div>
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Stage 1 — detector</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">mAP50 is 0.515 across the test set, and the single number hides two different realities.</span>
+<span data-lang="tr">Test kümesinde mAP50 0,515 ve bu tek sayı iki farklı gerçeği gizliyor.</span>
+</p>
+</div>
+<div class="font-label-code-md text-label-code-md">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Daylight</span><span class="text-tertiary-fixed-dim">mAP50 0.608</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Rain + night</span><span class="text-error">mAP50 0.361</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Overall</span><span class="text-on-surface">mAP50 0.515</span></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline leading-relaxed">
+<span data-lang="en">Inference resolution mattered more than training did: running the 640-trained model at 960 px raised recall from 0.379 to 0.724 without retraining anything. At 1280 px it falls back to 0.448 — there is an optimum, and it does not show up without measuring.</span>
+<span data-lang="tr">Çıkarım çözünürlüğü eğitimden daha çok fark yarattı: 640'ta eğitilmiş modeli 960 pikselde çalıştırmak, hiçbir şey eğitmeden duyarlığı 0,379'dan 0,724'e çıkardı. 1280 pikselde 0,448'e düşüyor — bir optimum var ve ölçmeden ortaya çıkmıyor.</span>
+</p>
+</div>
+</div>
+</figure>
+</div>
+</section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="flex flex-col gap-space-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Read further</span><span data-lang="tr">Devamını oku</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/trafikisaret/blob/main/docs/on-rapor.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Preliminary report</span><span data-lang="tr">Ön rapor</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">What the project set out to do, and the constraints that shaped the plan.</span>
+<span data-lang="tr">Projenin amacı ve planı şekillendiren kısıtlar.</span>
+</span>
+</a>
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/trafikisaret/blob/main/docs/dedektor-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Detector measurements</span><span data-lang="tr">Dedektör ölçümleri</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">Every resolution sweep and split, with the caveats on each table.</span>
+<span data-lang="tr">Bütün çözünürlük taramaları ve kesitler, her tablonun uyarılarıyla.</span>
+</span>
+</a>
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/trafikisaret/blob/main/docs/etiketleme-kilavuzu.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Labelling guide</span><span data-lang="tr">Etiketleme kılavuzu</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">The rules I labelled by, so the dataset stays consistent frame to frame.</span>
+<span data-lang="tr">Etiketlerken uyduğum kurallar; veri seti kareden kareye tutarlı kalsın diye.</span>
+</span>
+</a>
+</div>
+</section>
+
+<!-- ============================ NEXT ============================ -->
+<nav class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary hover:text-white transition-colors tracking-widest uppercase" href="/projects/smart-city/">
+<span data-lang="en">NEXT — smart-city</span><span data-lang="tr">SONRAKİ — smart-city</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</nav>
+
+</div>
