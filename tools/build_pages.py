@@ -103,6 +103,10 @@ SHELL = """<!DOCTYPE html>
 <meta content="{desc}" name="twitter:description"/>
 <meta content="{site}/assets/img/og-card.jpg" name="twitter:image"/>
 <meta content="#0e0e12" name="theme-color"/>
+<link href="/assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon.ico" rel="alternate icon" sizes="16x16 32x32 48x48"/>
+<link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
