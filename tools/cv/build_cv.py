@@ -41,7 +41,10 @@ body {
   margin: 0; font-family: "Inter", "Segoe UI", Arial, sans-serif;
   font-size: @BASE@pt; line-height: @LH@; color: #1a1a1a; background: #fff;
 }
-a { color: #1a1a1a; text-decoration: none; }
+/* Links stay black and are marked by a hairline underline instead of a colour,
+   so the page prints the same in mono and still reads as clickable. */
+a { color: inherit; text-decoration: underline; text-decoration-thickness: 0.4pt;
+    text-underline-offset: 1.6pt; }
 h1 { font-size: 21pt; margin: 0 0 1mm; letter-spacing: -0.4pt; font-weight: 700; }
 .title { font-size: 10pt; color: #444; margin: 0 0 2.4mm; }
 /* Flex-wrap, not inline text: joining the items with a separator element and
@@ -132,7 +135,11 @@ def render(short=False):
     p.append("<h2>Products</h2>")
     for pr in C.PRODUCTS:
         p.append('<div class="entry">')
-        link = f' <span class="entry-meta">{esc(pr["link"])}</span>' if pr["link"] else ""
+        link = ""
+        if pr["link"]:
+            label = esc(pr["link"])
+            inner = f'<a href="{pr["url"]}">{label}</a>' if pr.get("url") else label
+            link = f' <span class="entry-meta">{inner}</span>' 
         p.append('<div class="entry-head">'
                  f'<span class="entry-name">{esc(pr["name"])}{link}</span>'
                  f'<span class="entry-meta">{esc(pr["role"])}</span></div>')
@@ -142,11 +149,17 @@ def render(short=False):
         p.append("</div>")
 
     p.append(f'<h2>Open-Source Projects <span style="font-weight:400;text-transform:none;'
-             f'letter-spacing:0;color:#666">— {esc(C.CONTACT["github"])}</span></h2>')
+             f'letter-spacing:0;color:#666">— <a href="https://{C.CONTACT["github"]}">'
+             f'{esc(C.CONTACT["github"])}</a></span></h2>')
     for o in C.OPEN_SOURCE:
         p.append('<div class="entry">')
+        name = esc(o["name"])
+        if o.get("url"):
+            name = f'<a href="{o["url"]}">{name}</a>'
+        if o.get("demo"):
+            name += f' <span class="entry-meta">· <a href="{o["demo"]}">live demo</a></span>'
         p.append('<div class="entry-head">'
-                 f'<span class="entry-name">{esc(o["name"])}</span>'
+                 f'<span class="entry-name">{name}</span>'
                  f'<span class="entry-meta">{esc(o["stack"])}</span></div>')
         if short:
             p.append(f'<div style="margin-top:0.6mm">{esc(o["short"])}</div>')

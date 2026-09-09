@@ -57,6 +57,7 @@ PRODUCTS = [
         "name": "Shorties",
         "role": "Creator & Lead Developer",
         "link": "shorties.tr",
+        "url": "https://shorties.tr",
         "bullets": [
             "An exam-preparation ecosystem that turns a question bank into short vertical "
             "videos with AI: one shared architecture across three separate apps.",
@@ -79,6 +80,7 @@ PRODUCTS = [
         "name": "respos",
         "role": "Creator & Lead Developer",
         "link": "resposapp.com",
+        "url": "https://resposapp.com",
         "bullets": [
             "A multi-tenant SaaS point-of-sale system for restaurants: one Node.js/Express "
             "backend serves many tenants, each with isolated data and self-service sign-up.",
@@ -98,6 +100,7 @@ PRODUCTS = [
         "name": "Mobile Fitness Tracker",
         "role": "Team project",
         "link": None,
+        "url": None,
         "bullets": [
             "Cross-platform fitness app building personalised meal and workout "
             "recommendations with AI; secure authentication, workout logging and data "
@@ -114,6 +117,7 @@ PRODUCTS = [
 OPEN_SOURCE = [
     {
         "name": "otonomarac",
+        "url": "https://github.com/Byomer1021/otonomarac",
         "tagline": "Monocular driving perception and bird's-eye-view mapping",
         "bullets": [
             "Detection (YOLO), multi-object tracking (ByteTrack), monocular depth "
@@ -123,12 +127,14 @@ OPEN_SOURCE = [
             "the free tier.",
         ],
         "stack": "Python · PyTorch · OpenCV · Gradio",
+        "demo": "https://huggingface.co/spaces/byomer1021/otonomarac",
         "short": "Single-camera driving perception: detection, tracking, monocular depth, "
                  "segmentation, ground-plane projection and time-to-collision over eight "
                  "weeks. Live public demo on Hugging Face Spaces.",
     },
     {
         "name": "trafikisaret",
+        "url": "https://github.com/Byomer1021/trafikisaret",
         "tagline": "Turkish traffic-sign dataset and two-stage recogniser",
         "bullets": [
             "717 bounding boxes labelled by hand over 787 frames of own dashcam footage in "
@@ -144,6 +150,7 @@ OPEN_SOURCE = [
     },
     {
         "name": "smart-city-traffic-analysis",
+        "url": "https://github.com/Byomer1021/smart-city-traffic-analysis",
         "tagline": "38.3 million New York taxi trips modelled as a graph",
         "bullets": [
             "PageRank, Louvain communities and a node-removal simulation over 258 zones and "
@@ -158,6 +165,7 @@ OPEN_SOURCE = [
     },
     {
         "name": "plakatanima",
+        "url": "https://github.com/Byomer1021/plakatanima",
         "tagline": "Turkish licence plate recognition — in progress",
         "bullets": [
             "Synthetic data generator calibrated against 690 hand-labelled real plates: the "
