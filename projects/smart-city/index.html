@@ -24,6 +24,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
 <link href="/assets/css/base.css" rel="stylesheet"/>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script defer src="/assets/js/smartcity-map.js"></script>
+<link crossorigin="" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+<style>
+/* Leaflet ships light chrome; align it with the page's dark surfaces. */
+#sc-map { height: 560px; background: #0b0b0f; }
+@media (max-width: 640px) { #sc-map { height: 420px; } }
+.leaflet-container { background: #0b0b0f; font-family: Geist, system-ui, sans-serif; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #12121a; color: #e5e1e7; border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
+}
+.leaflet-popup-content-wrapper { border-radius: 8px; }
+.leaflet-popup-close-button { color: #8f909d !important; }
+.leaflet-bar a { background: #1b1b1f; color: #e5e1e7; border-bottom-color: rgba(255,255,255,0.08); }
+.leaflet-bar a:hover { background: #2a292e; color: #00f5ff; }
+.leaflet-control-attribution {
+  background: rgba(14,14,18,0.85) !important; color: #8f909d !important;
+  font-family: JetBrains Mono, monospace; font-size: 10px;
+}
+.leaflet-control-attribution a { color: #849495 !important; }
+</style>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="/assets/js/tw-config.js"></script>
 </head>
@@ -133,6 +156,83 @@
 <span data-lang="tr">Louvain'in bulduğu üç topluluk, gerçek koordinatlarına çizilmiş. JFK tek başına uzakta duruyor ve buna rağmen Manhattan çekirdeğine uzun kenarlar çekiyor — çıkarılınca bu kadar hasar vermesinin sebebi tam olarak bu.</span>
 </p>
 </div>
+</section>
+
+<!-- ============================ INTERACTIVE MAP ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Walk the network yourself</span><span data-lang="tr">Ağda kendin dolaş</span>
+</h2>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">258 ZONES ON THEIR REAL COORDINATES</span>
+</div>
+
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">Every circle is a taxi zone, sized by PageRank and coloured by the community Louvain found; the lines are the 299 heaviest flows between them. Click a zone for its numbers. Then step through the removal simulation and watch what happens at step four.</span>
+<span data-lang="tr">Her daire bir taksi bölgesi — büyüklüğü PageRank'e, rengi Louvain'in bulduğu topluluğa göre; çizgiler aralarındaki en ağır 299 akış. Sayıları için bir bölgeye tıkla. Sonra silme simülasyonunu adım adım ilerlet ve dördüncü adımda ne olduğuna bak.</span>
+</p>
+
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+
+<div class="w-full px-space-md py-space-sm bg-surface-container-low/90 backdrop-blur-md flex flex-wrap items-center justify-between gap-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-wrap items-center gap-space-md font-label-code-sm text-label-code-sm">
+<span class="flex items-center gap-space-3xs"><span class="w-2.5 h-2.5 rounded-full" style="background:#69f6b9"></span><span class="text-on-surface-variant">OUTER · 182</span></span>
+<span class="flex items-center gap-space-3xs"><span class="w-2.5 h-2.5 rounded-full" style="background:#8f9fe8"></span><span class="text-on-surface-variant">SOUTH · 44</span></span>
+<span class="flex items-center gap-space-3xs"><span class="w-2.5 h-2.5 rounded-full" style="background:#e8c33f"></span><span class="text-on-surface-variant">CORE · 32</span></span>
+</div>
+<label class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-on-surface-variant cursor-pointer">
+<input checked class="accent-primary-container" id="sc-edges" type="checkbox"/>
+<span data-lang="en">show flows</span><span data-lang="tr">akışları göster</span>
+</label>
+</div>
+
+<div class="relative">
+<div id="sc-map"></div>
+<div class="absolute inset-0 flex items-center justify-center bg-[#0b0b0f] font-label-code-md text-label-code-md text-outline z-[500]" id="sc-loading">Loading 258 zones…</div>
+</div>
+
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md flex flex-col gap-space-md" hidden id="sc-controls" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-space-2xs px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-surface-container-high hover:text-on-surface transition-colors disabled:opacity-40 disabled:cursor-not-allowed" id="sc-back" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[14px]">undo</span>
+<span data-lang="en">BACK</span><span data-lang="tr">GERİ</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed" id="sc-next" style="border: 1px solid rgba(255,255,255,0.2);" type="button">
+<span data-lang="en">REMOVE NEXT ZONE</span><span data-lang="tr">SONRAKİ BÖLGEYİ ÇIKAR</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs px-space-md py-space-xs rounded-full bg-surface-container-lowest text-outline font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface transition-colors" id="sc-reset" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+<span data-lang="en">RESET</span><span data-lang="tr">SIFIRLA</span>
+</button>
+</div>
+<div class="flex flex-wrap items-center gap-space-lg">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary" id="sc-flow">100.0%</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">flow remaining</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">kalan akış</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim" id="sc-components">1</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">connected components</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">bağlı bileşen</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-on-surface" id="sc-step">0 / 5</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">removal step</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">silme adımı</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-outline" id="sc-removed">Nothing removed — the network as it stands.</p>
+</div>
+</div>
+
+<p class="font-body-sm text-body-sm text-outline max-w-3xl">
+<span data-lang="en">The simulation removes zones in order of criticality and recomputes the graph each time. Steps one to three cost flow but leave the network whole. Step four is JFK, and the component count goes from one to sixteen — the same finding the static figures below report.</span>
+<span data-lang="tr">Simülasyon bölgeleri kritiklik sırasıyla çıkarıp çizgeyi her seferinde yeniden hesaplıyor. Birinci ve üçüncü adımlar akışa mal oluyor ama ağı bütün bırakıyor. Dördüncü adım JFK ve bileşen sayısı birden on altıya çıkıyor — aşağıdaki durağan figürlerin raporladığı bulgunun aynısı.</span>
+</p>
 </section>
 
 <!-- ============================ FINDINGS ============================ -->

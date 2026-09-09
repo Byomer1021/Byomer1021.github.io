@@ -42,6 +42,17 @@ Tailwind comes from a CDN and the design tokens live in `assets/js/tw-config.js`
 Both languages sit in the markup as `[data-lang]` elements and CSS hides the
 inactive one, so the page is readable before any script runs.
 
+## The smart-city map
+
+`/projects/smart-city/` carries an interactive Leaflet map built from
+`assets/data/smartcity-map.json` — 258 taxi zones on their real coordinates,
+the 299 heaviest flows between them, and the node-removal simulation. The data
+is exported from the project's own results, not hand-written.
+
+Tiles come from Esri's Dark Gray Canvas, which needs no API key. CARTO's dark
+basemap now watermarks every tile with "API KEY REQUIRED" and OpenStreetMap's
+own servers block generic clients, so neither is usable here.
+
 ## Deployment
 
 GitHub Pages, custom domain in `CNAME`.

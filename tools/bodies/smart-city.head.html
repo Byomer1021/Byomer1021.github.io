@@ -1,0 +1,22 @@
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script defer src="/assets/js/smartcity-map.js"></script>
+<link crossorigin="" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+<style>
+/* Leaflet ships light chrome; align it with the page's dark surfaces. */
+#sc-map { height: 560px; background: #0b0b0f; }
+@media (max-width: 640px) { #sc-map { height: 420px; } }
+.leaflet-container { background: #0b0b0f; font-family: Geist, system-ui, sans-serif; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #12121a; color: #e5e1e7; border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
+}
+.leaflet-popup-content-wrapper { border-radius: 8px; }
+.leaflet-popup-close-button { color: #8f909d !important; }
+.leaflet-bar a { background: #1b1b1f; color: #e5e1e7; border-bottom-color: rgba(255,255,255,0.08); }
+.leaflet-bar a:hover { background: #2a292e; color: #00f5ff; }
+.leaflet-control-attribution {
+  background: rgba(14,14,18,0.85) !important; color: #8f909d !important;
+  font-family: JetBrains Mono, monospace; font-size: 10px;
+}
+.leaflet-control-attribution a { color: #849495 !important; }
+</style>

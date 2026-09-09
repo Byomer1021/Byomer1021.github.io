@@ -9,11 +9,14 @@ on one page and right on the others.
     python tools/build_pages.py
 
 Bodies live in tools/bodies/<name>.html and are written into the output path
-each page declares below.
+each page declares below. A page may also carry <name>.head.html (injected into
+<head>) and <name>.script.js (inlined before </body>).
 """
 
 import pathlib
 import sys
+
+NL = chr(10)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BODIES = ROOT / "tools" / "bodies"
@@ -105,6 +108,7 @@ SHELL = """<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
 <link href="/assets/css/base.css" rel="stylesheet"/>
+{head_extra}
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="/assets/js/tw-config.js"></script>
 </head>
@@ -187,6 +191,11 @@ def build():
         parent = str(pathlib.PurePosixPath(out_path).parent)
         url = SITE + "/" if parent == "." else SITE + "/" + parent + "/"
 
+        head_file = BODIES / f"{name}.head.html"
+        head_extra = ""
+        if head_file.exists():
+            head_extra = head_file.read_text(encoding="utf-8").rstrip() + NL
+
         script_file = BODIES / f"{name}.script.js"
         page_script = ""
         if script_file.exists():
@@ -200,6 +209,7 @@ def build():
             nav=nav_links(active), nav_mobile=nav_links(active, mobile=True),
             body=body_file.read_text(encoding="utf-8").rstrip(),
             page_script=page_script,
+            head_extra=head_extra,
         )
         dest = ROOT / out_path
         dest.parent.mkdir(parents=True, exist_ok=True)
