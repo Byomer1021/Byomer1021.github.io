@@ -22,7 +22,7 @@ SITE = "https://omercanatli.com"
 NAV = [
     ("index", "/", "01 // ABOUT"),
     ("projects", "/projects/", "02 // PROJECTS"),
-    ("architecture", "/architecture/", "03 // ARCHITECTURE"),
+    ("method", "/method/", "03 // METHOD"),
     ("cv", "/cv/", "04 // CV"),
     ("contact", "/contact/", "05 // TERMINAL"),
 ]
@@ -32,9 +32,9 @@ PAGES = [
     ("index", "index.html", "index",
      "Ömer Can Atlı — Computer Engineer",
      "Final-year Computer Engineering student at Gebze Technical University. Backend systems, AI pipelines, and the full-stack and mobile apps built on top of them."),
-    ("architecture", "architecture/index.html", "architecture",
-     "Architecture — Ömer Can Atlı",
-     "How the perception pipeline, the two-stage recogniser, the graph analysis and the product backends are put together."),
+    ("method", "method/index.html", "method",
+     "Method — Ömer Can Atlı",
+     "Four engineering rules learned by getting a number wrong first, and the table of every measurement that changed a decision."),
     ("cv", "cv/index.html", "cv",
      "CV — Ömer Can Atlı",
      "Education, work experience, project experience and technical skills of Ömer Can Atlı."),

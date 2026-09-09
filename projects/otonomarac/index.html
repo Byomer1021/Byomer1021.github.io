@@ -40,7 +40,7 @@
 <nav class="hidden xl:flex items-center gap-space-xs p-space-3xs bg-surface-container-low/70 rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index" href="/">01 // ABOUT</a>
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects" href="/projects/">02 // PROJECTS</a>
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="architecture" href="/architecture/">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="method" href="/method/">03 // METHOD</a>
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv" href="/cv/">04 // CV</a>
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact" href="/contact/">05 // TERMINAL</a>
 </nav>
@@ -61,7 +61,7 @@
 <div class="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl px-gutter-mobile pb-space-md flex flex-col gap-space-2xs" hidden id="nav-drawer" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index" href="/">01 // ABOUT</a>
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects" href="/projects/">02 // PROJECTS</a>
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="architecture" href="/architecture/">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="method" href="/method/">03 // METHOD</a>
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv" href="/cv/">04 // CV</a>
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact" href="/contact/">05 // TERMINAL</a>
 </div>
@@ -69,6 +69,7 @@
 
 <main class="w-full pt-16 bg-surface-container-lowest flex-1">
 <div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
 
 <!-- ============================ HEADER ============================ -->
 <header class="flex flex-col gap-space-md">
@@ -148,34 +149,288 @@ DETECT → TRACK → DEPTH → BEV
 </div>
 </section>
 
-<!-- ============================ HOW IT WORKS ============================ -->
-<section class="flex flex-col gap-space-lg">
-<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-<span data-lang="en">How it works</span><span data-lang="tr">Nasıl çalışıyor</span>
-</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-2xs reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest">Three parallel branches</span>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">Detection, depth and segmentation do not depend on each other, so they read the same frame independently and only meet at a fusion layer.</span>
-<span data-lang="tr">Tespit, derinlik ve segmentasyon birbirine bağlı değil; aynı kareyi bağımsız okuyup yalnızca füzyon katmanında buluşuyorlar.</span>
-</p>
+<!-- ============================ PIPELINE DIAGRAM ============================ -->
+<section class="flex flex-col rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-wrap items-center justify-between gap-space-sm px-space-lg py-space-sm bg-surface-container-low/60" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-2xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-code-md text-label-code-md text-primary-container tracking-[0.08em] font-semibold">otonomarac</span>
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">LAYER FLOW</span>
 </div>
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-2xs reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline hidden md:inline">|</span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant hidden md:inline">ONE FRAME IN, ONE RENDERED FRAME OUT</span>
+</div>
+<div class="flex items-center gap-space-md font-label-code-sm text-label-code-sm">
+<span class="text-primary-fixed-dim">3 PARALLEL BRANCHES</span>
+<span class="text-outline">•</span>
+<span class="text-tertiary-fixed-dim">1 FUSION POINT</span>
+</div>
+</div>
+
+<div class="w-full overflow-x-auto bg-[#0b0b0f] p-space-lg">
+<svg class="w-full min-w-[720px] h-auto" role="img" viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg">
+<title>The otonomarac layer flow: one video frame fans out to detection, depth and segmentation, merges at a fusion layer, and splits again into bird's-eye projection and risk before being rendered</title>
+<defs>
+<marker id="arrow" markerHeight="6" markerWidth="7" orient="auto" refX="6" refY="3">
+<path d="M0,0 L7,3 L0,6 z" fill="#849495"/>
+</marker>
+</defs>
+<g fill="none" marker-end="url(#arrow)" stroke="#3a494a" stroke-width="1.5">
+<path d="M450,52 L450,74"/>
+<path d="M145,80 L145,93" stroke="#3a494a"/>
+<path d="M450,80 L450,93"/>
+<path d="M760,80 L760,93"/>
+<path d="M145,141 L145,167"/>
+<path d="M145,213 L145,231 L450,231 L450,247"/>
+<path d="M450,141 L450,247"/>
+<path d="M760,141 L760,231 L450,231 L450,247" marker-end="none"/>
+<path d="M450,295 L450,311"/>
+<path d="M300,318 L300,331" marker-end="url(#arrow)"/>
+<path d="M600,318 L600,331" marker-end="url(#arrow)"/>
+<path d="M300,379 L300,397 L450,397 L450,413"/>
+<path d="M600,379 L600,397 L450,397" marker-end="none"/>
+</g>
+<!-- horizontal fan-out bus under the frame -->
+<path d="M145,74 L760,74" fill="none" stroke="#3a494a" stroke-width="1.5"/>
+<path d="M145,74 L145,80 M450,74 L450,80 M760,74 L760,80" fill="none" stroke="#3a494a" stroke-width="1.5"/>
+<!-- horizontal fan-out bus under fusion -->
+<path d="M300,311 L600,311" fill="none" stroke="#3a494a" stroke-width="1.5"/>
+<path d="M300,311 L300,318 M600,311 L600,318" fill="none" stroke="#3a494a" stroke-width="1.5"/>
+
+<g font-family="Geist, sans-serif">
+<!-- frame -->
+<rect fill="#1b1b1f" height="42" rx="6" stroke="#849495" width="180" x="360" y="10"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="450" y="36">Video frame</text>
+
+<!-- detection -->
+<rect fill="#12121a" height="48" rx="6" stroke="#00f5ff" stroke-opacity="0.45" width="170" x="60" y="93"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="145" y="114">Detection</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="145" y="131">YOLO • COCO classes</text>
+
+<!-- depth -->
+<rect fill="#12121a" height="48" rx="6" stroke="#d0bcff" stroke-opacity="0.45" width="170" x="365" y="93"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="450" y="114">Depth</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="450" y="131">Depth Anything V2</text>
+
+<!-- segmentation -->
+<rect fill="#12121a" height="48" rx="6" stroke="#69f6b9" stroke-opacity="0.45" width="180" x="670" y="93"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="760" y="114">Segmentation</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="760" y="131">drivable area • lanes</text>
+
+<!-- tracking -->
+<rect fill="#12121a" height="48" rx="6" stroke="#00f5ff" stroke-opacity="0.45" width="170" x="60" y="167"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="145" y="188">Tracking</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="145" y="205">ByteTrack • stable IDs</text>
+
+<!-- fusion -->
+<rect fill="#1b1b1f" height="48" rx="6" stroke="#e5e1e7" stroke-opacity="0.6" width="220" x="340" y="247"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="450" y="268">Fusion layer</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="450" y="285">(id, class, position, depth)</text>
+
+<!-- bev -->
+<rect fill="#12121a" height="48" rx="6" stroke="#69f6b9" stroke-opacity="0.45" width="180" x="210" y="331"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="300" y="352">BEV projection</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="300" y="369">homography • ground plane</text>
+
+<!-- risk -->
+<rect fill="#12121a" height="48" rx="6" stroke="#ffb4ab" stroke-opacity="0.45" width="180" x="510" y="331"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="600" y="352">Risk</text>
+<text fill="#849495" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" x="600" y="369">closing speed • TTC</text>
+
+<!-- output -->
+<rect fill="#1b1b1f" height="42" rx="6" stroke="#849495" width="220" x="340" y="413"/>
+<text fill="#e5e1e7" font-size="14" font-weight="500" text-anchor="middle" x="450" y="439">Rendered output video</text>
+</g>
+</svg>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/[0.06] bg-surface-container-low/40">
+<div class="p-space-md flex flex-col gap-space-3xs">
+<span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest">Why three branches</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Detection, depth and segmentation do not depend on each other, so they read the same frame independently and only meet at fusion.</span>
+<span data-lang="tr">Tespit, derinlik ve segmentasyon birbirine bağlı değil; aynı kareyi bağımsız okuyup yalnızca füzyonda buluşuyorlar.</span>
+</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-3xs">
 <span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest">The critical link</span>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
 <span data-lang="en">Speed and time-to-collision are both derived from track history, so tracker ID stability is the single point everything downstream depends on.</span>
-<span data-lang="tr">Hız da çarpışmaya kalan süre de takip geçmişinden çıkıyor; takip ID kararlılığı, aşağı akıştaki her şeyin bağlı olduğu tek nokta.</span>
-</p>
+<span data-lang="tr">Hız da çarpışmaya kalan süre de takip geçmişinden çıkıyor; bu yüzden takip ID kararlılığı, aşağı akıştaki her şeyin bağlı olduğu tek nokta.</span>
+</span>
 </div>
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-2xs reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="p-space-md flex flex-col gap-space-3xs">
 <span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest">No custom training</span>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
 <span data-lang="en">Pre-trained weights throughout. The work is in the geometry, the fusion and the measurement, not in a new model.</span>
 <span data-lang="tr">Baştan sona önceden eğitilmiş ağırlıklar. İş yeni bir modelde değil; geometride, füzyonda ve ölçümde.</span>
+</span>
+</div>
+</div>
+</section>
+
+<!-- ============================ STAGE BREAKDOWN ============================ -->
+<section class="flex flex-col gap-space-2xl">
+<div class="flex flex-col gap-space-xs reveal">
+<div class="flex flex-wrap items-baseline gap-space-sm">
+<span class="font-label-code-md text-[19px] leading-tight text-primary-container tracking-[0.08em] font-semibold">otonomarac</span>
+<span class="h-px w-10 bg-outline-variant self-center"></span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">THE THREE DECISIONS THAT MATTERED</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Three points where the obvious choice was the wrong one</span>
+<span data-lang="tr">Bariz tercihin yanlış olduğu üç nokta</span>
+</h2>
+</div>
+
+<div class="flex flex-col gap-space-xl">
+
+<!-- Stage 01 -->
+<div class="flex flex-col lg:flex-row items-start gap-space-xl p-space-xl rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="w-full lg:w-2/5 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-primary-container">STAGE 01</span>
+<span class="text-outline">/</span>
+<span class="font-label-code-sm text-label-code-sm text-outline">src/perception/depth.py</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Median, not mean</span>
+<span data-lang="tr">Ortalama değil, medyan</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Depth Anything gives a value per pixel, but an object needs one number. A bounding box always contains some background pixels — sky through a windscreen, road under a bumper — and averaging lets a handful of them drag the estimate. The median does not move. The sample is taken from the lower-centre of the box, which is the part most likely to be the object itself.</span>
+<span data-lang="tr">Depth Anything piksel başına bir değer veriyor ama bir nesne için tek sayı gerekiyor. Sınırlayıcı kutunun içinde her zaman arka plan pikselleri bulunur — camdan görünen gökyüzü, tamponun altındaki yol — ve ortalama alınca birkaç tanesi tahmini sürükler. Medyan kıpırdamaz. Örnek, kutunun alt-orta bölgesinden alınıyor; orası nesnenin kendisi olma ihtimali en yüksek kısım.</span>
 </p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-primary-fixed-dim">RELATIVE DEPTH</span>
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-outline">NUMPY MEDIAN</span>
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-outline">LOWER-CENTRE PATCH</span>
 </div>
 </div>
+<div class="w-full lg:w-3/5 bg-surface-container-lowest p-space-md rounded-lg overflow-x-auto" style="border: 1px solid rgba(255,255,255,0.06);">
+<pre class="font-label-code-md text-label-code-md leading-relaxed"><code><span class="text-primary">def</span> <span class="text-primary-container">fuse</span>(detections, disparity_map, config, camera=<span class="text-secondary">None</span>):
+    <span class="text-tertiary-fixed-dim">"""Her tespite derinlik degeri yazar (yerinde degistirir).</span>
+
+<span class="text-tertiary-fixed-dim">    Ornek bolgesindeki degerlerin **medyani** alinir, ortalamasi degil:</span>
+<span class="text-tertiary-fixed-dim">    kutu icinde arka plana ait birkac piksel her zaman bulunur ve ortalama</span>
+<span class="text-tertiary-fixed-dim">    bunlardan etkilenir, medyan etkilenmez.</span>
+<span class="text-tertiary-fixed-dim">    """</span>
+    shape = disparity_map.shape[:<span class="text-secondary">2</span>]
+
+    <span class="text-primary">for</span> det <span class="text-primary">in</span> detections:
+        region = <span class="text-primary-container">sample_region</span>(det, shape, config, camera)
+        <span class="text-primary">if</span> region <span class="text-primary">is</span> <span class="text-secondary">None</span>:
+            det.depth = <span class="text-secondary">None</span>
+            <span class="text-primary">continue</span>
+
+        x1, y1, x2, y2 = region
+        patch = disparity_map[y1:y2, x1:x2]
+        <span class="text-primary">if</span> patch.size == <span class="text-secondary">0</span>:
+            det.depth = <span class="text-secondary">None</span>
+            <span class="text-primary">continue</span>
+
+        det.depth = <span class="text-primary-container">relative_distance</span>(<span class="text-primary-fixed-dim">float</span>(np.<span class="text-primary-container">median</span>(patch)))
+
+    <span class="text-primary">return</span> detections</code></pre>
+</div>
+</div>
+
+<!-- Stage 02 -->
+<div class="flex flex-col lg:flex-row items-start gap-space-xl p-space-xl rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="w-full lg:w-2/5 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim">STAGE 02</span>
+<span class="text-outline">/</span>
+<span class="font-label-code-sm text-label-code-sm text-outline">src/perception/bev.py</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">The car's own bonnet is not road</span>
+<span data-lang="tr">Aracın kendi kaputu yol değildir</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The projection takes the bottom edge of a box as the point where the object touches the ground, then maps it through a homography. But the bonnet fills the lower band of every dashcam frame, so a contact point that lands there is describing bodywork, not road — and the homography would happily turn it into a confident position on the map. Those points are dropped instead.</span>
+<span data-lang="tr">İzdüşüm, kutunun alt kenarını nesnenin zemine değdiği nokta sayıp homografiyle haritaya taşıyor. Ama kaput her dashcam karesinin alt bandını dolduruyor; oraya düşen bir temas noktası yolu değil kaportayı tarif ediyor — ve homografi bunu memnuniyetle haritada kendinden emin bir konuma çevirirdi. Bu noktalar onun yerine düşürülüyor.</span>
+</p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-tertiary-fixed-dim">cv2.perspectiveTransform</span>
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-outline">HOOD GUARD</span>
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-outline">GROUND CONTACT POINT</span>
+</div>
+</div>
+<div class="w-full lg:w-3/5 bg-surface-container-lowest p-space-md rounded-lg overflow-x-auto" style="border: 1px solid rgba(255,255,255,0.06);">
+<pre class="font-label-code-md text-label-code-md leading-relaxed"><code><span class="text-primary">def</span> <span class="text-primary-container">project</span>(<span class="text-secondary">self</span>, detections, shape):
+    <span class="text-tertiary-fixed-dim">"""Her tespitin zemine degme noktasini haritaya tasir.</span>
+
+<span class="text-tertiary-fixed-dim">    Kaputun altina dusen temas noktalari gecersiz sayilir: o piksel yolu</span>
+<span class="text-tertiary-fixed-dim">    degil aracin kendi kaputunu gosterir, dolayisiyla homografi oradan</span>
+<span class="text-tertiary-fixed-dim">    anlamli bir zemin konumu uretemez.</span>
+<span class="text-tertiary-fixed-dim">    """</span>
+    height = shape[<span class="text-secondary">0</span>]
+    hood_row = height * <span class="text-secondary">self</span>.camera.hood_top \
+        <span class="text-primary">if</span> <span class="text-secondary">self</span>.camera.hood_top <span class="text-primary">is not</span> <span class="text-secondary">None</span> <span class="text-primary">else</span> height
+
+    usable, contacts = [], []
+    <span class="text-primary">for</span> det <span class="text-primary">in</span> detections:
+        cx, cy = det.bottom_center
+        <span class="text-primary">if</span> cy &gt; hood_row:
+            det.bev_xy = <span class="text-secondary">None</span>
+            <span class="text-primary">continue</span>
+        usable.<span class="text-primary-container">append</span>(det)
+        contacts.<span class="text-primary-container">append</span>((cx, cy))
+
+    ground = <span class="text-secondary">self</span>.<span class="text-primary-container">to_ground</span>(np.<span class="text-primary-container">array</span>(contacts), shape)</code></pre>
+</div>
+</div>
+
+<!-- Stage 03 -->
+<div class="flex flex-col lg:flex-row items-start gap-space-xl p-space-xl rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="w-full lg:w-2/5 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-error">STAGE 03</span>
+<span class="text-outline">/</span>
+<span class="font-label-code-sm text-label-code-sm text-outline">src/perception/risk.py</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">A slope is not a speed until the fit is good</span>
+<span data-lang="tr">Uyum iyi olmadan eğim bir hız değildir</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Closing speed comes from fitting a line to the distance history, and time-to-collision follows from distance over that speed. The trap is that a line can be fitted to anything. If the residual is large the distance is not changing smoothly, which means the slope is measuring tracker jitter rather than motion — so the estimate is refused rather than reported. Objects moving away or standing still get no TTC at all, because there is none.</span>
+<span data-lang="tr">Yaklaşma hızı, mesafe geçmişine bir doğru uydurmaktan geliyor; çarpışmaya kalan süre de mesafenin bu hıza bölümü. Tuzak şu: her şeye bir doğru uydurulabilir. Artık büyükse mesafe düzgün değişmiyordur, yani eğim hareketi değil takip titremesini ölçüyordur — bu yüzden tahmin raporlanmak yerine reddediliyor. Uzaklaşan ya da duran nesnelere hiç TTC verilmiyor, çünkü yok.</span>
+</p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-error">FIT-QUALITY GATE</span>
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-outline">np.polyfit</span>
+<span class="px-space-xs py-space-3xs rounded bg-surface-container font-label-code-sm text-label-code-sm text-outline">SLIDING WINDOW</span>
+</div>
+</div>
+<div class="w-full lg:w-3/5 bg-surface-container-lowest p-space-md rounded-lg overflow-x-auto" style="border: 1px solid rgba(255,255,255,0.06);">
+<pre class="font-label-code-md text-label-code-md leading-relaxed"><code><span class="text-tertiary-fixed-dim"># Yalnizca son `history_seconds` icindeki gozlemler. Daha eskisi,</span>
+<span class="text-tertiary-fixed-dim"># nesnenin o zamandan beri hizlanmis olabilecegi icin yaniltir.</span>
+window = [(t, d) <span class="text-primary">for</span> t, d <span class="text-primary">in</span> history <span class="text-primary">if</span> now - t &lt;= <span class="text-secondary">self</span>.config.history_seconds]
+
+<span class="text-tertiary-fixed-dim"># Mesafenin zamana gore egimi. Negatif egim = mesafe azaliyor = yaklasiyor.</span>
+coeffs = np.<span class="text-primary-container">polyfit</span>(times, dists, <span class="text-secondary">1</span>)
+slope = <span class="text-primary-fixed-dim">float</span>(coeffs[<span class="text-secondary">0</span>])
+closing = -slope
+
+<span class="text-tertiary-fixed-dim"># Fit kalitesi kapisi: artik buyukse mesafe duzgun degismiyor demektir</span>
+<span class="text-tertiary-fixed-dim"># ve egimden cikarilan "hiz" gercek hareket degil gurultudur.</span>
+residual = <span class="text-primary-fixed-dim">float</span>(np.<span class="text-primary-container">sqrt</span>(np.<span class="text-primary-container">mean</span>((dists - np.<span class="text-primary-container">polyval</span>(coeffs, times)) ** <span class="text-secondary">2</span>)))
+<span class="text-primary">if</span> residual &gt; <span class="text-secondary">self</span>.config.max_fit_residual_ratio * <span class="text-primary-fixed-dim">max</span>(distance, <span class="text-secondary">1.0</span>):
+    <span class="text-primary">return</span> <span class="text-primary-container">Motion</span>(track_id, distance, <span class="text-secondary">None</span>, <span class="text-secondary">None</span>, RiskLevel.NONE, <span class="text-primary-fixed-dim">len</span>(window))
+
+<span class="text-primary">if</span> closing &lt; <span class="text-secondary">self</span>.config.min_closing_speed:
+    <span class="text-tertiary-fixed-dim"># Uzaklasiyor ya da duragan: TTC tanimsiz, risk yok.</span>
+    <span class="text-primary">return</span> <span class="text-primary-container">Motion</span>(track_id, distance, closing, <span class="text-secondary">None</span>, RiskLevel.NONE, <span class="text-primary-fixed-dim">len</span>(window))
+
+ttc = distance / closing</code></pre>
+</div>
+</div>
+
+</div>
+</section>
 <div class="flex flex-wrap gap-space-2xs font-label-code-sm text-label-code-sm text-on-surface-variant">
 <span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(0,245,255,0.2);">YOLO</span>
 <span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">ByteTrack</span>
@@ -184,7 +439,6 @@ DETECT → TRACK → DEPTH → BEV
 <span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">OpenCV</span>
 <span class="px-2.5 py-1 rounded bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.06);">Gradio</span>
 </div>
-</section>
 
 <!-- ============================ FIGURES ============================ -->
 <section class="flex flex-col gap-space-lg">

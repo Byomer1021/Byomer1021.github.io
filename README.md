@@ -12,7 +12,7 @@ Kişisel portfolyo sitesi. Türkçe için sağ üstteki **TR** anahtarına bas.
 | `/` | About: profile, education, languages, technical skills, work experience |
 | `/projects/` | Card grid: four open-source projects and three products |
 | `/projects/<name>/` | One page per project: figures, measurements, docs and links |
-| `/architecture/` | Pipeline diagrams and the code at the decisions that mattered |
+| `/method/` | Four working rules and the table of measurements that changed a decision |
 | `/cv/` | Full CV, downloadable as PDF |
 | `/contact/` | Contact details behind a small interactive shell |
 

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Method — Ömer Can Atlı</title>
+<meta name="description" content="Four engineering rules learned by getting a number wrong first, and the table of every measurement that changed a decision."/>
+<link href="https://omercanatli.com/method/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://omercanatli.com/method/" property="og:url"/>
+<meta content="Method — Ömer Can Atlı" property="og:title"/>
+<meta content="Four engineering rules learned by getting a number wrong first, and the table of every measurement that changed a decision." property="og:description"/>
+<meta content="https://omercanatli.com/assets/img/og-card.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Ömer Can Atlı" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Method — Ömer Can Atlı" name="twitter:title"/>
+<meta content="Four engineering rules learned by getting a number wrong first, and the table of every measurement that changed a decision." name="twitter:description"/>
+<meta content="https://omercanatli.com/assets/img/og-card.jpg" name="twitter:image"/>
+<meta content="#0e0e12" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="/assets/css/base.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/assets/js/tw-config.js"></script>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
+<canvas aria-hidden="true" id="bg-canvas"></canvas>
+
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-16 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
+<a class="flex items-center gap-space-xs group shrink-0" href="/">
+<span class="w-2 h-2 rounded-full bg-primary-container group-hover:scale-125 transition-transform shadow-[0_0_8px_#00f5ff]"></span>
+<span class="font-label-code-md text-label-code-md tracking-wider text-primary font-bold uppercase">OCA.DEV</span>
+<span class="font-label-code-sm text-label-code-sm text-outline hidden sm:inline-block tracking-widest uppercase">// SOFTWARE &amp; AI</span>
+</a>
+<nav class="hidden xl:flex items-center gap-space-xs p-space-3xs bg-surface-container-low/70 rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index" href="/">01 // ABOUT</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects" href="/projects/">02 // PROJECTS</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="method" href="/method/">03 // METHOD</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv" href="/cv/">04 // CV</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact" href="/contact/">05 // TERMINAL</a>
+</nav>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-3xs p-space-3xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<button class="px-space-xs py-space-3xs rounded-full font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-lang-btn="en" type="button">EN</button>
+<button class="px-space-xs py-space-3xs rounded-full font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-lang-btn="tr" type="button">TR</button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed-dim"></span></span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">GTU • CLASS OF 2027</span>
+</div>
+<button aria-expanded="false" aria-label="Menu" class="xl:hidden w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center" id="nav-toggle" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">menu</span>
+</button>
+</div>
+</div>
+<div class="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl px-gutter-mobile pb-space-md flex flex-col gap-space-2xs" hidden id="nav-drawer" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index" href="/">01 // ABOUT</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects" href="/projects/">02 // PROJECTS</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="method" href="/method/">03 // METHOD</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv" href="/cv/">04 // CV</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact" href="/contact/">05 // TERMINAL</a>
+</div>
+</header>
+
+<main class="w-full pt-16 bg-surface-container-lowest flex-1">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl flex flex-col gap-space-4xl">
+
+
+<!-- ============================ PAGE HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md font-label-code-sm text-label-code-sm">
+<span class="flex items-center gap-space-2xs text-primary tracking-widest uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+[ 03 // METHOD ]
+</span>
+<span class="text-outline hidden sm:inline">|</span>
+<span class="text-on-surface-variant tracking-wider uppercase hidden sm:inline">ACROSS ALL FOUR OPEN PROJECTS</span>
+</div>
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight max-w-3xl">
+<span data-lang="en">How I work, and what it cost to learn</span>
+<span data-lang="tr">Nasıl çalışıyorum, ve bunu öğrenmenin bedeli</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">Four rules, each one learned by getting a number wrong first, and the table of every measurement that changed a decision. The per-project engineering detail lives on each project's own page.</span>
+<span data-lang="tr">Dört kural — her biri önce bir sayıyı yanlış ölçerek öğrenildi — ve bir kararı değiştiren her ölçümün tablosu. Projeye özel mühendislik detayı her projenin kendi sayfasında.</span>
+</p>
+</header>
+
+<!-- ============================ HOW I WORK ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Four rules</span><span data-lang="tr">Dört kural</span>
+</h2>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">EACH ONE LEARNED THE HARD WAY</span>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg">
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Measure before you build</span><span data-lang="tr">Kurmadan önce ölç</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The plan assumed ±35° of plate angle. I labelled 690 real plates, measured about 7°, and changed the generator instead of the measurement.</span>
+<span data-lang="tr">Plan ±35° plaka açısı varsayıyordu. 690 gerçek plaka etiketleyip yaklaşık 7° ölçtüm ve ölçümü değil üreteci değiştirdim.</span>
+</p>
+</div>
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Check the number that flatters you</span><span data-lang="tr">Hoşuna giden sayıyı kontrol et</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">I concluded sharpness does not predict night readability. It does, from 1% to 62%. My first sample only covered the flat end of the range.</span>
+<span data-lang="tr">Gecede keskinliğin okunabilirliği öngörmediği sonucuna varmıştım. Öngörüyor, %1'den %62'ye. İlk örneklemim aralığın sadece düz ucunu kapsıyordu.</span>
+</p>
+</div>
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Publish what fails too</span><span data-lang="tr">Bozulanı da yayımla</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Every repo has a section on where it breaks. The trafikisaret demo keeps a night frame with one sign found, because that is how the model performs there.</span>
+<span data-lang="tr">Her reponun nerede kırıldığını anlatan bölümü var. trafikisaret demosunda tek işaretin bulunduğu gece karesi duruyor, çünkü model orada böyle çalışıyor.</span>
+</p>
+</div>
+
+<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-display-hero text-[32px] leading-none text-outline-variant">04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Write down what you could not do</span><span data-lang="tr">Yapamadığını da yaz</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The plate plan needed a Jetson board I do not have, so the edge-latency phase is marked out of scope rather than estimated.</span>
+<span data-lang="tr">Plaka planı bende olmayan bir Jetson kartı gerektiriyordu; uç cihaz gecikme fazı tahmin edilmek yerine kapsam dışı işaretlendi.</span>
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ MEASUREMENT MATRIX ============================ -->
+<section class="flex flex-col gap-space-xl">
+<div class="flex flex-col gap-space-xs reveal">
+<div class="flex flex-wrap items-baseline gap-space-sm">
+<span class="font-label-code-md text-[19px] leading-tight text-on-surface tracking-[0.08em] font-semibold">measurement matrix</span>
+<span class="h-px w-10 bg-outline-variant self-center"></span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">WHAT THE NUMBERS CHANGED</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Findings that changed a decision</span>
+<span data-lang="tr">Bir kararı değiştiren bulgular</span>
+</h2>
+</div>
+
+<div class="rounded-xl overflow-hidden reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[760px] text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/60 font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">
+<th class="p-space-md font-medium">Project</th>
+<th class="p-space-md font-medium">Assumed</th>
+<th class="p-space-md font-medium">Measured</th>
+<th class="p-space-md font-medium">What changed</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium whitespace-nowrap">trafikisaret</td>
+<td class="p-space-md text-outline">Bigger inference resolution is better</td>
+<td class="p-space-md"><span class="text-on-surface-variant">recall</span> <span class="text-error">0.379</span> <span class="text-outline">@640</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">0.724</span> <span class="text-outline">@960</span> <span class="text-outline">→</span> <span class="text-error">0.448</span> <span class="text-outline">@1280</span></td>
+<td class="p-space-md text-on-surface-variant">Inference runs at 960 px. There is an optimum, and 1280 measuring worse is what proves it.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium whitespace-nowrap">trafikisaret</td>
+<td class="p-space-md text-outline">Leakage inflates a score</td>
+<td class="p-space-md"><span class="text-on-surface-variant">mAP50</span> <span class="text-error">0.694</span> <span class="text-outline">dirty</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">0.726</span> <span class="text-outline">clean</span></td>
+<td class="p-space-md text-on-surface-variant">Leakage made the number meaningless, not higher. Locked behind a test; the dirty run was kept, not deleted.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium whitespace-nowrap">plakatanima</td>
+<td class="p-space-md text-outline">±35° horizontal yaw</td>
+<td class="p-space-md"><span class="text-tertiary-fixed-dim">~7°</span> <span class="text-outline">over 690 labelled plates</span></td>
+<td class="p-space-md text-on-surface-variant">The generator was recalibrated against the labels instead of the plan.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium whitespace-nowrap">plakatanima</td>
+<td class="p-space-md text-outline">Sharpness does not predict night readability</td>
+<td class="p-space-md"><span class="text-error">1%</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">62%</span> <span class="text-outline">across the full range</span></td>
+<td class="p-space-md text-on-surface-variant">The first sample only covered the flat end of a sorted queue. The conclusion was withdrawn.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium whitespace-nowrap">smart-city</td>
+<td class="p-space-md text-outline">Busiest zone is the critical one</td>
+<td class="p-space-md"><span class="text-on-surface-variant">JFK removal:</span> <span class="text-error">1 → 16 components</span></td>
+<td class="p-space-md text-on-surface-variant">Volume and structural role are different questions. Betweenness catches what PageRank ranks 17th.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- ============================ CLOSING ============================ -->
+<section class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg p-space-xl rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-2xs">
+<span data-lang="en">The full record</span>
+<span data-lang="tr">Tam kayıt</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+<span data-lang="en">Education, work experience, project experience and skills on one page.</span>
+<span data-lang="tr">Eğitim, iş deneyimi, proje deneyimi ve yetkinlikler tek sayfada.</span>
+</p>
+</div>
+<a class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-on-primary font-label-code-md text-label-code-md tracking-wider uppercase hover:bg-white transition-colors shrink-0" href="/cv/" style="border: 1px solid rgba(255,255,255,0.2);">
+<span data-lang="en">OPEN THE CV</span><span data-lang="tr">CV'Yİ AÇ</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</section>
+
+</div>
+</main>
+
+<footer class="w-full bg-surface-container-lowest/90 backdrop-blur-xl py-space-xl" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed-dim">schedule</span>
+<span id="local-clock">--:--:--</span>
+</div>
+<div class="hidden sm:inline-block text-outline-variant font-label-code-sm text-label-code-sm">/</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+<span>MALTEPE, İSTANBUL • TR</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">.NET • SPRING BOOT • PYTORCH • FLUTTER</span>
+</div>
+<div class="flex items-center gap-space-lg font-label-code-sm text-label-code-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://github.com/Byomer1021" rel="noreferrer" target="_blank">GITHUB</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://www.linkedin.com/in/%C3%B6mer-can-atli-8a9b491b5/" rel="noreferrer" target="_blank">LINKEDIN</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="/contact/">CONTACT</a>
+</div>
+</div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script defer src="/assets/js/bg-three.js"></script>
+</body>
+</html>

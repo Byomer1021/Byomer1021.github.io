@@ -40,7 +40,7 @@
 <nav class="hidden xl:flex items-center gap-space-xs p-space-3xs bg-surface-container-low/70 rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index" href="/">01 // ABOUT</a>
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects" href="/projects/">02 // PROJECTS</a>
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="architecture" href="/architecture/">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="method" href="/method/">03 // METHOD</a>
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv" href="/cv/">04 // CV</a>
 <a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact" href="/contact/">05 // TERMINAL</a>
 </nav>
@@ -61,7 +61,7 @@
 <div class="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl px-gutter-mobile pb-space-md flex flex-col gap-space-2xs" hidden id="nav-drawer" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index" href="/">01 // ABOUT</a>
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects" href="/projects/">02 // PROJECTS</a>
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="architecture" href="/architecture/">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="method" href="/method/">03 // METHOD</a>
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv" href="/cv/">04 // CV</a>
 <a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact" href="/contact/">05 // TERMINAL</a>
 </div>
@@ -69,6 +69,7 @@
 
 <main class="w-full pt-16 bg-surface-container-lowest flex-1">
 <div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl flex flex-col gap-space-4xl">
+
 
 <!-- ============================ INTRO ============================ -->
 <header class="flex flex-col gap-space-md">
@@ -264,78 +265,20 @@
 </div>
 </section>
 
-<!-- ============================ HOW I WORK ============================ -->
-<section class="flex flex-col gap-space-lg">
-<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-<h2 class="font-headline-md text-headline-md text-on-surface">
-<span data-lang="en">How I work</span><span data-lang="tr">Nasıl çalışıyorum</span>
-</h2>
-<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">FOUR RULES THESE PROJECTS TAUGHT ME</span>
-</div>
-
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg">
-
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<span class="font-display-hero text-[32px] leading-none text-outline-variant">01</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span data-lang="en">Measure before you build</span><span data-lang="tr">Kurmadan önce ölç</span>
-</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">The plan assumed ±35° of plate angle. I labelled 690 real plates, measured about 7°, and changed the generator instead of the measurement.</span>
-<span data-lang="tr">Plan ±35° plaka açısı varsayıyordu. 690 gerçek plaka etiketleyip yaklaşık 7° ölçtüm ve ölçümü değil üreteci değiştirdim.</span>
-</p>
-</div>
-
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<span class="font-display-hero text-[32px] leading-none text-outline-variant">02</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span data-lang="en">Check the number that flatters you</span><span data-lang="tr">Hoşuna giden sayıyı kontrol et</span>
-</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">I concluded sharpness does not predict night readability. It does, from 1% to 62%. My first sample only covered the flat end of the range.</span>
-<span data-lang="tr">Gecede keskinliğin okunabilirliği öngörmediği sonucuna varmıştım. Öngörüyor, %1'den %62'ye. İlk örneklemim aralığın sadece düz ucunu kapsıyordu.</span>
-</p>
-</div>
-
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<span class="font-display-hero text-[32px] leading-none text-outline-variant">03</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span data-lang="en">Publish what fails too</span><span data-lang="tr">Bozulanı da yayımla</span>
-</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">Every repo has a section on where it breaks. The trafikisaret demo keeps a night frame with one sign found, because that is how the model performs there.</span>
-<span data-lang="tr">Her reponun nerede kırıldığını anlatan bölümü var. trafikisaret demosunda tek işaretin bulunduğu gece karesi duruyor, çünkü model orada böyle çalışıyor.</span>
-</p>
-</div>
-
-<div class="p-space-lg rounded-xl bg-surface-container-low/50 flex flex-col gap-space-sm reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<span class="font-display-hero text-[32px] leading-none text-outline-variant">04</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">
-<span data-lang="en">Write down what you could not do</span><span data-lang="tr">Yapamadığını da yaz</span>
-</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">The plate plan needed a Jetson board I do not have, so the edge-latency phase is marked out of scope rather than estimated.</span>
-<span data-lang="tr">Plaka planı bende olmayan bir Jetson kartı gerektiriyordu; uç cihaz gecikme fazı tahmin edilmek yerine kapsam dışı işaretlendi.</span>
-</p>
-</div>
-
-</div>
-</section>
-
 <!-- ============================ CLOSING ============================ -->
 <section class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg p-space-xl rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
 <div>
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-2xs">
-<span data-lang="en">Want the engineering detail?</span>
-<span data-lang="tr">Mühendislik detayı ister misin?</span>
+<span data-lang="en">How I decide what to build</span>
+<span data-lang="tr">Ne yapacağıma nasıl karar veriyorum</span>
 </h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
-<span data-lang="en">The pipeline diagrams, the code at the decisions that mattered, and the measurements that changed them.</span>
-<span data-lang="tr">Pipeline diyagramları, önemli kararlardaki kod ve o kararları değiştiren ölçümler.</span>
+<span data-lang="en">Four rules these projects taught me, and the table of every measurement that changed a decision.</span>
+<span data-lang="tr">Bu projelerin öğrettiği dört kural ve bir kararı değiştiren her ölçümün tablosu.</span>
 </p>
 </div>
-<a class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-on-primary font-label-code-md text-label-code-md tracking-wider uppercase hover:bg-white transition-colors shrink-0" href="/architecture/" style="border: 1px solid rgba(255,255,255,0.2);">
-<span data-lang="en">ARCHITECTURE</span><span data-lang="tr">MİMARİ</span>
+<a class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-on-primary font-label-code-md text-label-code-md tracking-wider uppercase hover:bg-white transition-colors shrink-0" href="/method/" style="border: 1px solid rgba(255,255,255,0.2);">
+<span data-lang="en">THE METHOD</span><span data-lang="tr">YÖNTEM</span>
 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 </a>
 </section>
