@@ -50,10 +50,13 @@
   });
 
   // ---- 3. Footer clock -----------------------------------------------------
-  var clock = document.getElementById('utc-clock');
+  var clock = document.getElementById('local-clock');
   if (clock) {
     var tick = function () {
-      clock.textContent = new Date().toISOString().slice(11, 19) + ' UTC';
+      // His local time, so a visitor can tell whether it is a sane hour to write.
+      clock.textContent = new Date().toLocaleTimeString('tr-TR', {
+        timeZone: 'Europe/Istanbul', hour12: false
+      }) + ' İSTANBUL';
     };
     tick();
     setInterval(tick, 1000);
