@@ -2,3 +2,6 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# CV build scratch — the committed output is assets/cv/*.pdf
+tools/cv/build/

@@ -53,6 +53,19 @@ Tiles come from Esri's Dark Gray Canvas, which needs no API key. CARTO's dark
 basemap now watermarks every tile with "API KEY REQUIRED" and OpenStreetMap's
 own servers block generic clients, so neither is usable here.
 
+## The CV
+
+`tools/cv/cv_content.py` holds the CV once; `python tools/cv/build_cv.py`
+renders it to HTML and prints two PDFs with headless Chrome:
+
+| File | Pages | For |
+|---|---|---|
+| `assets/cv/omer-can-atli-cv.pdf` | 2 | the full record |
+| `assets/cv/omer-can-atli-cv-1page.pdf` | 1 | applications that ask for one page |
+
+Single column on purpose — applicant tracking systems parse multi-column CVs
+badly, and print-to-pdf keeps the text selectable so they can read it at all.
+
 ## Deployment
 
 GitHub Pages, custom domain in `CNAME`.
