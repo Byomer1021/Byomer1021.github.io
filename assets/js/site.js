@@ -33,7 +33,15 @@
   });
 
   // ---- 2. Navigation active state -----------------------------------------
-  var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  // URLs are extensionless ("/projects"), but be tolerant of "/projects/",
+  // "/projects/index.html" and "/" so the nav highlights correctly anywhere.
+  var here = location.pathname
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/\/+$/, '')
+    .split('/')
+    .pop()
+    .toLowerCase() || 'index';
   document.querySelectorAll('[data-nav]').forEach(function (a) {
     if (a.getAttribute('data-nav') !== here) return;
     a.setAttribute('aria-current', 'page');

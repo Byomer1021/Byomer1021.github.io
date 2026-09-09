@@ -5,9 +5,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Projects — Ömer Can Atlı</title>
 <meta name="description" content="Four open-source projects with public code and measurements, and the products built in private repositories."/>
-<link href="https://omercanatli.com/projects.html" rel="canonical"/>
+<link href="https://omercanatli.com/projects" rel="canonical"/>
 <meta content="website" property="og:type"/>
-<meta content="https://omercanatli.com/projects.html" property="og:url"/>
+<meta content="https://omercanatli.com/projects" property="og:url"/>
 <meta content="Projects — Ömer Can Atlı" property="og:title"/>
 <meta content="Four open-source projects with public code and measurements, and the products behind private repositories." property="og:description"/>
 <meta content="https://omercanatli.com/assets/img/og-card.jpg" property="og:image"/>
@@ -23,9 +23,9 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
-<link href="assets/css/base.css" rel="stylesheet"/>
+<link href="/assets/css/base.css" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="assets/js/tw-config.js"></script>
+<script src="/assets/js/tw-config.js"></script>
 </head>
 <body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
 <canvas aria-hidden="true" id="bg-canvas"></canvas>
@@ -33,17 +33,17 @@
 <!-- ============================ HEADER ============================ -->
 <header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
 <div class="h-16 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
-<a class="flex items-center gap-space-xs group shrink-0" href="index.html">
+<a class="flex items-center gap-space-xs group shrink-0" href="/">
 <span class="w-2 h-2 rounded-full bg-primary-container group-hover:scale-125 transition-transform shadow-[0_0_8px_#00f5ff]"></span>
 <span class="font-label-code-md text-label-code-md tracking-wider text-primary font-bold uppercase">OCA.DEV</span>
 <span class="font-label-code-sm text-label-code-sm text-outline hidden sm:inline-block tracking-widest uppercase">// SOFTWARE &amp; AI</span>
 </a>
 <nav class="hidden xl:flex items-center gap-space-xs p-space-3xs bg-surface-container-low/70 rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index.html" href="index.html">01 // ABOUT</a>
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects.html" href="projects.html">02 // PROJECTS</a>
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="architecture.html" href="architecture.html">03 // ARCHITECTURE</a>
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv.html" href="cv.html">04 // CV</a>
-<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact.html" href="contact.html">05 // TERMINAL</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index" href="/">01 // ABOUT</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects" href="/projects">02 // PROJECTS</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="architecture" href="/architecture">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv" href="/cv">04 // CV</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact" href="/contact">05 // TERMINAL</a>
 </nav>
 <div class="flex items-center gap-space-sm">
 <div class="flex items-center gap-space-3xs p-space-3xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
@@ -60,11 +60,11 @@
 </div>
 </div>
 <div class="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl px-gutter-mobile pb-space-md flex flex-col gap-space-2xs" hidden id="nav-drawer" style="border-top: 1px solid rgba(255,255,255,0.06);">
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index.html" href="index.html">01 // ABOUT</a>
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects.html" href="projects.html">02 // PROJECTS</a>
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="architecture.html" href="architecture.html">03 // ARCHITECTURE</a>
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv.html" href="cv.html">04 // CV</a>
-<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact.html" href="contact.html">05 // TERMINAL</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index" href="/">01 // ABOUT</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects" href="/projects">02 // PROJECTS</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="architecture" href="/architecture">03 // ARCHITECTURE</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv" href="/cv">04 // CV</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact" href="/contact">05 // TERMINAL</a>
 </div>
 </header>
 
@@ -124,7 +124,7 @@
 <div class="project-img absolute inset-0 transition-all duration-700 opacity-100 scale-100 pointer-events-auto" data-stage="0">
 <div class="w-full h-full rounded-lg overflow-hidden bg-black flex items-center justify-center" style="border: 1px solid rgba(0,245,255,0.3);">
 <video autoplay class="w-full h-full object-contain" loop muted playsinline poster="assets/img/otonomarac-poster.jpg" preload="metadata">
-<source src="assets/img/otonomarac-demo.mp4" type="video/mp4"/>
+<source src="/assets/img/otonomarac-demo.mp4" type="video/mp4"/>
 </video>
 </div>
 <div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
@@ -136,7 +136,7 @@
 <!-- Visual 02: trafikisaret -->
 <div class="project-img absolute inset-0 transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-stage="1">
 <div class="w-full h-full rounded-lg overflow-hidden bg-black flex items-center justify-center" style="border: 1px solid rgba(208,188,255,0.3);">
-<img alt="The same traffic-sign model running on day, rain and night frames" class="w-full h-full object-contain" data-alt-en="The same traffic-sign model running on day, rain and night frames" data-alt-tr="Aynı trafik işareti modeli gündüz, yağmur ve gece karelerinde" loading="lazy" src="assets/img/trafikisaret-demo.jpg"/>
+<img alt="The same traffic-sign model running on day, rain and night frames" class="w-full h-full object-contain" data-alt-en="The same traffic-sign model running on day, rain and night frames" data-alt-tr="Aynı trafik işareti modeli gündüz, yağmur ve gece karelerinde" loading="lazy" src="/assets/img/trafikisaret-demo.jpg"/>
 </div>
 <div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
 <span class="text-label-code-sm font-label-code-sm text-secondary-fixed uppercase tracking-wider">DAY / RAIN / NIGHT</span>
@@ -147,7 +147,7 @@
 <!-- Visual 03: smart-city -->
 <div class="project-img absolute inset-0 transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-stage="2">
 <div class="w-full h-full rounded-lg overflow-hidden bg-[#0b0b0f] flex items-center justify-center" style="border: 1px solid rgba(105,246,185,0.3);">
-<img alt="Geographic map of the New York City taxi network, coloured by community, with JFK Airport as an outlying hub" class="w-full h-full object-contain" data-alt-en="Geographic map of the New York City taxi network, coloured by community, with JFK Airport as an outlying hub" data-alt-tr="New York taksi ağının coğrafi haritası, topluluklara göre renklendirilmiş; JFK Havalimanı dışarıda duran bir merkez" loading="lazy" src="assets/img/smartcity-geomap.png"/>
+<img alt="Geographic map of the New York City taxi network, coloured by community, with JFK Airport as an outlying hub" class="w-full h-full object-contain" data-alt-en="Geographic map of the New York City taxi network, coloured by community, with JFK Airport as an outlying hub" data-alt-tr="New York taksi ağının coğrafi haritası, topluluklara göre renklendirilmiş; JFK Havalimanı dışarıda duran bir merkez" loading="lazy" src="/assets/img/smartcity-geomap.png"/>
 </div>
 <div class="absolute bottom-3 left-3 right-3 p-2.5 bg-surface-container-lowest/85 backdrop-blur-md rounded flex items-center justify-between gap-2" style="border: 1px solid rgba(255,255,255,0.08);">
 <span class="text-label-code-sm font-label-code-sm text-tertiary-fixed uppercase tracking-wider">258 ZONES • 3 COMMUNITIES</span>
@@ -421,8 +421,8 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-black" href="assets/img/otonomarac-segmentation.jpg" rel="noreferrer" target="_blank">
-<img alt="Drivable area and lane paint drawn back onto a Maltepe street scene" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-segmentation.jpg"/>
+<a class="block bg-black" href="/assets/img/otonomarac-segmentation.jpg" rel="noreferrer" target="_blank">
+<img alt="Drivable area and lane paint drawn back onto a Maltepe street scene" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/otonomarac-segmentation.jpg"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">Drivable area + lane paint</span>
@@ -432,8 +432,8 @@
 </figure>
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-black" href="assets/img/otonomarac-bev-calibration.jpg" rel="noreferrer" target="_blank">
-<img alt="Homography calibration quadrilateral on the road, with the warped bird's-eye result beside it" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-bev-calibration.jpg"/>
+<a class="block bg-black" href="/assets/img/otonomarac-bev-calibration.jpg" rel="noreferrer" target="_blank">
+<img alt="Homography calibration quadrilateral on the road, with the warped bird's-eye result beside it" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/otonomarac-bev-calibration.jpg"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">Bird's-eye calibration</span>
@@ -443,8 +443,8 @@
 </figure>
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-black" href="assets/img/otonomarac-bonnet.jpg" rel="noreferrer" target="_blank">
-<img alt="A sweep of candidate calibration reference rows drawn across the bottom of the frame" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-bonnet.jpg"/>
+<a class="block bg-black" href="/assets/img/otonomarac-bonnet.jpg" rel="noreferrer" target="_blank">
+<img alt="A sweep of candidate calibration reference rows drawn across the bottom of the frame" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/otonomarac-bonnet.jpg"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">The bonnet artefact</span>
@@ -454,8 +454,8 @@
 </figure>
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-black" href="assets/img/otonomarac-night.jpg" rel="noreferrer" target="_blank">
-<img alt="Four night-time dashcam frames at 200, 600, 1000 and 1400 seconds" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/otonomarac-night.jpg"/>
+<a class="block bg-black" href="/assets/img/otonomarac-night.jpg" rel="noreferrer" target="_blank">
+<img alt="Four night-time dashcam frames at 200, 600, 1000 and 1400 seconds" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/otonomarac-night.jpg"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-primary uppercase tracking-widest block mb-space-2xs">Where it degrades</span>
@@ -476,8 +476,8 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-black" href="assets/img/trafikisaret-predictions.jpg" rel="noreferrer" target="_blank">
-<img alt="A grid of traffic-sign crops with the classifier's predicted label and confidence on each" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/trafikisaret-predictions.jpg"/>
+<a class="block bg-black" href="/assets/img/trafikisaret-predictions.jpg" rel="noreferrer" target="_blank">
+<img alt="A grid of traffic-sign crops with the classifier's predicted label and confidence on each" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/trafikisaret-predictions.jpg"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Stage 2 — classifier output</span>
@@ -487,8 +487,8 @@
 </figure>
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-[#0b0b0f]" href="assets/img/trafikisaret-confusion.png" rel="noreferrer" target="_blank">
-<img alt="Normalised confusion matrix across the fourteen supported sign classes" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/trafikisaret-confusion.png"/>
+<a class="block bg-[#0b0b0f]" href="/assets/img/trafikisaret-confusion.png" rel="noreferrer" target="_blank">
+<img alt="Normalised confusion matrix across the fourteen supported sign classes" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/trafikisaret-confusion.png"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest block mb-space-2xs">Where the classes bleed</span>
@@ -499,8 +499,8 @@
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal lg:col-span-2" style="border: 1px solid rgba(255,255,255,0.08);">
 <div class="grid grid-cols-1 md:grid-cols-2">
-<a class="block bg-[#0b0b0f]" href="assets/img/trafikisaret-f1.png" rel="noreferrer" target="_blank">
-<img alt="F1 score against confidence threshold for the class-agnostic sign detector" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/trafikisaret-f1.png"/>
+<a class="block bg-[#0b0b0f]" href="/assets/img/trafikisaret-f1.png" rel="noreferrer" target="_blank">
+<img alt="F1 score against confidence threshold for the class-agnostic sign detector" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/trafikisaret-f1.png"/>
 </a>
 <div class="p-space-lg flex flex-col justify-center gap-space-md" style="border-left: 1px solid rgba(255,255,255,0.06);">
 <div>
@@ -535,8 +535,8 @@
 <div class="grid grid-cols-1 gap-space-lg">
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-[#0b0b0f]" href="assets/img/smartcity-dashboard.png" rel="noreferrer" target="_blank">
-<img alt="Four-panel dashboard: top zones by PageRank, the removal simulation, PageRank against betweenness, and the community split" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/smartcity-dashboard.png"/>
+<a class="block bg-[#0b0b0f]" href="/assets/img/smartcity-dashboard.png" rel="noreferrer" target="_blank">
+<img alt="Four-panel dashboard: top zones by PageRank, the removal simulation, PageRank against betweenness, and the community split" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/smartcity-dashboard.png"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-space-2xs">The whole analysis on one sheet</span>
@@ -546,8 +546,8 @@
 </figure>
 
 <figure class="group rounded-xl overflow-hidden bg-surface-container-low/50 flex flex-col reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<a class="block bg-[#0b0b0f]" href="assets/img/smartcity-simulation.png" rel="noreferrer" target="_blank">
-<img alt="Flow remaining in the network as the most critical zones are removed one at a time" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="assets/img/smartcity-simulation.png"/>
+<a class="block bg-[#0b0b0f]" href="/assets/img/smartcity-simulation.png" rel="noreferrer" target="_blank">
+<img alt="Flow remaining in the network as the most critical zones are removed one at a time" class="w-full h-auto group-hover:opacity-90 transition-opacity" loading="lazy" src="/assets/img/smartcity-simulation.png"/>
 </a>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant leading-relaxed" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest block mb-space-2xs">Closing zones one at a time</span>
@@ -674,11 +674,11 @@
 <span data-lang="tr">YKS SHORTIES — MAĞAZA KAYDINDAN</span>
 </div>
 <div class="flex gap-space-md overflow-x-auto pb-space-xs">
-<img alt="Arena leaderboard: students ranked against each other by category" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Arena leaderboard: students ranked against each other by category" data-alt-tr="Arena sıralaması: öğrenciler kategoriye göre birbirine karşı sıralanıyor" loading="lazy" src="assets/img/yks-arena.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
-<img alt="The short vertical video feed the video engine produces" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="The short vertical video feed the video engine produces" data-alt-tr="Video motorunun ürettiği kısa dikey video akışı" loading="lazy" src="assets/img/yks-reels.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
-<img alt="Topic tracker showing which subjects still have gaps" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Topic tracker showing which subjects still have gaps" data-alt-tr="Hangi konularda eksik kaldığını gösteren konu takibi" loading="lazy" src="assets/img/yks-konular.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
-<img alt="Spaced-repetition flashcard screen" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Spaced-repetition flashcard screen" data-alt-tr="Aralıklı tekrar flashcard ekranı" loading="lazy" src="assets/img/yks-flashcard.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
-<img alt="Score calculator projecting university placement from practice results" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Score calculator projecting university placement from practice results" data-alt-tr="Deneme sonuçlarından üniversite yerleşimini öngören net hesaplayıcı" loading="lazy" src="assets/img/yks-net.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Arena leaderboard: students ranked against each other by category" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Arena leaderboard: students ranked against each other by category" data-alt-tr="Arena sıralaması: öğrenciler kategoriye göre birbirine karşı sıralanıyor" loading="lazy" src="/assets/img/yks-arena.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="The short vertical video feed the video engine produces" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="The short vertical video feed the video engine produces" data-alt-tr="Video motorunun ürettiği kısa dikey video akışı" loading="lazy" src="/assets/img/yks-reels.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Topic tracker showing which subjects still have gaps" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Topic tracker showing which subjects still have gaps" data-alt-tr="Hangi konularda eksik kaldığını gösteren konu takibi" loading="lazy" src="/assets/img/yks-konular.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Spaced-repetition flashcard screen" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Spaced-repetition flashcard screen" data-alt-tr="Aralıklı tekrar flashcard ekranı" loading="lazy" src="/assets/img/yks-flashcard.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
+<img alt="Score calculator projecting university placement from practice results" class="h-[300px] w-auto rounded-lg shrink-0" data-alt-en="Score calculator projecting university placement from practice results" data-alt-tr="Deneme sonuçlarından üniversite yerleşimini öngören net hesaplayıcı" loading="lazy" src="/assets/img/yks-net.jpg" style="border: 1px solid rgba(255,255,255,0.08);"/>
 </div>
 </div>
 </div>
@@ -711,28 +711,28 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
 <figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<img alt="The respos order screen on a phone, with an open table bill and its total" class="w-full h-auto" data-alt-en="The respos order screen on a phone, with an open table bill and its total" data-alt-tr="respos sipariş ekranı telefonda, açık masa adisyonu ve toplamıyla" loading="lazy" src="assets/img/respos-mobile.jpg"/>
+<img alt="The respos order screen on a phone, with an open table bill and its total" class="w-full h-auto" data-alt-en="The respos order screen on a phone, with an open table bill and its total" data-alt-tr="respos sipariş ekranı telefonda, açık masa adisyonu ve toplamıyla" loading="lazy" src="/assets/img/respos-mobile.jpg"/>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span data-lang="en">Tableside ordering: a server opens the table, adds items and closes the bill without walking back to a terminal.</span>
 <span data-lang="tr">Masa başında sipariş: garson masayı açıyor, ürün ekliyor ve terminale dönmeden adisyonu kapatıyor.</span>
 </figcaption>
 </figure>
 <figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<img alt="The kitchen display system showing incoming orders on a wall-mounted screen" class="w-full h-auto" data-alt-en="The kitchen display system showing incoming orders on a wall-mounted screen" data-alt-tr="Gelen siparişleri duvara monte ekranda gösteren mutfak ekran sistemi" loading="lazy" src="assets/img/respos-kds.jpg"/>
+<img alt="The kitchen display system showing incoming orders on a wall-mounted screen" class="w-full h-auto" data-alt-en="The kitchen display system showing incoming orders on a wall-mounted screen" data-alt-tr="Gelen siparişleri duvara monte ekranda gösteren mutfak ekran sistemi" loading="lazy" src="/assets/img/respos-kds.jpg"/>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span data-lang="en">Kitchen display: orders land the moment they are taken, so preparation order is decided by the screen and not by shouting.</span>
 <span data-lang="tr">Mutfak ekranı: siparişler alındığı anda düşüyor; hazırlık sırasını bağırış değil ekran belirliyor.</span>
 </figcaption>
 </figure>
 <figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<img alt="Live table plan on a tablet showing which tables are open" class="w-full h-auto" data-alt-en="Live table plan on a tablet showing which tables are open" data-alt-tr="Hangi masaların açık olduğunu gösteren tablet üzerindeki canlı masa planı" loading="lazy" src="assets/img/respos-tables.jpg"/>
+<img alt="Live table plan on a tablet showing which tables are open" class="w-full h-auto" data-alt-en="Live table plan on a tablet showing which tables are open" data-alt-tr="Hangi masaların açık olduğunu gösteren tablet üzerindeki canlı masa planı" loading="lazy" src="/assets/img/respos-tables.jpg"/>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span data-lang="en">Live salon view: table state is the shared source of truth every device reads from.</span>
 <span data-lang="tr">Canlı salon görünümü: masa durumu, her cihazın okuduğu ortak doğruluk kaynağı.</span>
 </figcaption>
 </figure>
 <figure class="rounded-xl overflow-hidden bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
-<img alt="The POS running in a browser on a counter terminal" class="w-full h-auto" data-alt-en="The POS running in a browser on a counter terminal" data-alt-tr="Tezgâh terminalinde tarayıcı içinde çalışan POS" loading="lazy" src="assets/img/respos-pos.jpg"/>
+<img alt="The POS running in a browser on a counter terminal" class="w-full h-auto" data-alt-en="The POS running in a browser on a counter terminal" data-alt-tr="Tezgâh terminalinde tarayıcı içinde çalışan POS" loading="lazy" src="/assets/img/respos-pos.jpg"/>
 <figcaption class="p-space-md font-body-sm text-body-sm text-on-surface-variant" style="border-top: 1px solid rgba(255,255,255,0.06);">
 <span data-lang="en">Counter terminal: the same web client, so a venue can use whatever hardware it already owns.</span>
 <span data-lang="tr">Tezgâh terminali: aynı web istemcisi; işletme elindeki donanımı neyse onu kullanabiliyor.</span>
@@ -849,7 +849,7 @@
 <span data-lang="tr">Pipeline'lar, hangi katmanlardan oluştukları ve arkalarındaki tercihler.</span>
 </p>
 </div>
-<a class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-on-primary font-label-code-md text-label-code-md tracking-wider uppercase hover:bg-white transition-colors shrink-0" href="architecture.html" style="border: 1px solid rgba(255,255,255,0.2);">
+<a class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary text-on-primary font-label-code-md text-label-code-md tracking-wider uppercase hover:bg-white transition-colors shrink-0" href="/architecture" style="border: 1px solid rgba(255,255,255,0.2);">
 <span data-lang="en">SEE THE ARCHITECTURE</span><span data-lang="tr">MİMARİYE BAK</span>
 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 </a>
@@ -880,12 +880,12 @@
 <div class="flex items-center gap-space-lg font-label-code-sm text-label-code-sm">
 <a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://github.com/Byomer1021" rel="noreferrer" target="_blank">GITHUB</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://www.linkedin.com/in/%C3%B6mer-can-atli-8a9b491b5/" rel="noreferrer" target="_blank">LINKEDIN</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="contact.html">CONTACT</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="/contact">CONTACT</a>
 </div>
 </div>
 </footer>
 
-<script src="assets/js/site.js"></script>
+<script src="/assets/js/site.js"></script>
 <script>
 /* Scrollytelling: 400vh wrapper drives four pinned chapters. */
 (function () {
@@ -973,6 +973,6 @@
 })();
 </script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-<script defer src="assets/js/bg-three.js"></script>
+<script defer src="/assets/js/bg-three.js"></script>
 </body>
 </html>
