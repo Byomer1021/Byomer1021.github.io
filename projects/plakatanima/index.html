@@ -4,19 +4,19 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>plakatanima — Ömer Can Atlı</title>
-<meta name="description" content="Turkish licence plate recognition: a synthetic data generator calibrated against 690 hand-labelled plates, and a CTC recogniser."/>
+<meta name="description" content="Turkish licence plate recognition measured end to end: 18 of 34 plates read fully automatically, a constrained decoder in C++, and TensorRT FP16 on a T4."/>
 <link href="https://omercanatli.com/projects/plakatanima/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="https://omercanatli.com/projects/plakatanima/" property="og:url"/>
 <meta content="plakatanima — Ömer Can Atlı" property="og:title"/>
-<meta content="Turkish licence plate recognition: a synthetic data generator calibrated against 690 hand-labelled plates, and a CTC recogniser." property="og:description"/>
+<meta content="Turkish licence plate recognition measured end to end: 18 of 34 plates read fully automatically, a constrained decoder in C++, and TensorRT FP16 on a T4." property="og:description"/>
 <meta content="https://omercanatli.com/assets/img/og-card.jpg" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="Ömer Can Atlı" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="plakatanima — Ömer Can Atlı" name="twitter:title"/>
-<meta content="Turkish licence plate recognition: a synthetic data generator calibrated against 690 hand-labelled plates, and a CTC recogniser." name="twitter:description"/>
+<meta content="Turkish licence plate recognition measured end to end: 18 of 34 plates read fully automatically, a constrained decoder in C++, and TensorRT FP16 on a T4." name="twitter:description"/>
 <meta content="https://omercanatli.com/assets/img/og-card.jpg" name="twitter:image"/>
 <meta content="#0e0e12" name="theme-color"/>
 <link href="/assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -84,12 +84,12 @@
 
 <div class="flex flex-wrap items-center gap-space-sm">
 <h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-primary-container tracking-tight">plakatanima</h1>
-<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(0,245,255,0.3);">IN PROGRESS • NOT TRAINED</span>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(105,246,185,0.35);">COMPLETE • MEASURED END TO END</span>
 </div>
 
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
-<span data-lang="en">Turkish licence plate recognition: a synthetic data generator and a CTC sequence recogniser. The interesting part of this project is not the model — it is that the generator was calibrated against measurements rather than against the plan, and that the plan lost.</span>
-<span data-lang="tr">Türk plakası tanıma: sentetik veri üreteci ve CTC dizi tanıyıcısı. Bu projenin ilginç kısmı model değil — üretecin plana göre değil ölçümlere göre kalibre edilmesi, ve bu çekişmeyi planın kaybetmesi.</span>
+<span data-lang="en">Turkish licence plate recognition: a synthetic data generator calibrated against real plates, a CTC sequence recogniser fine-tuned on them, a constrained beam search over the Turkish plate grammar written in C++, temporal voting across frames, and the whole pipeline exported to TensorRT and measured on a rented GPU.</span>
+<span data-lang="tr">Türk plakası tanıma: gerçek plakalara göre kalibre edilmiş sentetik veri üreteci, onlarla ince ayar yapılmış CTC dizi tanıyıcısı, C++'ta yazılmış Türk plaka dilbilgisine kısıtlı ışın araması, kareler arası zamansal oylama, ve TensorRT'ye aktarılıp kiralık GPU'da ölçülmüş bir pipeline.</span>
 </p>
 
 <div class="flex flex-wrap items-center gap-space-sm">
@@ -99,34 +99,176 @@
 </a>
 <a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-on-surface hover:bg-surface-container-high transition-colors" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
 <span class="material-symbols-outlined text-[16px]">straighten</span>
-<span data-lang="en">MEASUREMENT NOTES</span><span data-lang="tr">ÖLÇÜM NOTLARI</span>
+<span data-lang="en">MEASUREMENT LOG — 25 SECTIONS</span><span data-lang="tr">ÖLÇÜM GÜNLÜĞÜ — 25 BÖLÜM</span>
 </a>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary">18 / 34</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">plates read, fully automatic</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">plaka okundu, tam otomatik</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-secondary">272</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">real plates labelled by hand</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">elle etiketlenmiş gerçek plaka</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim">8.93 ms</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">GPU-side per frame, T4</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">GPU tarafı, kare başına, T4</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim">24.7×</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">YOLO, TensorRT FP16</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">YOLO, TensorRT FP16</span>
+</div>
 </div>
 </header>
 
-<!-- ============================ HERO ============================ -->
-<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
-<div class="w-full h-10 px-space-md bg-surface-container-low/90 backdrop-blur-md flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-<span class="font-label-code-sm text-label-code-sm text-primary tracking-wider uppercase">GENERATOR CALIBRATION</span>
-<span class="font-label-code-sm text-label-code-sm text-outline">DIAGRAM, NOT A SCREENSHOT</span>
+<!-- ============================ THE RESULT ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Two numbers, and only one of them is the system</span>
+<span data-lang="tr">İki sayı var, sistemin sayısı bunlardan biri</span>
+</h2>
 </div>
-<div class="bg-[#0b0b0f] flex items-center justify-center">
-<img alt="Synthetic plates as the plan assumed them, and as the measurements say they should be" class="w-full h-auto" loading="lazy" src="/assets/img/card-plakatanima.jpg"/>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(105,246,185,0.25);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim uppercase tracking-widest">HELD-OUT TEST SET — 34 PLATES, 157 CROPS</span>
+<div class="font-label-code-md text-label-code-md">
+<div class="flex items-center justify-between gap-space-sm py-space-xs border-b border-white/5">
+<span class="text-outline uppercase tracking-wider">Corners marked by hand</span>
+<span class="text-on-surface-variant">22 / 34 &nbsp;<span class="text-outline">(64.7%)</span></span>
 </div>
-<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
-<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
-<span data-lang="en">The model has not been trained, so there is no accuracy figure to show and this page does not invent one. The diagram shows what the generator produced before and after the measurements.</span>
-<span data-lang="tr">Model eğitilmedi, bu yüzden gösterilecek bir doğruluk sayısı yok ve bu sayfa uydurmuyor. Diyagram, üretecin ölçümlerden önce ve sonra ne ürettiğini gösteriyor.</span>
+<div class="flex items-center justify-between gap-space-sm py-space-xs">
+<span class="text-on-surface uppercase tracking-wider font-medium">Corners found by a model</span>
+<span class="text-tertiary-fixed-dim font-semibold">18 / 34 &nbsp;<span class="text-outline">(52.9%)</span></span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The second row is the system's real number. The first shows what the recogniser can do on its own, but it assumes four corners a human marked; in deployment a model finds those corners and its error lands on top of everything else. The page leads with both because only one of them is what a camera would deliver.</span>
+<span data-lang="tr">İkinci satır sistemin gerçek sayısı. Birincisi tanıyıcının kendi başarısını gösteriyor ama insanın işaretlediği dört köşeyi varsayıyor; dağıtımda o köşeleri bir model buluyor ve hatası her şeyin üstüne biniyor. Sayfa ikisini birden veriyor çünkü bir kameranın üreteceği olan yalnızca biri.</span>
 </p>
+</div>
+
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-error uppercase tracking-widest">AND THE GAP IS NOT RESOLVED</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Even that four-plate difference is not something this sample can settle. Of the ten discordant plates, seven are losses and three are gains — McNemar gives p ≈ 0.34. A four-plate gap on 34 plates looks decisive and is not, so the log says so rather than banking the difference as a finding.</span>
+<span data-lang="tr">O dört plakalık fark bile bu örneklemin çözebileceği bir şey değil. Ayrık on plakanın yedisi kayıp, üçü kazanç — McNemar p ≈ 0,34 veriyor. 34 plakada dört plakalık fark kesin görünüyor ama değil; günlük de farkı bulgu diye kasaya koymak yerine bunu yazıyor.</span>
+</p>
+<div class="font-label-code-md text-label-code-md mt-auto pt-space-2xs">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Discordant plates</span><span class="text-on-surface">10</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Losses / gains</span><span class="text-on-surface">7 / 3</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">McNemar</span><span class="text-error">p ≈ 0.34</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================ THE JOURNEY ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">How it got there — including the step that cost four plates</span>
+<span data-lang="tr">Oraya nasıl gelindi — dört plakaya mal olan adım dâhil</span>
+</h2>
+</div>
+
+<div class="rounded-xl overflow-hidden reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<div class="overflow-x-auto">
+<table class="w-full min-w-[560px] text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/60 font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">
+<th class="p-space-md font-medium">Stage</th>
+<th class="p-space-md font-medium">Plates read</th>
+<th class="p-space-md font-medium">What it added</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium">Synthetic data only</td>
+<td class="p-space-md font-label-code-md text-error">4 / 34</td>
+<td class="p-space-md text-on-surface-variant">A generator alone does not cross the gap to real glass, rain and motion blur.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium">+ fine-tune on real plates</td>
+<td class="p-space-md font-label-code-md text-primary-fixed-dim">18 / 34</td>
+<td class="p-space-md text-on-surface-variant">The single largest jump, and the reason the labelling effort was worth it.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium">+ constrained decoder in C++</td>
+<td class="p-space-md font-label-code-md text-tertiary-fixed-dim">22 / 34</td>
+<td class="p-space-md text-on-surface-variant">Beam search over the Turkish plate grammar rules out strings a plate cannot be.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium">+ corners found by a model</td>
+<td class="p-space-md font-label-code-md text-error">18 / 34</td>
+<td class="p-space-md text-on-surface-variant">The honest configuration. Removing the human costs back everything the decoder won.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">The road was not straight. The first training run scored zero, the second stalled at 0.42, the generator turned out never to produce 54% of real plates, and at one point the pipeline invented plates with full confidence on crops that had nothing readable in them. All of it measured and fixed, none of it deleted.</span>
+<span data-lang="tr">Yol düz gelmedi. İlk eğitim sıfır verdi, ikincisi 0,42'de takıldı, üretecin gerçek plakaların %54'ünü hiç üretmediği ortaya çıktı, ve boru hattı bir ara okunacak hiçbir şey olmayan kırpmalarda tam güvenle plaka uydurdu. Hepsi ölçülüp düzeltildi, hiçbiri silinmedi.</span>
+</p>
+</section>
+
+<!-- ============================ SPEED ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Speed, and what it is not</span><span data-lang="tr">Hız, ve ne olmadığı</span>
+</h2>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-widest">MEASURED ON A RENTED T4</span>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<div class="rounded-xl overflow-hidden reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<table class="w-full text-left border-collapse">
+<tbody class="font-body-md text-body-md">
+<tr class="bg-surface-container-low/40"><td class="p-space-md text-outline uppercase tracking-wider font-label-code-sm text-label-code-sm">Local CPU, per frame</td><td class="p-space-md font-label-code-md text-on-surface">115.4 ms · 8.7 FPS</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-outline uppercase tracking-wider font-label-code-sm text-label-code-sm">GPU-side work on a T4</td><td class="p-space-md font-label-code-md text-tertiary-fixed-dim">8.93 ms</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-outline uppercase tracking-wider font-label-code-sm text-label-code-sm">TensorRT FP16 — YOLO</td><td class="p-space-md font-label-code-md text-primary">24.7×</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-outline uppercase tracking-wider font-label-code-sm text-label-code-sm">TensorRT FP16 — recogniser</td><td class="p-space-md font-label-code-md text-primary">5.4×</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-outline uppercase tracking-wider font-label-code-sm text-label-code-sm">FP16 fidelity</td><td class="p-space-md font-label-code-md text-tertiary-fixed-dim">157 / 157 identical</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-outline uppercase tracking-wider font-label-code-sm text-label-code-sm">Box drift under FP16</td><td class="p-space-md font-label-code-md text-on-surface-variant">0.022 px mean</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">It is not real-time at 60 fps, and says so</span>
+<span data-lang="tr">60 fps'te gerçek zamanlı değil, ve bunu yazıyor</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The footage is recorded at 60 fps and the system does not keep up with that. What saves it is the shape of the problem rather than the hardware: a vehicle stays in frame for seconds, and the temporal vote only needs a handful of frames to settle on a plate. Quoting the GPU number alone would have implied a real-time claim the measurement does not support.</span>
+<span data-lang="tr">Kayıt 60 fps ve sistem bu hıza yetişmiyor. Onu kurtaran donanım değil, problemin şekli: bir araç kadrajda saniyelerce kalıyor ve zamansal oylamanın bir plakaya karar vermesi için birkaç kare yetiyor. Yalnızca GPU sayısını vermek, ölçümün desteklemediği bir gerçek zamanlılık iddiası ima ederdi.</span>
+</p>
+<p class="font-body-sm text-body-sm text-outline leading-relaxed mt-auto">
+<span data-lang="en">FP16 was checked for accuracy, not just speed: all 157 crops decode to the same plates and YOLO's boxes move 0.022 px on average. A speedup that quietly changed an answer would not be a speedup.</span>
+<span data-lang="tr">FP16 yalnızca hız için değil doğruluk için de kontrol edildi: 157 kırpmanın tamamı aynı plakalara çözülüyor ve YOLO'nun kutuları ortalama 0,022 piksel oynuyor. Bir cevabı sessizce değiştiren hızlanma, hızlanma sayılmaz.</span>
+</p>
+</div>
 </div>
 </section>
 
 <!-- ============================ THE CORRECTIONS ============================ -->
 <section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
 <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
-<span data-lang="en">Three times the measurement beat the plan</span>
-<span data-lang="tr">Ölçümün planı üç kez yendiği yerler</span>
+<span data-lang="en">Where the measurement beat the expectation</span>
+<span data-lang="tr">Ölçümün beklentiyi yendiği yerler</span>
 </h2>
+</div>
 
 <div class="flex flex-col gap-space-lg">
 
@@ -134,17 +276,18 @@
 <div class="lg:col-span-1 font-display-hero text-[40px] leading-none text-outline-variant">01</div>
 <div class="lg:col-span-5">
 <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
-<span data-lang="en">The camera angle</span><span data-lang="tr">Kamera açısı</span>
+<span data-lang="en">The generator was calibrated, not guessed</span><span data-lang="tr">Üreteç tahmin edilmedi, kalibre edildi</span>
 </h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">The plan assumed ±35° of horizontal perspective. I labelled 690 real plates first and measured about 7° — the dashcam sits behind and above the car ahead, so the left-right angle stays small. Training on ±35° would have taught the model images it will never meet.</span>
-<span data-lang="tr">Plan ±35° yatay perspektif varsayıyordu. Önce 690 gerçek plaka etiketleyip yaklaşık 7° ölçtüm — dashcam öndeki aracın arkasında ve yukarısında duruyor, sağa-sola açı küçük kalıyor. ±35° ile eğitmek modele hiç karşılaşmayacağı görüntüleri öğretmek olurdu.</span>
+<span data-lang="en">272 real plates were labelled first, then the generator was tuned to them. The plan assumed ±35° of horizontal angle; the measurement said about 7°, because the dashcam sits behind and above the car ahead. Scale was sampled uniformly with a median of 167 px where the real median is 105, so real widths are bootstrapped now.</span>
+<span data-lang="tr">Önce 272 gerçek plaka etiketlendi, sonra üreteç onlara göre ayarlandı. Plan ±35° yatay açı varsayıyordu; ölçüm yaklaşık 7° dedi, çünkü dashcam öndeki aracın arkasında ve yukarısında duruyor. Ölçek ortancası 167 piksel olacak şekilde düzgün örnekleniyordu, gerçeğin ortancası 105; artık gerçek genişlikler bootstrap ediliyor.</span>
 </p>
 </div>
 <div class="lg:col-span-6 flex items-center">
 <div class="w-full p-space-md rounded-lg bg-surface-container-lowest font-label-code-md text-label-code-md" style="border: 1px solid rgba(255,255,255,0.06);">
-<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Assumed</span><span class="text-error">±35°</span></div>
-<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Measured over 690 plates</span><span class="text-tertiary-fixed-dim">~7°</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Horizontal yaw</span><span class="text-right"><span class="text-error">±35° assumed</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">~7° measured</span></span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Median plate width</span><span class="text-right"><span class="text-error">167 px</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">105 px</span></span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Coverage of real plates</span><span class="text-right text-on-surface">54% never generated, then fixed</span></div>
 </div>
 </div>
 </div>
@@ -153,18 +296,19 @@
 <div class="lg:col-span-1 font-display-hero text-[40px] leading-none text-outline-variant">02</div>
 <div class="lg:col-span-5">
 <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
-<span data-lang="en">The plate size</span><span data-lang="tr">Plaka boyutu</span>
+<span data-lang="en">A GPU table where all four rows were the CPU</span>
+<span data-lang="tr">Dört satırının dördü de CPU olan bir GPU tablosu</span>
 </h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">Scale was sampled uniformly between 55 and 280 pixels, median 167. The real median is 105. Synthetic plates were coming out systematically too large and too sharp, so real widths are bootstrapped now instead of guessed.</span>
-<span data-lang="tr">Ölçek 55 ile 280 piksel arasında düzgün örnekleniyordu, ortancası 167. Gerçeğin ortancası 105. Sentetik plakalar sistematik olarak fazla büyük ve fazla keskin çıkıyordu; artık tahmin yerine gerçek genişlikler bootstrap ediliyor.</span>
+<span data-lang="en">A benchmark reported a 1.02× TensorRT speedup, which looked reasonable — the models are small, so little gain is plausible. The script's own stderr was printing "falling back to CPU" while its table said "TensorRT FP16". A wrong number that matches expectation is more dangerous than one that looks wrong, so the benchmark now proves which provider actually ran before it prints anything.</span>
+<span data-lang="tr">Bir ölçüm 1,02x TensorRT hızlanması raporladı ve makul göründü — modeller küçük, az kazanç beklenir. Betiğin kendi stderr'i "CPU'ya düşülüyor" yazarken tablosu "TensorRT FP16" diyordu. Beklentiye uyan yanlış sayı, yanlış görünen yanlış sayıdan daha tehlikeli; ölçüm artık bir şey yazdırmadan önce hangi sağlayıcının gerçekten çalıştığını kanıtlıyor.</span>
 </p>
 </div>
 <div class="lg:col-span-6 flex items-center">
 <div class="w-full p-space-md rounded-lg bg-surface-container-lowest font-label-code-md text-label-code-md" style="border: 1px solid rgba(255,255,255,0.06);">
-<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Generated median width</span><span class="text-error">167 px</span></div>
-<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Real median width</span><span class="text-tertiary-fixed-dim">105 px</span></div>
-<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Sampling</span><span class="text-on-surface text-right">uniform → bootstrap from real</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Reported then</span><span class="text-error">1.02× "TensorRT FP16"</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Actually running</span><span class="text-error">CPU, all four rows</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">After the fix</span><span class="text-tertiary-fixed-dim">24.7× YOLO · 5.4× recogniser</span></div>
 </div>
 </div>
 </div>
@@ -173,27 +317,18 @@
 <div class="lg:col-span-1 font-display-hero text-[40px] leading-none text-outline-variant">03</div>
 <div class="lg:col-span-5">
 <h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">
-<span data-lang="en">A conclusion I withdrew</span><span data-lang="tr">Geri çektiğim bir sonuç</span>
+<span data-lang="en">Three negative results, kept</span><span data-lang="tr">Üç olumsuz sonuç, saklandı</span>
 </h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-<span data-lang="en">From 180 crops I concluded that sharpness does not predict readability at night. It does — from 1% to 62% across the full range. The first measurement sampled only the top of a sorted queue, where the curve is flat. The measurement was right; generalising from a truncated range was not.</span>
-<span data-lang="tr">180 kırpmadan "gecede keskinlik okunabilirliği öngörmüyor" sonucuna varmıştım. Öngörüyor — tüm aralıkta %1'den %62'ye. İlk ölçüm sıralı kuyruğun yalnızca üst ucundan geliyordu ve eğri orada düz. Ölçüm doğruydu; kesilmiş aralıktan genelleme yanlıştı.</span>
+<span data-lang="en">Multi-task learning on a shared trunk made both tasks worse. The C++ pipeline came out slower than Python — Python was never the bottleneck. TensorRT FP32 gained nothing on models this small. Each of these would have been just as believable in reverse, which is exactly why they are in the log instead of being quietly dropped.</span>
+<span data-lang="tr">Ortak gövdeli çok görevli öğrenme iki işi birden bozdu. C++ boru hattı Python'dan yavaş çıktı — darboğaz hiçbir zaman Python değilmiş. TensorRT FP32 bu küçüklükteki modellerde hiçbir şey kazandırmadı. Üçünün de tersi aynı derecede inandırıcı görünürdü; sessizce düşürülmek yerine günlükte durmalarının sebebi tam olarak bu.</span>
 </p>
 </div>
 <div class="lg:col-span-6 flex items-center">
 <div class="w-full p-space-md rounded-lg bg-surface-container-lowest font-label-code-md text-label-code-md" style="border: 1px solid rgba(255,255,255,0.06);">
-<div class="text-outline uppercase tracking-wider mb-space-sm text-label-code-sm">Readability across the sharpness range, night set</div>
-<div class="flex items-end gap-1 h-16">
-<div class="flex-1 bg-error-container/60 rounded-sm" style="height: 6%"></div>
-<div class="flex-1 bg-error-container/60 rounded-sm" style="height: 14%"></div>
-<div class="flex-1 bg-secondary-container/60 rounded-sm" style="height: 28%"></div>
-<div class="flex-1 bg-secondary-container/60 rounded-sm" style="height: 45%"></div>
-<div class="flex-1 bg-primary-container/60 rounded-sm" style="height: 62%"></div>
-<div class="flex-1 bg-primary-container/70 rounded-sm" style="height: 78%"></div>
-<div class="flex-1 bg-tertiary-container/70 rounded-sm" style="height: 92%"></div>
-<div class="flex-1 bg-tertiary-container/70 rounded-sm" style="height: 96%"></div>
-</div>
-<div class="flex items-center justify-between gap-space-sm mt-space-sm text-label-code-sm text-outline"><span>1%</span><span class="text-on-surface-variant text-center">first run sampled only the flat end</span><span>62%</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Multi-task, shared trunk</span><span class="text-error">worse at both</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">C++ pipeline vs Python</span><span class="text-error">slower</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">TensorRT FP32</span><span class="text-error">no gain at this size</span></div>
 </div>
 </div>
 </div>
@@ -201,7 +336,38 @@
 </div>
 </section>
 
-<!-- ============================ STATUS ============================ -->
+<!-- ============================ DATA ============================ -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-baseline gap-space-sm pb-space-sm" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Why the data is not in the repository</span>
+<span data-lang="tr">Veri neden repoda değil</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">A plate is personal data in Türkiye. A bare crop might pass as context-free, but the filename encodes the source video and the second, and the label file ties the text to it — the combination is plate plus place plus time. The trained weights are out for the same reason. What is published is the code and the synthetic pipeline, which runs on one command and needs nobody's data.</span>
+<span data-lang="tr">Plaka Türkiye'de kişisel veri. Çıplak bir kırpma bağlamsız sayılabilirdi ama dosya adı kaynak videoyu ve saniyeyi kodluyor, etiket dosyası da metni ona bağlıyor — birleşim plaka artı yer artı zaman ediyor. Eğitilmiş ağırlıklar da aynı sebeple dışarıda. Yayımlanan şey kod ve sentetik pipeline; tek komutla çalışıyor ve kimsenin verisine ihtiyaç duymuyor.</span>
+</p>
+</div>
+<div class="p-space-xl rounded-xl bg-surface-container-low/50 flex flex-col gap-space-md reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-secondary uppercase tracking-widest">WHAT LABELLING ACTUALLY YIELDED</span>
+<div class="font-label-code-md text-label-code-md">
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Vehicle crops reviewed</span><span class="text-on-surface">2,119</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">Had a readable plate</span><span class="text-tertiary-fixed-dim">38% — 811 crops / 272 plates</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs border-b border-white/5"><span class="text-outline uppercase tracking-wider">No plate visible</span><span class="text-outline">706</span></div>
+<div class="flex items-center justify-between gap-space-sm py-space-2xs"><span class="text-outline uppercase tracking-wider">Plate there but unreadable</span><span class="text-outline">602</span></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline leading-relaxed">
+<span data-lang="en">That 38% is the unwritten condition under every accuracy number in the log: it sets the pipeline-level yield before any model is involved.</span>
+<span data-lang="tr">Bu %38, günlükteki her doğruluk sayısının yazılmamış koşulu: hiçbir model işin içine girmeden önce pipeline düzeyindeki verimi belirliyor.</span>
+</p>
+</div>
+</div>
+</section>
+
+<!-- ============================ PHASES ============================ -->
 <section class="flex flex-col gap-space-lg">
 <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
 <span data-lang="en">Where it stands</span><span data-lang="tr">Şu anki durum</span>
@@ -218,17 +384,18 @@
 </thead>
 <tbody class="font-body-md text-body-md">
 <tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">0</td><td class="p-space-md text-on-surface-variant">Synthetic generator + real data collection</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
-<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">1</td><td class="p-space-md text-on-surface-variant">Detector with corner regression</td><td class="p-space-md text-outline">PENDING</td></tr>
-<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">2</td><td class="p-space-md text-on-surface-variant">CTC sequence recogniser</td><td class="p-space-md text-primary-fixed-dim font-medium">WRITTEN, NOT TRAINED</td></tr>
-<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">3</td><td class="p-space-md text-on-surface-variant">Constrained decoding, confidence calibration</td><td class="p-space-md text-outline">PENDING</td></tr>
-<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">4</td><td class="p-space-md text-on-surface-variant">TensorRT FP16 / INT8</td><td class="p-space-md text-outline">PENDING, CLOUD GPU</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">1</td><td class="p-space-md text-on-surface-variant">Corner regression + an acceptance gate</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">2</td><td class="p-space-md text-on-surface-variant">CTC recogniser + fine-tuning on real plates</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">3</td><td class="p-space-md text-on-surface-variant">Constrained decoding in C++ + confidence calibration</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">4</td><td class="p-space-md text-on-surface-variant">ONNX + TensorRT FP16, measured on a T4</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">5</td><td class="p-space-md text-on-surface-variant">Temporal voting, ByteTrack, C++ pipeline</td><td class="p-space-md text-tertiary-fixed-dim font-medium">DONE</td></tr>
 <tr style="border-top: 1px solid rgba(255,255,255,0.06);"><td class="p-space-md text-on-surface font-medium">6</td><td class="p-space-md text-on-surface-variant">Edge-device latency measurements</td><td class="p-space-md text-error font-medium">OUT OF SCOPE — NO HARDWARE</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
-<span data-lang="en">The plan wanted a Jetson Orin Nano, a global-shutter camera and IR lighting. I have none of them, so the edge phase is written down as out of scope instead of estimated, and the thesis sentence changed from "30 FPS on device" to "measured on cloud GPU; no device measurement was taken".</span>
+<span data-lang="en">The plan wanted a Jetson Orin Nano, a global-shutter camera and IR lighting. None of it exists here, so the edge phase is written down as out of scope instead of estimated, and the thesis sentence changed from "30 FPS on device" to "measured on cloud GPU; no device measurement was taken".</span>
 <span data-lang="tr">Plan Jetson Orin Nano, global shutter kamera ve IR aydınlatma istiyordu. Hiçbiri yok; bu yüzden uç cihaz fazı tahmin edilmek yerine kapsam dışı yazıldı ve tez cümlesi "uç cihazda 30 FPS"ten "bulut GPU'da ölçüldü, uç cihaz ölçümü yapılmadı"ya döndü.</span>
 </p>
 </section>
@@ -239,6 +406,18 @@
 <span data-lang="en">Read further</span><span data-lang="tr">Devamını oku</span>
 </h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+<span data-lang="en">Measurement log</span><span data-lang="tr">Ölçüm günlüğü</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">25 sections: every number, how it was measured, and the ones that turned out wrong.</span>
+<span data-lang="tr">25 bölüm: her sayı, nasıl ölçüldüğü, ve yanlış çıkanlar.</span>
+</span>
+</a>
 <a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/on-rapor.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
 <div class="flex items-center justify-between gap-space-sm">
 <span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
@@ -247,20 +426,8 @@
 <span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
 </div>
 <span class="font-body-md text-body-md text-on-surface-variant">
-<span data-lang="en">The plan set against the hardware I actually have, and what got dropped because of it.</span>
-<span data-lang="tr">Planın elimdeki donanımla yüzleşmesi ve bu yüzden neyin düştüğü.</span>
-</span>
-</a>
-<a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima/blob/main/docs/veri-olcumleri.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
-<div class="flex items-center justify-between gap-space-sm">
-<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-<span data-lang="en">Data measurements</span><span data-lang="tr">Veri ölçümleri</span>
-</span>
-<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
-</div>
-<span class="font-body-md text-body-md text-on-surface-variant">
-<span data-lang="en">Every calibration figure on this page, with how it was measured and where it stopped.</span>
-<span data-lang="tr">Bu sayfadaki her kalibrasyon sayısı; nasıl ölçüldüğü ve nerede durulduğuyla.</span>
+<span data-lang="en">The plan set against the hardware that actually exists, and what got dropped because of it.</span>
+<span data-lang="tr">Planın gerçekte var olan donanımla yüzleşmesi ve bu yüzden neyin düştüğü.</span>
 </span>
 </a>
 <a class="group p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col gap-space-2xs reveal" href="https://github.com/Byomer1021/plakatanima#readme" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
@@ -269,8 +436,8 @@
 <span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">arrow_outward</span>
 </div>
 <span class="font-body-md text-body-md text-on-surface-variant">
-<span data-lang="en">Phase table, measurement discipline and the reasoning behind the setup.</span>
-<span data-lang="tr">Faz tablosu, ölçüm disiplini ve kurulumun arkasındaki gerekçe.</span>
+<span data-lang="en">Results, the full command flow from labelling to TensorRT, and an English summary.</span>
+<span data-lang="tr">Sonuçlar, etiketlemeden TensorRT'ye tüm komut akışı, ve İngilizce özet.</span>
 </span>
 </a>
 </div>

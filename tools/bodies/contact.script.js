@@ -89,10 +89,10 @@
         '                           717 boxes labelled by hand over 787 frames',
         'smart-city-traffic-analysis  38,310,226 NYC taxi trips as a graph',
         '                           removing JFK splits the network into 16 parts',
-        'plakatanima                Turkish plate recognition, CTC + synthetic data',
-        '                           data phase done, model not trained yet',
+        'plakatanima                Turkish plate recognition, measured end to end',
+        '                           18 of 34 plates fully automatic; TensorRT FP16 24.7x',
         '',
-        'Full write-ups: /projects.html'
+        'Full write-ups: /projects/'
       ],
       tr: [
         'otonomarac                 tek kameradan sürüş algısı + kuşbakışı harita',
@@ -101,10 +101,10 @@
         '                           787 karede elle etiketlenmiş 717 kutu',
         'smart-city-traffic-analysis  38.310.226 NYC taksi yolculuğu, graph olarak',
         '                           JFK çıkınca ağ 16 parçaya bölünüyor',
-        'plakatanima                Türk plakası tanıma, CTC + sentetik veri',
-        '                           veri fazı bitti, model henüz eğitilmedi',
+        'plakatanima                Türk plakası tanıma, uçtan uca ölçüldü',
+        '                           18 / 34 plaka tam otomatik; TensorRT FP16 24.7x',
         '',
-        'Ayrıntılar: /projects.html'
+        'Ayrıntılar: /projects/'
       ]
     },
     private: {

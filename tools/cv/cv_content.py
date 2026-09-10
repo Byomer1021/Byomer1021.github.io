@@ -166,18 +166,22 @@ OPEN_SOURCE = [
     {
         "name": "plakatanima",
         "url": "https://github.com/Byomer1021/plakatanima",
-        "tagline": "Turkish licence plate recognition — in progress",
+        "tagline": "Turkish licence plate recognition, measured end to end",
         "bullets": [
-            "Synthetic data generator calibrated against 690 hand-labelled real plates: the "
-            "plan assumed ±35° of plate angle, measurement showed about 7°, so the generator "
-            "changed rather than the measurement.",
-            "CTC sequence recogniser written; training not yet run, and the project reports "
-            "that rather than an estimate.",
+            "Reads 18 of 34 plates correctly on a held-out test set fully automatically, "
+            "and 22 with the corners marked by hand — the page leads with both, because "
+            "only the first is what a camera would deliver. The four-plate gap is not "
+            "resolved by this sample (McNemar p ~ 0.34).",
+            "Synthetic generator calibrated against 272 hand-labelled real plates, a CTC "
+            "recogniser fine-tuned on them, and a constrained beam search over the Turkish "
+            "plate grammar written in C++.",
+            "Exported to ONNX and TensorRT FP16 on a rented T4: 24.7x on YOLO and 5.4x on "
+            "the recogniser, with all 157 crops decoding to identical plates.",
         ],
-        "stack": "Python · PyTorch · CTC · Synthetic data",
-        "short": "Turkish plate recognition: synthetic data generator calibrated against 690 "
-                 "hand-labelled plates, CTC recogniser written. Data phase complete, "
-                 "training not yet run.",
+        "stack": "Python · PyTorch · CTC · ONNX · TensorRT · C++",
+        "short": "Turkish plate recognition measured end to end: 18 of 34 plates read fully "
+                 "automatically, a generator calibrated against 272 labelled plates, a "
+                 "constrained decoder in C++, and TensorRT FP16 at 24.7x on a T4.",
     },
 ]
 

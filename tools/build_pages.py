@@ -58,7 +58,7 @@ PAGES = [
      "38.3 million New York taxi trips modelled as a graph to find the structural bottlenecks in the city's traffic."),
     ("plakatanima", "projects/plakatanima/index.html", "projects",
      "plakatanima — Ömer Can Atlı",
-     "Turkish licence plate recognition: a synthetic data generator calibrated against 690 hand-labelled plates, and a CTC recogniser."),
+     "Turkish licence plate recognition measured end to end: 18 of 34 plates read fully automatically, a constrained decoder in C++, and TensorRT FP16 on a T4."),
     ("shorties", "projects/shorties/index.html", "projects",
      "Shorties — Ömer Can Atlı",
      "An exam-preparation ecosystem of three separate apps on one shared architecture. YKS is live on the App Store and Google Play."),
@@ -192,8 +192,30 @@ SHELL = """<!DOCTYPE html>
 """
 
 
+def check_inline_scripts(path, text):
+    """A bare apostrophe inside a single-quoted JS string ends it early.
+
+    Turkish suffixes attach with one ("Play'de", "18'i"), so this has broken the
+    terminal three times. Flag it at build time rather than in the browser.
+    """
+    import re
+    problems = []
+    for block in re.findall(r"<script(?![^>]*'\ssrc=)[^>]*>(.*?)</script>", text, re.S):
+        for n, line in enumerate(block.split(NL), 1):
+            t = line.strip()
+            if len(t) > 2 and t.startswith(chr(39)) and t.rstrip(",").endswith(chr(39)):
+                inner = t.rstrip(",")[1:-1]
+                if chr(39) in inner.replace(chr(92) + chr(39), ""):
+                    problems.append((n, t[:70]))
+    for n, t in problems:
+        print(f"  !! {path}: line {n} has a stray apostrophe in a JS string: {t}",
+              file=sys.stderr)
+    return not problems
+
+
 def build():
     written = []
+    ok_scripts = True
     for name, out_path, active, title, desc in PAGES:
         body_file = BODIES / f"{name}.html"
         if not body_file.exists():
@@ -225,6 +247,8 @@ def build():
         dest = ROOT / out_path
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html, encoding="utf-8")
+        if not check_inline_scripts(out_path, html):
+            ok_scripts = False
         written.append(out_path)
         print(f"  wrote {out_path}")
 
@@ -235,6 +259,8 @@ def build():
         en, tr = s.count('data-lang="en"'), s.count('data-lang="tr"')
         flag = "" if en == tr else "   <-- MISMATCH"
         print(f"  {out_path:42s} en={en:3d} tr={tr:3d}{flag}")
+    if not ok_scripts:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
