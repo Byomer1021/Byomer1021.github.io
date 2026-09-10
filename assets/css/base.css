@@ -17,9 +17,18 @@ html[lang="tr"] [data-lang="en"] { display: none; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
+/* Motion follows the operating system, and a visitor can override it either way.
+   site.js resolves the two into data-motion on <html>; the media query stays as
+   the pre-JS default so a reduced-motion visitor never sees a flash of movement. */
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+  html:not([data-motion="on"]) .reveal { opacity: 1; transform: none; transition: none; }
+  html:not([data-motion="on"]) * {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+  }
+}
+html[data-motion="off"] .reveal { opacity: 1; transform: none; transition: none; }
+html[data-motion="off"] * {
+  animation-duration: .001ms !important; animation-iteration-count: 1 !important;
 }
 
 /* Printing: the CV page is the one people save as a PDF, so flatten the dark

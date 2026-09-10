@@ -10,8 +10,12 @@
   var canvas = document.getElementById('bg-canvas');
   if (!canvas || typeof THREE === 'undefined') return;
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+  // site.js has already resolved the OS setting and any explicit choice into
+  // data-motion, so read that rather than the media query — otherwise the
+  // visitor's opt-in would be ignored here.
+  function motionOff() {
+    return document.documentElement.getAttribute('data-motion') === 'off';
+  }
   var GROUND = 0x0e0e12;   // matches surface-container-lowest
   var CYAN = 0x00f5ff;
   var VIOLET = 0xd0bcff;
@@ -148,8 +152,9 @@
   var target = { x: 0, y: 0 };
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  if (fine && !reduced) {
+  if (fine) {
     window.addEventListener('mousemove', function (e) {
+      if (motionOff()) return;
       target.x = (e.clientX / window.innerWidth - 0.5) * 2;
       target.y = (e.clientY / window.innerHeight - 0.5) * 2;
     }, { passive: true });
@@ -165,7 +170,7 @@
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight, false);
-    if (reduced) renderer.render(scene, camera);
+    if (motionOff()) renderer.render(scene, camera);
   }, { passive: true });
 
   // ---- Loop -------------------------------------------------------------
@@ -207,7 +212,7 @@
   }
 
   function play() {
-    if (running || reduced) return;
+    if (running || motionOff()) return;
     running = true;
     frame = requestAnimationFrame(render);
   }
@@ -221,7 +226,19 @@
     if (document.hidden) pause(); else play();
   });
 
-  if (reduced) {
+  // Toggling the preference starts or stops the field without a reload.
+  window.addEventListener('oca:motion', function (e) {
+    if (e.detail === 'on') {
+      start = performance.now();
+      play();
+    } else {
+      pause();
+      camera.lookAt(0, 4, -40);
+      renderer.render(scene, camera);
+    }
+  });
+
+  if (motionOff()) {
     // Still give the page its depth, just frozen.
     camera.lookAt(0, 4, -40);
     renderer.render(scene, camera);
