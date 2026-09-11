@@ -1,0 +1,467 @@
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
+<!-- ============================ HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase w-fit" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-secondary tracking-tight">payflow</h1>
+<span class="font-label-code-sm text-label-code-sm text-secondary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(208,188,255,0.35);">RUNS IN YOUR BROWSER</span>
+</div>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">A small programming language for subscription billing, with its own lexer, parser, type checker and interpreter — all hand-written, no parser generator, no dependencies. Money carries its currency in the type, so adding dollars to euros is a compile error rather than a support ticket.</span>
+<span data-lang="tr">Abonelik faturalandırması için küçük bir programlama dili; kendi sözcük çözümleyicisi, ayrıştırıcısı, tip denetleyicisi ve yorumlayıcısıyla — hepsi elle yazıldı, ayrıştırıcı üreteci yok, bağımlılık yok. Para birimi tipin içinde taşındığı için dolara euro eklemek bir destek kaydı değil, derleme hatası.</span>
+</p>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-secondary text-on-secondary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-secondary-fixed transition-colors" href="https://github.com/Byomer1021/payflow" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.2);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-primary transition-colors" href="https://github.com/Byomer1021/payflow/blob/main/docs/language-spec.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span data-lang="en">LANGUAGE SPEC</span><span data-lang="tr">DİL SPESİFİKASYONU</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-primary transition-colors" href="#playground">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span data-lang="en">RUN IT BELOW</span><span data-lang="tr">AŞAĞIDA ÇALIŞTIR</span>
+</a>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-secondary">4</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">pipeline stages, hand-written</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">boru hattı aşaması, elle yazılmış</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary">50</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">unit tests, all passing</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">birim testi, hepsi geçiyor</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim">0</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">third-party dependencies</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">üçüncü parti bağımlılık</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim">8</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">precedence levels in the grammar</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">gramerde öncelik seviyesi</span>
+</div>
+</div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="bg-black flex items-center justify-center">
+<img alt="The split operator, and the two rounding rules it could have had" class="w-full h-auto" data-alt-en="The split operator, and the two rounding rules it could have had" data-alt-tr="split operatörü ve sahip olabileceği iki yuvarlama kuralı" loading="lazy" src="/assets/img/payflow-card.png"/>
+</div>
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
+<span data-lang="en">This figure is drawn by a script that first runs the program through the interpreter and refuses to render if the answer is no longer 8.91. A figure that cannot go stale is worth more than a screenshot.</span>
+<span data-lang="tr">Bu şekil, önce programı yorumlayıcıdan geçiren ve cevap artık 8.91 değilse çizmeyi reddeden bir script tarafından üretiliyor. Bayatlayamayan bir şekil, ekran görüntüsünden daha değerlidir.</span>
+</p>
+</div>
+</section>
+
+<!-- ============================ WHY A LANGUAGE ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Why a language and not a library</span>
+<span data-lang="tr">Neden kütüphane değil de dil</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">A library can offer a Money class and a rounding helper. What it cannot do is make the wrong program fail to compile. Three billing concepts are constructs of the language here, and each one moves a class of bug from run time to compile time.</span>
+<span data-lang="tr">Bir kütüphane Money sınıfı ve yuvarlama yardımcısı sunabilir. Yapamadığı şey, yanlış programın derlenmesini engellemektir. Burada üç faturalandırma kavramı dilin yapı taşı ve her biri bir hata sınıfını çalışma zamanından derleme zamanına taşıyor.</span>
+</p>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+
+<div class="flex flex-col gap-space-sm p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-secondary tracking-widest uppercase">01 // MONEY</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Currency lives in the type</span>
+<span data-lang="tr">Para birimi tipin içinde</span>
+</h3>
+<pre class="font-label-code-md text-label-code-md text-on-surface-variant bg-surface-container-lowest rounded-lg p-space-sm overflow-x-auto" style="border: 1px solid rgba(255,255,255,0.06);"><code>9.99 USD + 2.50 EUR
+<span class="text-error">Type error at line 2:
+cannot + money in
+different currencies
+(USD vs EUR)</span></code></pre>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">money is not a float with a label stapled on. Where the currencies are known statically the checker rejects the program, and there is no coercion between money and float in either direction.</span>
+<span data-lang="tr">money, üzerine etiket iliştirilmiş bir float değil. Para birimleri statik olarak bilindiğinde denetleyici programı reddediyor ve money ile float arasında hiçbir yönde dönüşüm yok.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-sm p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase">02 // PAYWALL</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Exhaustiveness is grammar</span>
+<span data-lang="tr">Bütünlük gramerin işi</span>
+</h3>
+<pre class="font-label-code-md text-label-code-md text-on-surface-variant bg-surface-container-lowest rounded-lg p-space-sm overflow-x-auto" style="border: 1px solid rgba(255,255,255,0.06);"><code>paywall Onboarding {
+  when region == "EU" { ... }
+<span class="text-error">}  &lt;- no default</span>
+
+<span class="text-error">Parse error at line 13:
+every `paywall` must end
+with a `default` clause</span></code></pre>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The default clause is written into the grammar rule itself, not checked afterwards. A paywall with an unhandled region does not parse, so it cannot reach a user with a blank screen.</span>
+<span data-lang="tr">default bloğu sonradan denetlenmiyor, doğrudan gramer kuralının içine yazılmış. Karşılanmayan bölgesi olan bir paywall ayrıştırılamıyor, dolayısıyla kullanıcıya boş ekranla ulaşamıyor.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-sm p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim tracking-widest uppercase">03 // SPLIT</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Deductions chain left to right</span>
+<span data-lang="tr">Kesintiler soldan sağa zincirlenir</span>
+</h3>
+<pre class="font-label-code-md text-label-code-md text-on-surface-variant bg-surface-container-lowest rounded-lg p-space-sm overflow-x-auto" style="border: 1px solid rgba(255,255,255,0.06);"><code>price <span class="text-secondary">split</span> storeFee <span class="text-secondary">split</span> vat
+
+<span class="text-outline">// binds looser than + and -</span>
+total + bonus <span class="text-secondary">split</span> fee
+<span class="text-outline">// == (total + bonus) split fee</span></code></pre>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The store takes its cut first, then VAT comes off the remainder. Placing split below addition means an auditor reading left to right gets the same answer the interpreter does.</span>
+<span data-lang="tr">Önce mağaza payını alır, sonra kalandan KDV düşer. split'i toplamanın altına koymak, soldan sağa okuyan bir denetçinin yorumlayıcıyla aynı cevaba varması demek.</span>
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ PLAYGROUND ============================ -->
+<section class="flex flex-col gap-space-lg" id="playground">
+<div class="flex flex-col gap-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Run it yourself</span>
+<span data-lang="tr">Kendin çalıştır</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">This is not a simulation of the language. The five Python modules from the repository are loaded into your browser and executed there, so the errors below are the ones the real type checker raises. The runtime is about 10 MB and downloads only when you press RUN.</span>
+<span data-lang="tr">Bu, dilin bir taklidi değil. Repodaki beş Python modülü tarayıcına yüklenip orada çalıştırılıyor, yani aşağıdaki hatalar gerçek tip denetleyicisinin ürettiği hatalar. Çalışma zamanı yaklaşık 10 MB ve yalnızca ÇALIŞTIR'a bastığında iniyor.</span>
+</p>
+</div>
+
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+
+<!-- controls -->
+<div class="flex flex-wrap items-center gap-space-sm p-space-md bg-surface-container-low/60" style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+<label class="flex items-center gap-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-wider uppercase" data-lang="en">EXAMPLE</span>
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-wider uppercase" data-lang="tr">ÖRNEK</span>
+<select class="font-label-code-sm text-label-code-sm bg-surface-container-lowest text-on-surface rounded px-space-xs py-space-2xs" id="pf-preset" style="border: 1px solid rgba(255,255,255,0.12);">
+<option value="regional">regional routing</option>
+<option value="basic">basic plan</option>
+<option value="rounding">rounding divergence</option>
+<option value="typeerr">type error — name equivalence</option>
+<option value="currency">type error — mixed currency</option>
+<option value="leak">runtime error — currency behind a parameter</option>
+</select>
+</label>
+
+<label class="flex items-center gap-space-xs">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-wider uppercase">REGION</span>
+<select class="font-label-code-sm text-label-code-sm bg-surface-container-lowest text-on-surface rounded px-space-xs py-space-2xs" id="pf-region" style="border: 1px solid rgba(255,255,255,0.12);">
+<option value="US">US</option>
+<option value="EU">EU</option>
+<option value="TR">TR</option>
+<option value="JP">JP</option>
+</select>
+</label>
+
+<button class="inline-flex items-center gap-space-xs px-space-lg py-space-2xs rounded-full bg-secondary text-on-secondary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-secondary-fixed transition-colors" id="pf-run" style="border: 1px solid rgba(255,255,255,0.2);" type="button">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span data-lang="en">RUN</span><span data-lang="tr">ÇALIŞTIR</span>
+</button>
+
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-wider uppercase" id="pf-status">—</span>
+</div>
+
+<!-- editor + output -->
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="flex flex-col" style="border-right: 1px solid rgba(255,255,255,0.08);">
+<div class="px-space-md py-space-2xs bg-surface-container-low/40 font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase" style="border-bottom: 1px solid rgba(255,255,255,0.06);">program.pf</div>
+<textarea aria-label="PayFlow source code" class="w-full h-[420px] bg-surface-container-lowest text-on-surface font-label-code-md text-label-code-md p-space-md resize-y focus:outline-none" id="pf-editor" spellcheck="false"></textarea>
+</div>
+
+<div class="flex flex-col">
+<div class="flex items-center gap-space-3xs px-space-xs py-space-3xs bg-surface-container-low/40" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+<button class="px-space-sm py-space-3xs rounded font-label-code-sm text-label-code-sm tracking-widest uppercase text-primary bg-surface-container-high transition-colors" data-pf-tab="output" type="button">OUTPUT</button>
+<button class="px-space-sm py-space-3xs rounded font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-pf-tab="ast" type="button">AST</button>
+<button class="px-space-sm py-space-3xs rounded font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-pf-tab="tokens" type="button">TOKENS</button>
+</div>
+<pre class="h-[420px] overflow-auto bg-surface-container-lowest font-label-code-md text-label-code-md p-space-md whitespace-pre-wrap" data-pf-panel="output" id="pf-output"><span class="text-outline">press RUN</span></pre>
+<pre class="h-[420px] overflow-auto bg-surface-container-lowest font-label-code-md text-label-code-md text-on-surface-variant p-space-md" data-pf-panel="ast" hidden id="pf-ast"></pre>
+<pre class="h-[420px] overflow-auto bg-surface-container-lowest font-label-code-md text-label-code-md text-on-surface-variant p-space-md" data-pf-panel="tokens" hidden id="pf-tokens"></pre>
+</div>
+</div>
+</div>
+
+<p class="font-body-sm text-body-sm text-outline max-w-3xl leading-relaxed">
+<span data-lang="en">The AST and TOKENS tabs show the same structures the CLI prints with --dump-ast. Ctrl+Enter runs without reaching for the button.</span>
+<span data-lang="tr">AST ve TOKENS sekmeleri, komut satırının --dump-ast ile bastığı yapıların aynısını gösteriyor. Ctrl+Enter, butona uzanmadan çalıştırır.</span>
+</p>
+</section>
+
+<!-- ============================ THE MEASUREMENT ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">The example that was proving nothing</span>
+<span data-lang="tr">Hiçbir şey kanıtlamayan örnek</span>
+</h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-start">
+<div class="flex flex-col gap-space-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">The specification says split rounds after every step, not once at the end. The repository shipped an example named after that rule, using a 30% platform cut and 18% VAT.</span>
+<span data-lang="tr">Spesifikasyon, split'in her adımdan sonra yuvarladığını söylüyor; sonda bir kez değil. Repoda bu kuralın adını taşıyan bir örnek vardı: %30 platform payı ve %18 KDV ile.</span>
+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Both rules return 5.73 USD on those numbers. The example demonstrated the rule it was named after only in the sense that it did not contradict it — its own comment admitted as much. I picked percentages where the rules disagree and added a second example, so the claim is now settled by running it rather than by trusting the comment.</span>
+<span data-lang="tr">O sayılarda iki kural da 5.73 USD veriyor. Örnek, adını taşıdığı kuralı ancak onunla çelişmediği ölçüde gösteriyordu — kendi yorum satırı da bunu kabul ediyordu. Kuralların ayrıştığı yüzdeleri seçip ikinci bir örnek ekledim; artık iddia, yoruma güvenerek değil çalıştırılarak karara bağlanıyor.</span>
+</p>
+<p class="font-body-md text-body-md text-outline leading-relaxed">
+<span data-lang="en">This is the same failure as a test that passes for the wrong reason. The number was right; the example simply could not tell the two candidates apart.</span>
+<span data-lang="tr">Bu, yanlış sebepten geçen bir testle aynı hata. Sayı doğruydu; örnek sadece iki adayı birbirinden ayırt edemiyordu.</span>
+</p>
+</div>
+
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.1);">
+<table class="w-full font-label-code-md text-label-code-md">
+<thead>
+<tr class="bg-surface-container-low/60 text-outline">
+<th class="text-left p-space-sm font-normal tracking-wider uppercase">input</th>
+<th class="text-right p-space-sm font-normal tracking-wider uppercase">per-step</th>
+<th class="text-right p-space-sm font-normal tracking-wider uppercase">at end</th>
+<th class="text-right p-space-sm font-normal tracking-wider uppercase">verdict</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-sm">9.99 split 30% split 18%</td>
+<td class="p-space-sm text-right">5.73</td>
+<td class="p-space-sm text-right">5.73</td>
+<td class="p-space-sm text-right text-error">tells nothing</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-sm text-on-surface">9.99 split 3% split 8%</td>
+<td class="p-space-sm text-right text-tertiary-fixed-dim">8.91</td>
+<td class="p-space-sm text-right">8.92</td>
+<td class="p-space-sm text-right text-tertiary-fixed-dim">decisive</td>
+</tr>
+</tbody>
+</table>
+<div class="p-space-md bg-surface-container-low/40" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<p class="font-body-sm text-body-sm text-outline leading-relaxed">
+<span data-lang="en">Load "rounding divergence" in the playground above to reproduce the second row.</span>
+<span data-lang="tr">İkinci satırı yeniden üretmek için yukarıdaki playground'da "rounding divergence" örneğini seç.</span>
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================ PIPELINE ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Four stages, four error messages</span>
+<span data-lang="tr">Dört aşama, dört hata mesajı</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">Each stage is its own module with its own exception type, and the driver turns any failure into one line naming the phase and the line number. Nothing is caught in a place that cannot say what went wrong.</span>
+<span data-lang="tr">Her aşama kendi istisna tipiyle ayrı bir modül; sürücü, herhangi bir başarısızlığı aşamayı ve satır numarasını söyleyen tek satıra çeviriyor. Hiçbir şey, neyin bozulduğunu söyleyemeyecek bir yerde yakalanmıyor.</span>
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-secondary tracking-widest uppercase">01 // LEXER</span>
+<span class="font-label-code-md text-label-code-md text-on-surface">lexer.py</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Source to tokens. Percent is one token; money and duration are assembled later, so the lexer never has to know the currency list.</span>
+<span data-lang="tr">Kaynaktan token'lara. Yüzde tek token; money ve duration sonradan birleştiriliyor, böylece lexer'ın para birimi listesini bilmesi gerekmiyor.</span>
+</p>
+<code class="font-label-code-sm text-label-code-sm text-error">Lex error at line 4:<br/>unexpected character '@'</code>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase">02 // PARSER</span>
+<span class="font-label-code-md text-label-code-md text-on-surface">parser.py</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Recursive descent. Left-associativity comes from loops, not from recursing before the operator is consumed — the usual way a hand-written parser turns out right-associative by accident.</span>
+<span data-lang="tr">Özyinelemeli iniş. Sol birleşimlilik döngülerden geliyor, operatör tüketilmeden özyinelemeden değil — elle yazılmış bir ayrıştırıcının kazara sağ birleşimli çıkmasının olağan yolu budur.</span>
+</p>
+<code class="font-label-code-sm text-label-code-sm text-error">Parse error at line 3:<br/>comparison operators do not chain</code>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-primary-fixed-dim tracking-widest uppercase">03 // TYPES</span>
+<span class="font-label-code-md text-label-code-md text-on-surface">type_checker.py</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Two passes, so a paywall can reference a plan declared further down. Records use name equivalence: identical fields are still different types.</span>
+<span data-lang="tr">İki geçiş, böylece bir paywall daha aşağıda tanımlanmış bir plana atıf yapabiliyor. Record'lar isim denkliği kullanıyor: aynı alanlar hâlâ farklı tipler.</span>
+</p>
+<code class="font-label-code-sm text-label-code-sm text-error">Type error at line 26:<br/>expects Plan, got RefundRule</code>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-secondary-fixed-dim tracking-widest uppercase">04 // INTERPRETER</span>
+<span class="font-label-code-md text-label-code-md text-on-surface">interpreter.py</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Tree-walking, with money held as Decimal in the currency's minor unit. No float ever touches a price, so no drift accumulates across a chain.</span>
+<span data-lang="tr">Ağaç yürüyen; para, para biriminin alt biriminde Decimal olarak tutuluyor. Hiçbir float fiyata dokunmuyor, dolayısıyla zincir boyunca kayma birikmiyor.</span>
+</p>
+<code class="font-label-code-sm text-label-code-sm text-error">Runtime error at line 7:<br/>division by zero</code>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ LIMITS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">What it cannot do</span>
+<span data-lang="tr">Yapamadıkları</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">SCOPED OUT</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Records can be passed, not built</span>
+<span data-lang="tr">Record'lar geçirilebiliyor, inşa edilemiyor</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">A record type can be declared, named in a parameter and read with field access, but there is no expression that constructs one. The type checker is complete on records; the language around them is not.</span>
+<span data-lang="tr">Bir record tipi tanımlanabiliyor, parametrede adlandırılabiliyor ve alan erişimiyle okunabiliyor; ama onu inşa eden bir ifade yok. Tip denetleyicisi record'lar için tam; etrafındaki dil değil.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">BY DESIGN</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">No assignment, so no loops</span>
+<span data-lang="tr">Atama yok, dolayısıyla döngü de yok</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Removing assignment makes every function pure and auditable in isolation, which is what a billing rule should be. The cost is real: there is no accumulator, so anything iterative has to be expressed by composition.</span>
+<span data-lang="tr">Atamayı kaldırmak her fonksiyonu saf ve tek başına denetlenebilir yapıyor; bir faturalandırma kuralının olması gereken de bu. Bedeli gerçek: biriktirici yok, dolayısıyla yinelemeli her şey bileşimle ifade edilmek zorunda.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">CAUGHT LATE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">The spec used syntax the parser lacked</span>
+<span data-lang="tr">Spesifikasyon, ayrıştırıcıda olmayan sözdizimini kullandı</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The design document used p.price as a worked example before field access existed in the grammar. Writing the type-checker tests surfaced it, because they were the first thing to approach the spec from a new angle.</span>
+<span data-lang="tr">Tasarım dokümanı, gramerde alan erişimi yokken p.price'ı çözümlü örnek olarak kullanıyordu. Bunu tip denetleyicisi testlerini yazmak ortaya çıkardı, çünkü spesifikasyona yeni bir açıdan yaklaşan ilk şey onlardı.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">LEAKS TO RUN TIME</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">The money annotation has no currency</span>
+<span data-lang="tr">money anotasyonu para birimi taşımıyor</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">A parameter is declared money, not money(USD), so the checker only rejects mixed currency where both sides are statically known. Pass a USD and a EUR into the same function and the failure arrives at run time instead — and its message starts with "internal:", because the interpreter considers this a case the checker was supposed to catch. Currency-parameterised types would close the gap; the playground's last two examples show both sides of it.</span>
+<span data-lang="tr">Bir parametre money(USD) değil money olarak tanımlanıyor, dolayısıyla denetleyici karışık para birimini yalnızca iki taraf da statik olarak biliniyorken reddediyor. Aynı fonksiyona bir USD ve bir EUR geçir, hata bu kez çalışma zamanında gelir — ve mesajı "internal:" ile başlar, çünkü yorumlayıcı bunu denetleyicinin yakalaması gereken bir durum sayıyor. Para birimiyle parametrelenmiş tipler bu boşluğu kapatırdı; playground'daki son iki örnek meselenin iki yüzünü de gösteriyor.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">NOT MEASURED</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">No performance claims</span>
+<span data-lang="tr">Performans iddiası yok</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Nothing here is benchmarked. A tree-walking interpreter on arbitrary-precision decimals is slow by construction, and the design accepts that openly — paywalls are evaluated about once per session. I have not measured it, so I do not quote a number.</span>
+<span data-lang="tr">Burada hiçbir şeyin kıyaslaması yapılmadı. Rastgele duyarlıklı ondalıklar üzerinde ağaç yürüyen bir yorumlayıcı yapısı gereği yavaştır ve tasarım bunu açıkça kabul ediyor — paywall'lar oturum başına yaklaşık bir kez değerlendiriliyor. Ölçmediğim için sayı da vermiyorum.</span>
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Read further</span>
+<span data-lang="tr">Devamını oku</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/payflow/blob/main/docs/language-spec.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-secondary">menu_book</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">language-spec.md</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">The full grammar in EBNF, big-step operational semantics for split and paywall, the precedence table, and a named trade-off for every design decision.</span>
+<span data-lang="tr">EBNF'te tam gramer, split ve paywall için büyük adım işlemsel semantik, öncelik tablosu ve her tasarım kararı için adı konmuş bir ödünleşim.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/payflow/tree/main/examples" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim">description</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">examples/</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Five programs that run and six that are meant to fail — one per error class, each with the exact message the pipeline produces.</span>
+<span data-lang="tr">Çalışan beş program ve başarısız olması amaçlanan altı tanesi — her hata sınıfından bir tane, her biri boru hattının ürettiği tam mesajla.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/payflow/tree/main/tests" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">science</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">tests/</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Fifty tests over the rules that distinguish this language from a generic toy: banker's rounding, short-circuiting, first-match paywalls, and left-to-right evaluation.</span>
+<span data-lang="tr">Bu dili genel bir oyuncaktan ayıran kurallar üzerine elli test: bankacı yuvarlaması, kısa devre değerlendirme, ilk eşleşen paywall ve soldan sağa değerlendirme.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+</div>
+</section>
+
+<!-- ============================ NEXT ============================ -->
+<section class="flex flex-col gap-space-md pt-space-lg" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">
+<span data-lang="en">NEXT PROJECT</span><span data-lang="tr">SONRAKİ PROJE</span>
+</span>
+<a class="group flex flex-wrap items-center justify-between gap-space-md" href="/projects/otonomarac/">
+<div class="flex flex-col gap-space-2xs">
+<span class="font-headline-md text-headline-md text-primary-container">otonomarac</span>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<span data-lang="en">One camera in, a live bird's-eye map of the road out.</span>
+<span data-lang="tr">Tek kamera girer, yolun canlı kuşbakışı haritası çıkar.</span>
+</span>
+</div>
+<span class="material-symbols-outlined text-[28px] text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</section>
+
+</div>

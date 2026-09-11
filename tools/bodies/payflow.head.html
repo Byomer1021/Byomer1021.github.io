@@ -1,0 +1,16 @@
+<script defer src="/assets/js/payflow-playground.js"></script>
+<style>
+/* The playground's form controls are the only native widgets on the site;
+   without color-scheme the dropdown list renders light-on-light. */
+#pf-preset, #pf-region, #pf-editor { color-scheme: dark; }
+#pf-editor { tab-size: 2; line-height: 1.65; }
+#pf-editor:focus { box-shadow: inset 0 0 0 1px rgba(208,188,255,0.5); }
+
+/* base.css hides scrollbars site-wide; these panes still need to scroll,
+   and on a fixed-height pane the visitor has to know there is more. */
+#pf-output, #pf-ast, #pf-tokens { scrollbar-width: thin; scrollbar-color: #3a494a transparent; }
+
+@media (max-width: 1023px) {
+  #pf-editor, #pf-output, #pf-ast, #pf-tokens { height: 320px; }
+}
+</style>

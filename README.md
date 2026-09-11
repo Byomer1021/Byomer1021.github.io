@@ -53,6 +53,36 @@ Tiles come from Esri's Dark Gray Canvas, which needs no API key. CARTO's dark
 basemap now watermarks every tile with "API KEY REQUIRED" and OpenStreetMap's
 own servers block generic clients, so neither is usable here.
 
+## The PayFlow playground
+
+`/projects/payflow/` runs a real programming language in the visitor's browser.
+`assets/payflow/` holds the five modules copied verbatim from
+[the payflow repo](https://github.com/Byomer1021/payflow), plus `_runner.py`,
+which is the only file written for this site. Pyodide loads them into a
+browser filesystem and the page calls `run_source()` across that boundary as
+JSON.
+
+The copy is deliberate. Fetching the modules from raw.githubusercontent.com
+would mean the playground silently changes whenever that repo does, including
+in ways that break it. Re-copy when the language changes:
+
+```bash
+cp ../payflow/src/{lexer,parser,ast_nodes,type_checker,interpreter}.py assets/payflow/
+```
+
+Pyodide is ~10 MB and is fetched only when the visitor presses RUN, so the page
+costs one script tag until then.
+
+The card figure is generated, not screenshotted:
+
+```bash
+python tools/make_payflow_card.py
+```
+
+It runs the program it depicts through the interpreter first and refuses to
+render if the answer is no longer 8.91 USD, so the figure cannot go stale
+without the build failing.
+
 ## The CV
 
 `tools/cv/cv_content.py` holds the CV once; `python tools/cv/build_cv.py`
