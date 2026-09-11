@@ -71,6 +71,48 @@ PAGES = [
 ]
 
 
+# The order a visitor walks the project pages in, matching the card grid on
+# /projects/. Each page's footer links to the next one and the last wraps to
+# the first, so the ring is closed by construction.
+#
+# This used to be hand-written into every body, which meant adding a project
+# required editing the one before it -- and payflow was added without that,
+# so nothing linked to it. Keep this list in the grid's order and the footers
+# follow.
+PROJECT_RING = [
+    ("otonomarac", "otonomarac"),
+    ("trafikisaret", "trafikisaret"),
+    ("smart-city", "smart-city"),
+    ("plakatanima", "plakatanima"),
+    ("payflow", "payflow"),
+    ("shorties", "Shorties"),
+    ("respos", "respos"),
+]
+
+NEXT_MARKER = "<!-- NEXT -->"
+
+NEXT_NAV = """<!-- ============================ NEXT ============================ -->
+<nav class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary hover:text-white transition-colors tracking-widest uppercase" href="/projects/{slug}/">
+<span data-lang="en">NEXT — {label}</span><span data-lang="tr">SONRAKİ — {label}</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</nav>"""
+
+
+def next_nav(name):
+    """The footer nav for project page `name`, pointing at the next in the ring."""
+    slugs = [s for s, _ in PROJECT_RING]
+    if name not in slugs:
+        return None
+    slug, label = PROJECT_RING[(slugs.index(name) + 1) % len(PROJECT_RING)]
+    return NEXT_NAV.format(slug=slug, label=label)
+
+
 def nav_links(active, mobile=False):
     out = []
     for slug, href, label in NAV:
@@ -240,10 +282,25 @@ def build():
                 + script_file.read_text(encoding="utf-8").rstrip()
                 + "\n</script>\n"
             )
+        body = body_file.read_text(encoding="utf-8").rstrip()
+
+        # Expand the project footer from PROJECT_RING.
+        ring_nav = next_nav(name)
+        if NEXT_MARKER in body:
+            if ring_nav is None:
+                print(f"  !! {name}: has {NEXT_MARKER} but is not in PROJECT_RING",
+                      file=sys.stderr)
+                ok_scripts = False
+            body = body.replace(NEXT_MARKER, ring_nav)
+        elif ring_nav is not None:
+            print(f"  !! {name}: in PROJECT_RING but its body has no {NEXT_MARKER}",
+                  file=sys.stderr)
+            ok_scripts = False
+
         html = SHELL.format(
             title=title, desc=desc, url=url, site=SITE,
             nav=nav_links(active), nav_mobile=nav_links(active, mobile=True),
-            body=body_file.read_text(encoding="utf-8").rstrip(),
+            body=body,
             page_script=page_script,
             head_extra=head_extra,
         )
