@@ -152,6 +152,8 @@ def render(short=False):
              f'letter-spacing:0;color:#666">— <a href="https://{C.CONTACT["github"]}">'
              f'{esc(C.CONTACT["github"])}</a></span></h2>')
     for o in C.OPEN_SOURCE:
+        if short and not o.get("short"):
+            continue          # entry is full-CV only; see cv_content.py
         p.append('<div class="entry">')
         name = esc(o["name"])
         if o.get("url"):
@@ -214,25 +216,52 @@ def to_pdf(chrome, html_path, pdf_path):
     ], check=True, capture_output=True)
 
 
+def page_count(pdf_path):
+    """Number of pages in a PDF, or None if pypdf is not installed."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        return None
+    return len(PdfReader(str(pdf_path)).pages)
+
+
 def main():
     BUILD.mkdir(parents=True, exist_ok=True)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    jobs = [("cv-full", False, "omer-can-atli-cv.pdf"),
-            ("cv-short", True, "omer-can-atli-cv-1page.pdf")]
+    # (name, short, output, pages it must have)
+    #
+    # The one-page CV exists because some applications ask for one page; if an
+    # entry pushes it onto a second, it silently stops being the thing it is
+    # named after. Check rather than assume.
+    jobs = [("cv-full", False, "omer-can-atli-cv.pdf", 2),
+            ("cv-short", True, "omer-can-atli-cv-1page.pdf", 1)]
 
     chrome = find_chrome()
     if not chrome:
         print("  no Chrome found; wrote HTML only", file=sys.stderr)
 
-    for name, short, pdf_name in jobs:
+    wrong = []
+    for name, short, pdf_name, want_pages in jobs:
         html_path = BUILD / f"{name}.html"
         html_path.write_text(render(short=short), encoding="utf-8")
         print(f"  {html_path.relative_to(ROOT)}")
         if chrome:
             pdf_path = OUT_DIR / pdf_name
             to_pdf(chrome, html_path, pdf_path)
-            print(f"  {pdf_path.relative_to(ROOT)}  ({pdf_path.stat().st_size // 1024} KB)")
+            got = page_count(pdf_path)
+            pages = "?" if got is None else str(got)
+            print(f"  {pdf_path.relative_to(ROOT)}  "
+                  f"({pdf_path.stat().st_size // 1024} KB, {pages} pages)")
+            if got is not None and got != want_pages:
+                wrong.append(f"{pdf_name}: {got} pages, expected {want_pages}")
+
+    if wrong:
+        print(file=sys.stderr)
+        for w in wrong:
+            print(f"  !! {w}", file=sys.stderr)
+        print("  shorten an entry, or drop one from the short CV.", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

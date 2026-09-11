@@ -24,7 +24,7 @@ SUMMARY = (
     "interest in backend systems and artificial intelligence. I build across the stack — "
     ".NET and Node.js backends, React Native and Flutter clients, and applied "
     "computer-vision and graph pipelines in Python. Creator and lead developer of two "
-    "shipped products, and four open-source projects published with the measurements "
+    "shipped products, and five open-source projects published with the measurements "
     "that say where each one breaks."
 )
 
@@ -182,6 +182,28 @@ OPEN_SOURCE = [
         "short": "Turkish plate recognition measured end to end: 18 of 34 plates read fully "
                  "automatically, a generator calibrated against 272 labelled plates, a "
                  "constrained decoder in C++, and TensorRT FP16 at 24.7x on a T4.",
+    },
+    {
+        "name": "payflow",
+        "url": "https://github.com/Byomer1021/payflow",
+        "tagline": "A domain-specific programming language for subscription billing",
+        "bullets": [
+            "Hand-written lexer, recursive-descent parser, type checker and tree-walking "
+            "interpreter in pure Python — no parser generator, no third-party dependencies, "
+            "50 unit tests.",
+            "Money carries its currency in the type, a domain-specific split operator rounds "
+            "per step with banker's rounding, and paywall exhaustiveness is enforced by the "
+            "grammar rather than checked afterwards.",
+            "Runs live in the browser: the same five modules loaded into Pyodide, so a "
+            "visitor sees the errors the real type checker raises rather than an imitation.",
+        ],
+        "stack": "Python · Recursive descent · Type systems · Pyodide",
+        "demo": "https://omercanatli.com/projects/payflow/",
+        # No `short`, so this entry is left off the one-page CV. A fifth
+        # open-source entry pushes the volunteer section onto a second page,
+        # and a one-page CV that is two pages is not one of the two things
+        # this file is for. Give it a `short` if something else comes off.
+        "short": None,
     },
 ]
 
