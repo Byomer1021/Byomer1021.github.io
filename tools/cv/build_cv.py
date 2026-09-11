@@ -134,6 +134,8 @@ def render(short=False):
 
     p.append("<h2>Products</h2>")
     for pr in C.PRODUCTS:
+        if not pr.get("in_pdf", True):
+            continue          # website only; see cv_content.py
         p.append('<div class="entry">')
         link = ""
         if pr["link"]:

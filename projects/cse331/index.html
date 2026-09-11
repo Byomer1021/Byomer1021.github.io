@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>cse331-computer-organization — Ömer Can Atlı</title>
+<meta name="description" content="A MIPS text analyzer in assembly, a gate-level datapath, a single-cycle MIPS32 CPU that runs the assembly program, and a sequential multiplier."/>
+<link href="https://omercanatli.com/projects/cse331/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="https://omercanatli.com/projects/cse331/" property="og:url"/>
+<meta content="cse331-computer-organization — Ömer Can Atlı" property="og:title"/>
+<meta content="A MIPS text analyzer in assembly, a gate-level datapath, a single-cycle MIPS32 CPU that runs the assembly program, and a sequential multiplier." property="og:description"/>
+<meta content="https://omercanatli.com/assets/img/og-card.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Ömer Can Atlı" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="cse331-computer-organization — Ömer Can Atlı" name="twitter:title"/>
+<meta content="A MIPS text analyzer in assembly, a gate-level datapath, a single-cycle MIPS32 CPU that runs the assembly program, and a sequential multiplier." name="twitter:description"/>
+<meta content="https://omercanatli.com/assets/img/og-card.jpg" name="twitter:image"/>
+<meta content="#0e0e12" name="theme-color"/>
+<link href="/assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon.ico" rel="alternate icon" sizes="16x16 32x32 48x48"/>
+<link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="/assets/css/base.css" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/assets/js/tw-config.js"></script>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
+<canvas aria-hidden="true" id="bg-canvas"></canvas>
+
+<header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-16 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md">
+<a class="flex items-center gap-space-xs group shrink-0" href="/">
+<span class="w-2 h-2 rounded-full bg-primary-container group-hover:scale-125 transition-transform shadow-[0_0_8px_#00f5ff]"></span>
+<span class="font-label-code-md text-label-code-md tracking-wider text-primary font-bold uppercase">OCA.DEV</span>
+<span class="font-label-code-sm text-label-code-sm text-outline hidden sm:inline-block tracking-widest uppercase">// SOFTWARE &amp; AI</span>
+</a>
+<nav class="hidden xl:flex items-center gap-space-xs p-space-3xs bg-surface-container-low/70 rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="index" href="/">01 // ABOUT</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="projects" href="/projects/">02 // PROJECTS</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="method" href="/method/">03 // METHOD</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="cv" href="/cv/">04 // CV</a>
+<a class="px-space-sm py-space-2xs rounded-full font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-nav="contact" href="/contact/">05 // TERMINAL</a>
+</nav>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-3xs p-space-3xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<button class="px-space-xs py-space-3xs rounded-full font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-lang-btn="en" type="button">EN</button>
+<button class="px-space-xs py-space-3xs rounded-full font-label-code-sm text-label-code-sm tracking-widest uppercase text-outline transition-colors" data-lang-btn="tr" type="button">TR</button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed-dim"></span></span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">GTU • CLASS OF 2027</span>
+</div>
+<button aria-expanded="false" aria-label="Menu" class="xl:hidden w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center" id="nav-toggle" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">menu</span>
+</button>
+</div>
+</div>
+<div class="xl:hidden bg-surface-container-lowest/95 backdrop-blur-xl px-gutter-mobile pb-space-md flex flex-col gap-space-2xs" hidden id="nav-drawer" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="index" href="/">01 // ABOUT</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="projects" href="/projects/">02 // PROJECTS</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="method" href="/method/">03 // METHOD</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="cv" href="/cv/">04 // CV</a>
+<a class="px-space-sm py-space-xs rounded font-label-code-sm text-label-code-sm tracking-wider text-on-surface-variant hover:bg-surface-container-high" data-nav="contact" href="/contact/">05 // TERMINAL</a>
+</div>
+</header>
+
+<main class="w-full pt-16 bg-surface-container-lowest flex-1">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
+<!-- ============================ HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase w-fit" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-tertiary-fixed-dim tracking-tight">cse331-computer-organization</h1>
+<span class="font-label-code-sm text-label-code-sm text-tertiary-fixed-dim tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(105,246,185,0.35);">370 CHECKS</span>
+</div>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">A MIPS program written in assembly, and the processor built from gates to run it. Four Computer Organization assignments: a text analyzer, a gate-level datapath, a full single-cycle MIPS32 CPU, and a sequential multiplier — every one of them with a self-checking testbench that actually runs.</span>
+<span data-lang="tr">Assembly ile yazılmış bir MIPS programı ve onu çalıştırmak için kapılardan kurulmuş işlemci. Dört Bilgisayar Organizasyonu ödevi: metin analizcisi, kapı seviyesi datapath, tam tek çevrimli MIPS32 işlemcisi ve sıralı çarpan — her birinin gerçekten çalışan, kendi kendini denetleyen testbench'i var.</span>
+</p>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-tertiary-container text-on-tertiary-container font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-tertiary-fixed transition-colors" href="https://github.com/Byomer1021/cse331-computer-organization" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.2);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-primary transition-colors" href="https://github.com/Byomer1021/cse331-computer-organization/blob/main/assignment3-single-cycle-cpu/README.md" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+<span data-lang="en">CPU README</span><span data-lang="tr">İŞLEMCİ README</span>
+</a>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim">370</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">self-checking assertions</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">kendi kendini denetleyen kontrol</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary">36</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">MIPS instructions implemented</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">uygulanmış MIPS komutu</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-secondary">32</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">full adders in one 32-bit add</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">tam toplayıcı, tek 32-bit toplamada</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim">3</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">tools written to test the work</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">işi test etmek için yazılan araç</span>
+</div>
+</div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="bg-black flex items-center justify-center">
+<img alt="The assignment 1 assembly on the left, its output from the assignment 3 processor on the right" class="w-full h-auto" data-alt-en="The assignment 1 assembly on the left, its output from the assignment 3 processor on the right" data-alt-tr="Solda Ödev 1 assembly kodu, sağda aynı algoritmanın Ödev 3 işlemcisinden çıkan sonucu" loading="lazy" src="/assets/img/cse331-card.png"/>
+</div>
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
+<span data-lang="en">Left: the counting routine from the assembly program. Right: the same algorithm's answers coming out of the processor, checked by a testbench. The two were written eight weeks apart for different assignments, and they agree.</span>
+<span data-lang="tr">Solda: assembly programındaki sayma rutini. Sağda: aynı algoritmanın işlemciden çıkan cevapları, testbench tarafından doğrulanmış. İkisi farklı ödevler için sekiz hafta arayla yazıldı ve birbirini tutuyor.</span>
+</p>
+</div>
+</section>
+
+<!-- ============================ THE FOUR ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Four assignments, and how they actually relate</span>
+<span data-lang="tr">Dört ödev ve aralarındaki gerçek ilişki</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">They are not one codebase that grows. Assignments 2 and 3 build the same kind of machine at deliberately different levels, and their briefs are explicit about it — so the second does not reuse the first's code, because doing that would write it against its own brief.</span>
+<span data-lang="tr">Bunlar büyüyen tek bir kod tabanı değil. Ödev 2 ve 3 aynı tür makineyi kasıtlı olarak farklı seviyelerde kuruyor ve brief'ler bunu açıkça söylüyor — bu yüzden ikincisi birincisinin kodunu kullanmıyor, kullanmak onu kendi brief'ine aykırı yazmak olurdu.</span>
+</p>
+
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="overflow-x-auto">
+<table class="w-full font-body-md text-body-md min-w-[640px]">
+<thead>
+<tr class="bg-surface-container-low/60 text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<th class="text-left p-space-md font-normal"></th>
+<th class="text-left p-space-md font-normal">Assignment 2</th>
+<th class="text-left p-space-md font-normal">Assignment 3</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<span data-lang="en">scope</span><span data-lang="tr">kapsam</span>
+</td>
+<td class="p-space-md">
+<span data-lang="en">Datapath only — no PC, no memory; the instruction is an input</span>
+<span data-lang="tr">Sadece datapath — PC yok, bellek yok; komut bir girdi</span>
+</td>
+<td class="p-space-md">
+<span data-lang="en">Whole processor — fetch, memory, branches, jumps</span>
+<span data-lang="tr">Tam işlemci — getirme, bellek, dallanma, atlama</span>
+</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<span data-lang="en">instructions</span><span data-lang="tr">komutlar</span>
+</td>
+<td class="p-space-md">
+<span data-lang="en">11, all ALU</span><span data-lang="tr">11 tane, hepsi ALU</span>
+</td>
+<td class="p-space-md">
+<span data-lang="en">36, including shifts, six branches and jal/jalr</span>
+<span data-lang="tr">36 tane; kaydırmalar, altı dallanma ve jal/jalr dahil</span>
+</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<span data-lang="en">style</span><span data-lang="tr">stil</span>
+</td>
+<td class="p-space-md text-on-surface">
+<span data-lang="en"><code class="text-error">assign</code> forbidden. A 32-bit adder is 32 full adders chained by their carries.</span>
+<span data-lang="tr"><code class="text-error">assign</code> yasak. 32-bit toplayıcı, taşımalarıyla zincirlenmiş 32 tam toplayıcı.</span>
+</td>
+<td class="p-space-md text-on-surface">
+<span data-lang="en"><code class="text-tertiary-fixed-dim">assign</code> preferred. The same adder is one line.</span>
+<span data-lang="tr"><code class="text-tertiary-fixed-dim">assign</code> tercih ediliyor. Aynı toplayıcı tek satır.</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- ============================ THE LINK ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">The program and the machine that runs it</span>
+<span data-lang="tr">Program ve onu çalıştıran makine</span>
+</h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-start">
+<div class="flex flex-col gap-space-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Assignment 1 is a MIPS program. Assignment 3 is a MIPS processor. So the processor runs the program — which is the one link across these four that is worth building rather than asserting.</span>
+<span data-lang="tr">Ödev 1 bir MIPS programı. Ödev 3 bir MIPS işlemcisi. O hâlde işlemci programı çalıştırsın — bu dördü arasında iddia etmek yerine gerçekten kurulmaya değer tek bağ bu.</span>
+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Not the same source. The assembly version walks a byte string with <code>lb</code> and talks to the user with <code>syscall</code>, and this CPU implements neither. The algorithm is identical; the string is stored one character per word and the counts are left in memory for the testbench to read.</span>
+<span data-lang="tr">Aynı kaynak değil. Assembly sürümü bir bayt dizisini <code>lb</code> ile geziyor ve kullanıcıyla <code>syscall</code> ile konuşuyor; bu işlemci ikisini de uygulamıyor. Algoritma birebir aynı; dizgi karakter başına bir word olarak saklanıyor ve sayımlar testbench'in okuması için bellekte bırakılıyor.</span>
+</p>
+<p class="font-body-md text-body-md text-outline leading-relaxed">
+<span data-lang="en">Every expected count in that testbench was produced by running the MARS version on the same string, not by counting by hand. On one row the two implementations agreed and the number I had written in the testbench was the thing that was wrong.</span>
+<span data-lang="tr">O testbench'teki her beklenen sayı, MARS sürümünü aynı dizgiyle çalıştırarak üretildi; elle sayılarak değil. Bir satırda iki uygulama hemfikirdi ve testbench'e elimle yazdığım sayı yanlış olandı.</span>
+</p>
+</div>
+
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="px-space-md py-space-2xs bg-surface-container-low/40 font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase" style="border-bottom: 1px solid rgba(255,255,255,0.06);">tb_textanalyze.v</div>
+<pre class="p-space-md overflow-x-auto font-label-code-md text-label-code-md text-on-surface-variant"><code>=== the assignment 1 algorithm,
+    on the assignment 3 CPU ===
+
+  "Hello World 123"
+        characters   <span class="text-tertiary-fixed-dim">15</span>
+        vowels        <span class="text-tertiary-fixed-dim">3</span>
+        consonants    <span class="text-tertiary-fixed-dim">7</span>
+        digits        <span class="text-tertiary-fixed-dim">3</span>
+        spaces        <span class="text-tertiary-fixed-dim">2</span>
+
+  "MIPS Assembly 2025"
+        characters   <span class="text-tertiary-fixed-dim">18</span>
+        vowels        <span class="text-tertiary-fixed-dim">3</span>
+        consonants    <span class="text-tertiary-fixed-dim">9</span>
+        digits        <span class="text-tertiary-fixed-dim">4</span>
+        spaces        <span class="text-tertiary-fixed-dim">2</span>
+
+  <span class="text-tertiary-fixed-dim">30 passed, 0 failed
+  RESULT: PASS</span></code></pre>
+</div>
+</div>
+</section>
+
+<!-- ============================ THE BUG ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">The bug that looked like correct code</span>
+<span data-lang="tr">Doğru koda benzeyen hata</span>
+</h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-start">
+<div class="flex flex-col gap-space-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Two tests failed on the first run of the CPU: <code>sra</code> and <code>srav</code> returned <code>0x08000000</code> where <code>0xF8000000</code> was expected. An arithmetic right shift behaving as a logical one — the sign bit was not being copied in.</span>
+<span data-lang="tr">İşlemcinin ilk çalıştırmasında iki test patladı: <code>sra</code> ve <code>srav</code>, <code>0xF8000000</code> beklenen yerde <code>0x08000000</code> döndürdü. Aritmetik sağa kaydırma mantıksal gibi davranıyordu — işaret biti içeri kopyalanmıyordu.</span>
+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">The shifter did use <code>$signed(a) &gt;&gt;&gt; shamt</code>, which is the advice everyone gives. It was still wrong. Signedness in Verilog is a property of the whole expression, not of one branch: the other arms of that conditional are unsigned, so the result type is unsigned and the <code>$signed()</code> is coerced straight back.</span>
+<span data-lang="tr">Kaydırıcıda zaten herkesin önerdiği <code>$signed(a) &gt;&gt;&gt; shamt</code> yazıyordu. Yine de yanlıştı. Verilog'da işaretlilik tek bir dalın değil, ifadenin bütününün özelliği: o koşullu ifadenin diğer kolları işaretsiz olduğu için sonuç tipi işaretsiz oluyor ve <code>$signed()</code> anında geri dönüştürülüyor.</span>
+</p>
+<p class="font-body-md text-body-md text-outline leading-relaxed">
+<span data-lang="en">Moving the arithmetic shift into its own continuous assignment gives it a self-contained signed context. Two lines changed; nothing else in the design did.</span>
+<span data-lang="tr">Aritmetik kaydırmayı kendi sürekli atamasına taşımak ona kendi içinde kapalı bir işaretli bağlam veriyor. İki satır değişti; tasarımda başka hiçbir şey değişmedi.</span>
+</p>
+</div>
+
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest" style="border: 1px solid rgba(255,255,255,0.1);">
+<pre class="p-space-md overflow-x-auto font-label-code-md text-label-code-md text-on-surface-variant"><code><span class="text-error">// wrong: the unsigned arms make the
+// whole expression unsigned</span>
+assign y = (mode == 2'b00) ? (a &lt;&lt; shamt)
+         : (mode == 2'b01) ? (a &gt;&gt; shamt)
+         : (mode == 2'b10) ? <span class="text-error">($signed(a) &gt;&gt;&gt; shamt)</span>
+         : a;
+
+<span class="text-tertiary-fixed-dim">// right: its own assignment, its own
+// signed context</span>
+<span class="text-secondary">wire signed</span> [31:0] a_signed = a;
+<span class="text-secondary">wire</span>        [31:0] sra_y    = a_signed &gt;&gt;&gt; shamt;
+
+assign y = (mode == 2'b00) ? (a &lt;&lt; shamt)
+         : (mode == 2'b01) ? (a &gt;&gt; shamt)
+         : (mode == 2'b10) ? <span class="text-tertiary-fixed-dim">sra_y</span>
+         : a;</code></pre>
+</div>
+</div>
+</section>
+
+<!-- ============================ BRIEFS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Two briefs that cannot be implemented as written</span>
+<span data-lang="tr">Yazıldığı gibi uygulanamayan iki brief</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">ASSIGNMENT 2</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">A field that is not there</span>
+<span data-lang="tr">Var olmayan bir alan</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The ALU-control table gives <code>ALUOp=11</code> to <code>ANDI</code>, <code>ORI</code> and <code>XORI</code> together and says to tell them apart from <code>funct</code>. There is no <code>funct</code> in an I-type instruction — those six bits are the bottom of the immediate, so <code>andi $1,$2,0xFF</code> and <code>ori $1,$2,0xFF</code> are identical there.</span>
+<span data-lang="tr">ALU kontrol tablosu <code>ANDI</code>, <code>ORI</code> ve <code>XORI</code>'ye birlikte <code>ALUOp=11</code> veriyor ve bunları <code>funct</code>'tan ayırmayı söylüyor. I-type bir komutta <code>funct</code> diye bir şey yok — o altı bit immediate'in alt ucu, dolayısıyla <code>andi $1,$2,0xFF</code> ile <code>ori $1,$2,0xFF</code> orada birebir aynı.</span>
+</p>
+<p class="font-body-md text-body-md text-outline leading-relaxed">
+<span data-lang="en">The ALU control takes the opcode as a third input instead, which keeps the brief's ALUOp table intact. The alternative was a wider ALUOp, which changes the control unit too.</span>
+<span data-lang="tr">Bunun yerine ALU kontrolü opcode'u üçüncü girdi olarak alıyor; böylece brief'in ALUOp tablosu olduğu gibi kalıyor. Alternatif, kontrol birimini de değiştiren daha geniş bir ALUOp'tu.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">ASSIGNMENT 1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">500 characters in 200 bytes</span>
+<span data-lang="tr">200 bayta 500 karakter</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The brief asks for a line "up to 500 characters" and a buffer declared <code>.space 200</code>. Both are requirements, and they do not fit together.</span>
+<span data-lang="tr">Brief hem "500 karaktere kadar" bir satır hem de <code>.space 200</code> ile tanımlanmış bir tampon istiyor. İkisi de şart ve birbirine sığmıyor.</span>
+</p>
+<p class="font-body-md text-body-md text-outline leading-relaxed">
+<span data-lang="en">The buffer is 501 bytes. A buffer that cannot hold the input it is specified to read is a defect rather than a style choice, so the functional requirement wins — written down at the point of the decision rather than left for a reader to notice.</span>
+<span data-lang="tr">Tampon 501 bayt. Okuması şart koşulan girdiyi tutamayan bir tampon, stil tercihi değil kusurdur; bu yüzden işlevsel gereksinim kazanıyor — kararın verildiği yere yazıldı, okuyanın fark etmesine bırakılmadı.</span>
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ LIMITS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">What is not claimed here</span>
+<span data-lang="tr">Burada iddia edilmeyenler</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">NOT MEASURED</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">No synthesis, no timing</span>
+<span data-lang="tr">Sentez yok, zamanlama yok</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Quartus is the synthesis target the briefs name, and the designs are written to be synthesisable — but nothing here was put through it, so there are no area or frequency numbers, because none were measured.</span>
+<span data-lang="tr">Brief'lerin adını verdiği sentez hedefi Quartus ve tasarımlar sentezlenebilir olacak şekilde yazıldı — ama buradaki hiçbir şey oradan geçmedi; dolayısıyla alan ya da frekans sayısı yok, çünkü ölçülmedi.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">A REAL COMPROMISE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">The memory an FPGA would not give</span>
+<span data-lang="tr">FPGA'nın vermeyeceği bellek</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The data memory reads asynchronously, which is what single-cycle execution needs and what a block RAM does not do. On real hardware this forces either a second cycle or a registered path. It is documented in the source rather than discovered later.</span>
+<span data-lang="tr">Veri belleği asenkron okuyor; tek çevrimli yürütmenin ihtiyacı bu, blok RAM'in yapmadığı da bu. Gerçek donanımda bu ya ikinci bir çevrim ya da kaydedilmiş bir yol gerektirir. Sonradan keşfedilmek yerine kaynağa yazıldı.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">DELIBERATELY ABSENT</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">No delay slot, no overflow trap</span>
+<span data-lang="tr">Gecikme yuvası yok, taşma tuzağı yok</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">A taken branch redirects the next fetch immediately, where real MIPS executes the following instruction first. And <code>add</code> wraps instead of trapping, because there is no exception mechanism to trap into. Both are deviations from MIPS32, and both are written down.</span>
+<span data-lang="tr">Alınan bir dallanma sonraki getirmeyi hemen yönlendiriyor; gerçek MIPS ise önce bir sonraki komutu çalıştırır. Ve <code>add</code> tuzağa düşmek yerine taşıyor, çünkü düşecek bir istisna mekanizması yok. İkisi de MIPS32'den sapma ve ikisi de yazılı.</span>
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Read further</span>
+<span data-lang="tr">Devamını oku</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/cse331-computer-organization/blob/main/assignment3-single-cycle-cpu/rtl/mips_cpu.v" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim">memory</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">mips_cpu.v</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">The processor top level: fetch, decode, execute, memory, write-back and next-PC selection, with every documented choice at the head of the file.</span>
+<span data-lang="tr">İşlemcinin en üst seviyesi: getirme, çözme, yürütme, bellek, geri yazma ve sonraki PC seçimi; her belgelenmiş karar dosyanın başında.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/cse331-computer-organization/blob/main/assignment3-single-cycle-cpu/tools/assemble.py" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">build</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">assemble.py</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">A MIPS assembler for exactly the instruction set the CPU implements. Hand-written hex was the alternative, and a mistyped nibble there looks exactly like a CPU bug.</span>
+<span data-lang="tr">Tam olarak işlemcinin uyguladığı komut kümesi için bir MIPS assembler'ı. Alternatifi elle yazılmış hex'ti ve oradaki yanlış bir nibble, işlemci hatasına birebir benziyor.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/cse331-computer-organization/blob/main/assignment2-datapath/slt32.v" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-secondary">memory_alt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">slt32.v</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Signed set-less-than from gates. Subtracting and testing the sign bit is wrong when the subtraction overflows; the answer is sign XOR overflow.</span>
+<span data-lang="tr">Kapılardan işaretli set-less-than. Çıkarıp işaret bitine bakmak, çıkarma taştığında yanlış sonuç verir; doğru cevap işaret XOR taşma.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+</div>
+</section>
+
+<!-- ============================ NEXT ============================ -->
+<nav class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-low reveal" style="border: 1px solid rgba(255,255,255,0.08);">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary hover:text-white transition-colors tracking-widest uppercase" href="/projects/shorties/">
+<span data-lang="en">NEXT — Shorties</span><span data-lang="tr">SONRAKİ — Shorties</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</nav>
+
+</div>
+</main>
+
+<footer class="w-full bg-surface-container-lowest/90 backdrop-blur-xl py-space-xl" style="border-top: 1px solid rgba(255,255,255,0.06);">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left">
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed-dim">schedule</span>
+<span id="local-clock">--:--:--</span>
+</div>
+<div class="hidden sm:inline-block text-outline-variant font-label-code-sm text-label-code-sm">/</div>
+<div class="flex items-center gap-space-xs font-label-code-sm text-label-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+<span>MALTEPE, İSTANBUL • TR</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-code-sm text-label-code-sm text-on-surface-variant tracking-wider uppercase">.NET • SPRING BOOT • PYTORCH • FLUTTER</span>
+</div>
+<button aria-pressed="true" class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-low text-primary hover:bg-surface-container-high transition-colors" data-motion-toggle="" style="border: 1px solid rgba(255,255,255,0.08);" type="button">
+<span class="material-symbols-outlined text-[14px]">motion_photos_on</span>
+<span class="font-label-code-sm text-label-code-sm tracking-wider uppercase" data-lang="en">MOTION</span>
+<span class="font-label-code-sm text-label-code-sm tracking-wider uppercase" data-lang="tr">HAREKET</span>
+</button>
+</div>
+<div class="flex items-center gap-space-lg font-label-code-sm text-label-code-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://github.com/Byomer1021" rel="noreferrer" target="_blank">GITHUB</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="https://www.linkedin.com/in/%C3%B6mer-can-atli-8a9b491b5/" rel="noreferrer" target="_blank">LINKEDIN</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider" href="/contact/">CONTACT</a>
+</div>
+</div>
+</footer>
+
+<script src="/assets/js/site.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script defer src="/assets/js/bg-three.js"></script>
+</body>
+</html>

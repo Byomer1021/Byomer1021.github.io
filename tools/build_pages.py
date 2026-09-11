@@ -62,6 +62,9 @@ PAGES = [
     ("payflow", "projects/payflow/index.html", "projects",
      "payflow — Ömer Can Atlı",
      "A programming language for subscription billing: hand-written lexer, parser, type checker and interpreter, running live in the browser."),
+    ("cse331", "projects/cse331/index.html", "projects",
+     "cse331-computer-organization — Ömer Can Atlı",
+     "A MIPS text analyzer in assembly, a gate-level datapath, a single-cycle MIPS32 CPU that runs the assembly program, and a sequential multiplier."),
     ("shorties", "projects/shorties/index.html", "projects",
      "Shorties — Ömer Can Atlı",
      "An exam-preparation ecosystem of three separate apps on one shared architecture. YKS is live on the App Store and Google Play."),
@@ -85,6 +88,7 @@ PROJECT_RING = [
     ("smart-city", "smart-city"),
     ("plakatanima", "plakatanima"),
     ("payflow", "payflow"),
+    ("cse331", "cse331"),
     ("shorties", "Shorties"),
     ("respos", "respos"),
 ]

@@ -24,7 +24,7 @@ SUMMARY = (
     "interest in backend systems and artificial intelligence. I build across the stack — "
     ".NET and Node.js backends, React Native and Flutter clients, and applied "
     "computer-vision and graph pipelines in Python. Creator and lead developer of two "
-    "shipped products, and five open-source projects published with the measurements "
+    "shipped products, and six open-source projects published with the measurements "
     "that say where each one breaks."
 )
 
@@ -107,6 +107,12 @@ PRODUCTS = [
             "analytics.",
         ],
         "stack": "Flutter · .NET · MSSQL",
+        # Website only. The printed CV is two pages and the sixth open-source
+        # entry needed the room; of everything on it this was the entry with
+        # the least to show -- a team project with no link and no measurement
+        # of its own. It stays on the CV page at omercanatli.com, which has no
+        # page limit.
+        "in_pdf": False,
         "short": [
             "Cross-platform fitness app with AI meal and workout recommendations; Flutter "
             "client, .NET backend, MSSQL.",
@@ -203,6 +209,22 @@ OPEN_SOURCE = [
         # open-source entry pushes the volunteer section onto a second page,
         # and a one-page CV that is two pages is not one of the two things
         # this file is for. Give it a `short` if something else comes off.
+        "short": None,
+    },
+    {
+        "name": "cse331-computer-organization",
+        "url": "https://github.com/Byomer1021/cse331-computer-organization",
+        "tagline": "A MIPS program in assembly, and the processor built to run it",
+        "bullets": [
+            "Single-cycle MIPS32 processor in Verilog covering 36 integer instructions, "
+            "and a gate-level datapath for the preceding assignment where a 32-bit adder "
+            "is 32 chained full adders and set-less-than is sign XOR overflow.",
+            "370 self-checking assertions across the four assignments, run by one "
+            "command. The MIPS text analyzer written in assembly runs on the processor "
+            "built two assignments later, and the two agree on every count.",
+        ],
+        "stack": "Verilog · MIPS assembly · Icarus Verilog · MARS",
+        # Same reason as above: the one-page CV has no room for it.
         "short": None,
     },
 ]
