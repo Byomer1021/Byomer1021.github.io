@@ -61,14 +61,48 @@
   // ---- 4. Scroll reveals ---------------------------------------------------
   var targets = document.querySelectorAll('.reveal');
   if (targets.length && 'IntersectionObserver' in window) {
+    var pending = Array.prototype.slice.call(targets);
+
+    var show = function (el) {
+      el.classList.add('is-visible');
+      var i = pending.indexOf(el);
+      if (i > -1) pending.splice(i, 1);
+    };
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
         io.unobserve(entry.target);
+        show(entry.target);
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
     targets.forEach(function (t) { io.observe(t); });
+
+    // The negative bottom margin holds a reveal back until it is properly in
+    // frame, which is what makes the effect read as deliberate. The cost is
+    // that an element sitting inside the last slice of the viewport at maximum
+    // scroll can never satisfy the observer — and that is where the closing
+    // section sits, so it stayed at opacity 0 for good whenever the footer was
+    // short enough. Two cases the observer cannot reach, then, and the sweep
+    // covers both: the page has nowhere left to scroll, or the element is
+    // already above the viewport because a jump carried us past it.
+    // The tolerance is not decoration: the page keeps growing for a moment
+    // after load while the webfont and the WebGL canvas settle, so an exact
+    // "scrolled to the very bottom" test misses by a few dozen pixels and the
+    // sweep never runs. Measured drift here was ~44px.
+    var sweep = function () {
+      if (!pending.length) return;
+      var doc = document.documentElement;
+      var nearEnd = doc.scrollHeight - window.innerHeight - window.scrollY <= 64;
+      pending.slice().forEach(function (el) {
+        if (!nearEnd && el.getBoundingClientRect().bottom >= 0) return;
+        io.unobserve(el);
+        show(el);
+      });
+    };
+    window.addEventListener('scroll', sweep, { passive: true });
+    window.addEventListener('resize', sweep);
+    sweep();
   } else {
     targets.forEach(function (t) { t.classList.add('is-visible'); });
   }
