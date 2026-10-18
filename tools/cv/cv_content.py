@@ -1,6 +1,6 @@
 """The CV, in one place.
 
-Both the two-page and the one-page PDF are rendered from this, so a fact fixed
+Both the three-page and the one-page PDF are rendered from this, so a fact fixed
 here is fixed in both. `short` is the compressed line used on the one-pager;
 where it is absent the full text is reused.
 
@@ -24,7 +24,7 @@ SUMMARY = (
     "interest in backend systems and artificial intelligence. I build across the stack — "
     ".NET and Node.js backends, React Native and Flutter clients, and applied "
     "computer-vision and graph pipelines in Python. Creator and lead developer of two "
-    "shipped products, and six open-source projects published with the measurements "
+    "shipped products, and seven open-source projects published with the measurements "
     "that say where each one breaks."
 )
 
@@ -107,12 +107,6 @@ PRODUCTS = [
             "analytics.",
         ],
         "stack": "Flutter · .NET · MSSQL",
-        # Website only. The printed CV is two pages and the sixth open-source
-        # entry needed the room; of everything on it this was the entry with
-        # the least to show -- a team project with no link and no measurement
-        # of its own. It stays on the CV page at omercanatli.com, which has no
-        # page limit.
-        "in_pdf": False,
         "short": [
             "Cross-platform fitness app with AI meal and workout recommendations; Flutter "
             "client, .NET backend, MSSQL.",
@@ -240,11 +234,8 @@ OPEN_SOURCE = [
             "0.770 under strict one-to-one matching.",
         ],
         "stack": "Python · OpenCV · scikit-image · NetworkX",
-        # Same reason as above: the one-page CV has no room for it. The
-        # two-page PDF is full too (three pages with this in), so it is on
-        # the CV page only until something else comes off the PDF.
+        # Same reason as above: the one-page CV has no room for it.
         "short": None,
-        "in_pdf": False,
     },
 ]
 

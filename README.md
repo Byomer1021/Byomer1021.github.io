@@ -90,7 +90,7 @@ renders it to HTML and prints two PDFs with headless Chrome:
 
 | File | Pages | For |
 |---|---|---|
-| `assets/cv/omer-can-atli-cv.pdf` | 2 | the full record |
+| `assets/cv/omer-can-atli-cv.pdf` | 3 | the full record |
 | `assets/cv/omer-can-atli-cv-1page.pdf` | 1 | applications that ask for one page |
 
 Single column on purpose — applicant tracking systems parse multi-column CVs

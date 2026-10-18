@@ -2,7 +2,7 @@
 
 Two versions from one content file:
 
-    omer-can-atli-cv.pdf         two pages, the full record
+    omer-can-atli-cv.pdf         three pages, the full record
     omer-can-atli-cv-1page.pdf   one page, for applications that ask for one
 
 Single column on purpose: applicant tracking systems parse multi-column CVs
@@ -238,7 +238,7 @@ def main():
     # The one-page CV exists because some applications ask for one page; if an
     # entry pushes it onto a second, it silently stops being the thing it is
     # named after. Check rather than assume.
-    jobs = [("cv-full", False, "omer-can-atli-cv.pdf", 2),
+    jobs = [("cv-full", False, "omer-can-atli-cv.pdf", 3),
             ("cv-short", True, "omer-can-atli-cv-1page.pdf", 1)]
 
     chrome = find_chrome()
