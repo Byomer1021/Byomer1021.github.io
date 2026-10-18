@@ -96,22 +96,6 @@ PRODUCTS = [
             "plan, kitchen display and recipe-based stock.",
         ],
     },
-    {
-        "name": "Mobile Fitness Tracker",
-        "role": "Team project",
-        "link": None,
-        "url": None,
-        "bullets": [
-            "Cross-platform fitness app building personalised meal and workout "
-            "recommendations with AI; secure authentication, workout logging and data "
-            "analytics.",
-        ],
-        "stack": "Flutter · .NET · MSSQL",
-        "short": [
-            "Cross-platform fitness app with AI meal and workout recommendations; Flutter "
-            "client, .NET backend, MSSQL.",
-        ],
-    },
 ]
 
 OPEN_SOURCE = [
@@ -234,8 +218,8 @@ OPEN_SOURCE = [
             "0.770 under strict one-to-one matching.",
         ],
         "stack": "Python · OpenCV · scikit-image · NetworkX",
-        # Same reason as above: the one-page CV has no room for it.
-        "short": None,
+        "short": "Floor plans to walls, doors, windows and a room graph, no learned models; "
+                 "door F1 0.904 on a held-out test split.",
     },
 ]
 
