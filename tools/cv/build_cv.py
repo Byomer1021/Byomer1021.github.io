@@ -154,6 +154,8 @@ def render(short=False):
              f'letter-spacing:0;color:#666">— <a href="https://{C.CONTACT["github"]}">'
              f'{esc(C.CONTACT["github"])}</a></span></h2>')
     for o in C.OPEN_SOURCE:
+        if not o.get("in_pdf", True):
+            continue          # website only, as for products; see cv_content.py
         if short and not o.get("short"):
             continue          # entry is full-CV only; see cv_content.py
         p.append('<div class="entry">')

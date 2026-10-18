@@ -18,7 +18,7 @@
         'Available commands:',
         '  whoami      who I am, in one paragraph',
         '  contact     email and profile links',
-        '  projects    the six open-source projects',
+        '  projects    the seven open-source projects',
         '  private     the products behind closed repositories',
         '  stack       languages, frameworks, tools',
         '  education   university and school',
@@ -31,7 +31,7 @@
         'Kullanılabilir komutlar:',
         '  whoami      kim olduğum, tek paragrafta',
         '  contact     e-posta ve profil linkleri',
-        '  projects    altı açık kaynak proje',
+        '  projects    yedi açık kaynak proje',
         '  private     kapalı repolardaki ürünler',
         '  stack       diller, frameworkler, araçlar',
         '  education   üniversite ve lise',
@@ -46,14 +46,14 @@
         'Ömer Can Atlı — final-year Computer Engineering student at Gebze',
         'Technical University (expected 2027). I build backend systems, applied',
         'machine-learning pipelines, and the web and mobile apps on top of them.',
-        'Six public repositories, each published with the measurements that say',
+        'Seven public repositories, each published with the measurements that say',
         'where it breaks. Two products with real users behind private repositories.'
       ],
       tr: [
         'Ömer Can Atlı — Gebze Teknik Üniversitesi Bilgisayar Mühendisliği son',
         'sınıf öğrencisi (beklenen mezuniyet 2027). Backend sistemler, uygulamalı',
         "makine öğrenmesi pipeline'ları ve bunların üzerindeki web ve mobil",
-        'uygulamaları geliştiriyorum. Altı açık repo, her biri nerede kırıldığını',
+        'uygulamaları geliştiriyorum. Yedi açık repo, her biri nerede kırıldığını',
         'söyleyen ölçümlerle yayımlanmış. Kapalı repolarda gerçek kullanıcılı iki ürün.'
       ]
     },
@@ -95,6 +95,8 @@
         '                           lexer, parser, type checker, interpreter; runs in the browser',
         'cse331-computer-organization  a MIPS program, and the CPU built to run it',
         '                           assembly, gate-level datapath, MIPS32 core, multiplier',
+        'floorplan-parser           floor plans to walls, doors, windows and a room graph',
+        '                           no learned models · test door F1 0.904, wall IoU 0.913',
         '',
         'Full write-ups: /projects/'
       ],
@@ -111,6 +113,8 @@
         '                           lexer, ayrıştırıcı, tip denetleyicisi, yorumlayıcı; tarayıcıda çalışır',
         'cse331-computer-organization  bir MIPS programı ve onu çalıştıran işlemci',
         '                           assembly, kapı seviyesi datapath, MIPS32 çekirdek, çarpan',
+        'floorplan-parser           kat planından duvar, kapı, pencere ve oda grafı',
+        '                           öğrenilmiş model yok · testte kapı F1 0.904, duvar IoU 0.913',
         '',
         'Ayrıntılar: /projects/'
       ]

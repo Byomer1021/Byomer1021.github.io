@@ -65,6 +65,9 @@ PAGES = [
     ("cse331", "projects/cse331/index.html", "projects",
      "cse331-computer-organization — Ömer Can Atlı",
      "A MIPS text analyzer in assembly, a gate-level datapath, a single-cycle MIPS32 CPU that runs the assembly program, and a sequential multiplier."),
+    ("floorplan", "projects/floorplan/index.html", "projects",
+     "floorplan-parser — Ömer Can Atlı",
+     "Raster floor plans to walls, doors, windows, rooms and a room graph with classical image processing only, measured once on a held-out test split."),
     ("shorties", "projects/shorties/index.html", "projects",
      "Shorties — Ömer Can Atlı",
      "An exam-preparation ecosystem of three separate apps on one shared architecture. YKS is live on the App Store and Google Play."),
@@ -89,6 +92,7 @@ PROJECT_RING = [
     ("plakatanima", "plakatanima"),
     ("payflow", "payflow"),
     ("cse331", "cse331"),
+    ("floorplan", "floorplan-parser"),
     ("shorties", "Shorties"),
     ("respos", "respos"),
 ]

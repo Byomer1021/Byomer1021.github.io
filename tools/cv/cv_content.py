@@ -227,6 +227,25 @@ OPEN_SOURCE = [
         # Same reason as above: the one-page CV has no room for it.
         "short": None,
     },
+    {
+        "name": "floorplan-parser",
+        "url": "https://github.com/Byomer1021/floorplan-parser",
+        "tagline": "Floor plans to walls, doors, windows and a room graph, no learned models",
+        "bullets": [
+            "Two-scale morphology, skeleton and probabilistic Hough lines, a quarter-arc "
+            "door template and a distance-transform watershed turn a raster plan into "
+            "walls, openings, rooms and a room-door graph; no neural network anywhere.",
+            "Thresholds chosen on 62 development plans and the held-out test split "
+            "measured once: wall IoU 0.913, door F1 0.904, window F1 0.830, room F1 "
+            "0.770 under strict one-to-one matching.",
+        ],
+        "stack": "Python · OpenCV · scikit-image · NetworkX",
+        # Same reason as above: the one-page CV has no room for it. The
+        # two-page PDF is full too (three pages with this in), so it is on
+        # the CV page only until something else comes off the PDF.
+        "short": None,
+        "in_pdf": False,
+    },
 ]
 
 EDUCATION = [
