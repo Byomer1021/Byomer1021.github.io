@@ -9,7 +9,7 @@
 [ 03 // METHOD ]
 </span>
 <span class="text-outline hidden sm:inline">|</span>
-<span class="text-on-surface-variant tracking-wider uppercase hidden sm:inline">ACROSS ALL SEVEN OPEN PROJECTS</span>
+<span class="text-on-surface-variant tracking-wider uppercase hidden sm:inline">ACROSS ALL EIGHT OPEN PROJECTS</span>
 </div>
 <h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-on-surface tracking-tight max-w-3xl">
 <span data-lang="en">How I work, and what it cost to learn</span>
@@ -152,6 +152,12 @@
 <td class="p-space-md text-outline">Four radii per gap are enough for the door-arc template</td>
 <td class="p-space-md"><span class="text-on-surface-variant">one door:</span> <span class="text-error">0.62</span> <span class="text-outline">@91 px</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">1.00</span> <span class="text-outline">@88 px</span></td>
 <td class="p-space-md text-on-surface-variant">The radius step was about 7 px, more than twice the 3 px tolerance. Finer radii for door-sized arcs found 32 more doors on the development plans.</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md text-on-surface font-medium whitespace-nowrap">ada-llm-gnn</td>
+<td class="p-space-md text-outline">Message passing along door edges can tell whether a room is reachable</td>
+<td class="p-space-md"><span class="text-on-surface-variant">crossable small room, wrong:</span> <span class="text-error">28 / 40</span> <span class="text-outline">→</span> <span class="text-tertiary-fixed-dim">4 / 40</span></td>
+<td class="p-space-md text-on-surface-variant">Whether a room too small to turn in can be crossed depends on the walls of two of its doors at once, which one door edge never sees. The route agent moved to a transit graph whose edge crosses a room and carries both walls.</td>
 </tr>
 </tbody>
 </table>

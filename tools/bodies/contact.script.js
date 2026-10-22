@@ -18,7 +18,7 @@
         'Available commands:',
         '  whoami      who I am, in one paragraph',
         '  contact     email and profile links',
-        '  projects    the seven open-source projects',
+        '  projects    the eight open-source projects',
         '  private     the products behind closed repositories',
         '  stack       languages, frameworks, tools',
         '  education   university and school',
@@ -31,7 +31,7 @@
         'Kullanılabilir komutlar:',
         '  whoami      kim olduğum, tek paragrafta',
         '  contact     e-posta ve profil linkleri',
-        '  projects    yedi açık kaynak proje',
+        '  projects    sekiz açık kaynak proje',
         '  private     kapalı repolardaki ürünler',
         '  stack       diller, frameworkler, araçlar',
         '  education   üniversite ve lise',
@@ -46,14 +46,14 @@
         'Ömer Can Atlı — final-year Computer Engineering student at Gebze',
         'Technical University (expected 2027). I build backend systems, applied',
         'machine-learning pipelines, and the web and mobile apps on top of them.',
-        'Seven public repositories, each published with the measurements that say',
+        'Eight public repositories, each published with the measurements that say',
         'where it breaks. Two products with real users behind private repositories.'
       ],
       tr: [
         'Ömer Can Atlı — Gebze Teknik Üniversitesi Bilgisayar Mühendisliği son',
         'sınıf öğrencisi (beklenen mezuniyet 2027). Backend sistemler, uygulamalı',
         "makine öğrenmesi pipeline'ları ve bunların üzerindeki web ve mobil",
-        'uygulamaları geliştiriyorum. Yedi açık repo, her biri nerede kırıldığını',
+        'uygulamaları geliştiriyorum. Sekiz açık repo, her biri nerede kırıldığını',
         'söyleyen ölçümlerle yayımlanmış. Kapalı repolarda gerçek kullanıcılı iki ürün.'
       ]
     },
@@ -97,6 +97,8 @@
         '                           assembly, gate-level datapath, MIPS32 core, multiplier',
         'floorplan-parser           floor plans to walls, doors, windows and a room graph',
         '                           no learned models · test door F1 0.904, wall IoU 0.913',
+        'ada-llm-gnn                IFC buildings checked for wheelchair access (ADA)',
+        '                           LLM-generated data, GNN agents · verdict macro F1 0.938',
         '',
         'Full write-ups: /projects/'
       ],
@@ -115,6 +117,8 @@
         '                           assembly, kapı seviyesi datapath, MIPS32 çekirdek, çarpan',
         'floorplan-parser           kat planından duvar, kapı, pencere ve oda grafı',
         '                           öğrenilmiş model yok · testte kapı F1 0.904, duvar IoU 0.913',
+        'ada-llm-gnn                IFC binalarda tekerlekli sandalye erişimi (ADA)',
+        '                           LLM ile üretilmiş veri, GNN ajanları · karar macro F1 0.938',
         '',
         'Ayrıntılar: /projects/'
       ]

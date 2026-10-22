@@ -24,7 +24,7 @@ SUMMARY = (
     "interest in backend systems and artificial intelligence. I build across the stack — "
     ".NET and Node.js backends, React Native and Flutter clients, and applied "
     "computer-vision and graph pipelines in Python. Creator and lead developer of two "
-    "shipped products, and seven open-source projects published with the measurements "
+    "shipped products, and eight open-source projects published with the measurements "
     "that say where each one breaks."
 )
 
@@ -220,6 +220,24 @@ OPEN_SOURCE = [
         "stack": "Python · OpenCV · scikit-image · NetworkX",
         "short": "Floor plans to walls, doors, windows and a room graph, no learned models; "
                  "door F1 0.904 on a held-out test split.",
+    },
+    {
+        "name": "ada-llm-gnn",
+        "url": "https://github.com/Byomer1021/ada-llm-gnn",
+        "tagline": "Wheelchair accessibility of IFC buildings: LLM-generated data, GNN agents",
+        "bullets": [
+            "A large LLM generates labelled single-storey buildings that code writes to IFC "
+            "and a rule engine verifies; a LoRA-tuned Qwen2.5-7B takes over the generation "
+            "(81% valid against 4% untuned, 2,013 buildings).",
+            "Three GNN agents, the route agent on a transit graph, check doors, rooms and "
+            "reachability; on 336 unseen buildings the verdict reaches macro F1 0.938, and "
+            "with 30% of the values deleted 3 of 225 inaccessible buildings are missed.",
+        ],
+        "stack": "Python · PyTorch Geometric · LoRA · vLLM · IfcOpenShell",
+        # Website only for now: the PDFs are at their page limits (three and one).
+        # Taking it into the PDF means taking something else out.
+        "short": None,
+        "in_pdf": False,
     },
 ]
 

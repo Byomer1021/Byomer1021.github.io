@@ -1,0 +1,333 @@
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl flex flex-col gap-space-3xl">
+
+<!-- ============================ HEADER ============================ -->
+<header class="flex flex-col gap-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-outline hover:text-primary transition-colors tracking-widest uppercase w-fit" href="/projects/">
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+<span data-lang="en">ALL PROJECTS</span><span data-lang="tr">TÜM PROJELER</span>
+</a>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-[32px] leading-[40px] md:text-headline-xl text-primary tracking-tight">ada-llm-gnn</h1>
+<span class="font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase px-2.5 py-1 rounded-full bg-surface-container-lowest" style="border: 1px solid rgba(0,245,255,0.35);">LLM DATA · GNN AGENTS</span>
+</div>
+
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">An IFC building model goes in; out comes whether a wheelchair user can reach every room, and if not, which door or room breaks which rule of the 2010 ADA Standards. Three graph neural network agents check the doors, the rooms and the route, and a main agent gives the verdict. There was no labelled data to learn from, so a large LLM generated it and a 7B model took over the generation.</span>
+<span data-lang="tr">Bir IFC bina modeli girer; tekerlekli sandalye kullanan biri her odaya ulaşabiliyor mu, ulaşamıyorsa hangi kapı ya da oda 2010 ADA Standartları'nın hangi kuralını bozuyor, o çıkar. Üç graph neural network ajanı kapıları, odaları ve rotayı denetliyor, bir ana ajan kararı veriyor. Öğrenilecek etiketli veri yoktu; onu büyük bir LLM üretti, üretimi de 7B bir model devraldı.</span>
+</p>
+
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary text-on-primary font-label-code-sm text-label-code-sm tracking-wider uppercase hover:bg-white transition-colors" href="https://github.com/Byomer1021/ada-llm-gnn" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.2);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span data-lang="en">SOURCE CODE</span><span data-lang="tr">KAYNAK KOD</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface-variant font-label-code-sm text-label-code-sm tracking-wider uppercase hover:text-primary transition-colors" href="https://github.com/Byomer1021/ada-llm-gnn/blob/main/docs/paper/main.pdf" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span data-lang="en">PAPER (IEEE, PDF)</span><span data-lang="tr">MAKALE (IEEE, PDF)</span>
+</a>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md pt-space-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary">0.938</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">building verdict macro F1, test</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">bina kararı macro F1, test</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-tertiary-fixed-dim">2,244</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">labelled IFC buildings generated</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">üretilen etiketli IFC bina</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-secondary">81% / 4%</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">valid buildings, fine-tuned 7B / untuned</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">geçerli bina, ince ayarlı 7B / eğitilmemiş</span>
+</div>
+<div class="flex flex-col gap-space-3xs">
+<span class="font-label-code-md text-label-code-md text-primary-fixed-dim">3 / 225</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="en">inaccessible buildings missed, 30% of values deleted</span>
+<span class="font-label-code-sm text-label-code-sm text-outline uppercase tracking-wider" data-lang="tr">değerlerin %30'u silinince kaçan erişilemez bina</span>
+</div>
+</div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="bg-white flex items-center justify-center">
+<img alt="Two 3D views: a two-room test building with its inner door in red, and the ground floor of a public house model with three inner doors in red" class="w-full h-auto" data-alt-en="Two 3D views: a two-room test building with its inner door in red, and the ground floor of a public house model with three inner doors in red" data-alt-tr="İki 3B görünüm: iç kapısı kırmızı, iki odalı bir test binası ve üç iç kapısı kırmızı, açık bir ev modelinin zemin katı" loading="lazy" src="/assets/img/ada-card.png"/>
+</div>
+<div class="p-space-md bg-surface-container-low/60 backdrop-blur-md" style="border-top: 1px solid rgba(255,255,255,0.08);">
+<p class="font-body-sm text-body-sm text-outline max-w-4xl leading-relaxed">
+<span data-lang="en">Left: a test building no model saw in training. D2 leaves 1196 mm of clear floor on its push side, 24 mm short of ADA 404.2.4, so R2 cannot be reached. Right: the ground floor of a public model (FZK-Haus). Its inner doors fail on an estimated width, a number this page does not trust; see the last section.</span>
+<span data-lang="tr">Solda: hiçbir modelin eğitimde görmediği bir test binası. D2'nin itme tarafında 1196 mm boş alan var, ADA 404.2.4'ün 24 mm altında; bu yüzden R2'ye ulaşılamıyor. Sağda: açık bir modelin (FZK-Haus) zemin katı. İç kapıları tahmini bir genişlikle kalıyor; o sayıya bu sayfa güvenmiyor, son bölüme bak.</span>
+</p>
+</div>
+</section>
+
+<!-- ============================ GENERATION ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Training data that did not exist</span>
+<span data-lang="tr">Olmayan eğitim verisi</span>
+</h2>
+<div class="flex flex-col gap-space-md max-w-3xl">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">There is no labelled set of IFC buildings with accessibility verdicts. A large LLM describes a building as JSON; my code writes the IFC file, a rule engine checks every value and writes the labels, and only buildings that match the scenario they were asked for are kept. The LLM never writes IFC itself.</span>
+<span data-lang="tr">Erişilebilirlik kararıyla etiketlenmiş bir IFC bina veri seti yok. Büyük bir LLM binayı JSON olarak tarif ediyor; IFC dosyasını benim kodum yazıyor, bir kural motoru her değeri kontrol edip etiketleri yazıyor ve sadece istenen senaryoya uyan binalar kalıyor. LLM hiçbir zaman IFC'yi kendisi yazmıyor.</span>
+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Asked in independent requests, a model repeats itself: in an early run 27 of 36 doors had the same 1000 mm handle height. So code, not the model, now fixes the layout and the exact values near each limit. The teacher's 231 verified answers fine-tuned Qwen2.5-7B with LoRA in 20 minutes on one GPU, and the student generated the remaining 2,013 buildings.</span>
+<span data-lang="tr">Birbirinden bağımsız isteklerde model kendini tekrar ediyor: ilk denemelerden birinde 36 kapının 27'sinin kol yüksekliği aynı 1000 mm'ydi. Bu yüzden yerleşimi ve her sınırın hemen yanındaki değerleri artık model değil kod belirliyor. Öğretmenin doğrulanmış 231 cevabıyla Qwen2.5-7B tek GPU'da 20 dakikada LoRA ile eğitildi; kalan 2.013 binayı bu öğrenci üretti.</span>
+</p>
+</div>
+<div class="rounded-xl overflow-hidden bg-white" style="border: 1px solid rgba(255,255,255,0.1);">
+<img alt="Pipeline: teacher LLM, IFC writer and rule engine, student LLM and labelled buildings on top; IFC reader, room-door graph, three GNN agents, main agent and verdict below" class="w-full h-auto" data-alt-en="Pipeline: teacher LLM, IFC writer and rule engine, student LLM and labelled buildings on top; IFC reader, room-door graph, three GNN agents, main agent and verdict below" data-alt-tr="Akış: üstte öğretmen LLM, IFC yazıcı ve kural motoru, öğrenci LLM ve etiketli binalar; altta IFC okuyucu, oda-kapı graph'ı, üç GNN ajanı, ana ajan ve karar" loading="lazy" src="/assets/img/ada-pipeline.png"/>
+</div>
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="overflow-x-auto">
+<table class="w-full font-body-md text-body-md min-w-[560px]">
+<thead>
+<tr class="bg-surface-container-low/60 text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<th class="text-left p-space-md font-normal"><span data-lang="en">generator</span><span data-lang="tr">üreten</span></th>
+<th class="text-right p-space-md font-normal"><span data-lang="en">valid / attempts</span><span data-lang="tr">geçerli / deneme</span></th>
+<th class="text-right p-space-md font-normal"><span data-lang="en">rate</span><span data-lang="tr">oran</span></th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant font-label-code-md text-label-code-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">teacher, Nemotron 3 Ultra (API)</span><span data-lang="tr">öğretmen, Nemotron 3 Ultra (API)</span></td>
+<td class="p-space-md text-right">231 / 231</td><td class="p-space-md text-right">100%</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">student, Qwen2.5-7B + LoRA</span><span data-lang="tr">öğrenci, Qwen2.5-7B + LoRA</span></td>
+<td class="p-space-md text-right">2,013 / 2,493</td><td class="p-space-md text-right text-primary">81%</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">the same 7B, untuned</span><span data-lang="tr">aynı 7B, eğitilmemiş</span></td>
+<td class="p-space-md text-right">2 / 50</td><td class="p-space-md text-right">4%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p class="font-body-md text-body-md text-outline max-w-3xl leading-relaxed">
+<span data-lang="en">The untuned model failed mostly by putting doors on walls other than the ones asked for (37 of its 48 rejections). The student also copied what the prompts left free: 3,432 of its 4,026 doors have a 1000 mm handle.</span>
+<span data-lang="tr">Eğitilmemiş model çoğunlukla kapıları istenen duvarlardan başkasına koyduğu için elendi (48 retten 37'si). Öğrenci, prompt'ların serbest bıraktığı değerleri de kopyaladı: 4.026 kapısının 3.432'sinin kolu 1000 mm'de.</span>
+</p>
+</section>
+
+<!-- ============================ ROUTE AGENT ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">A door edge cannot see the other door</span>
+<span data-lang="tr">Bir kapı kenarı öbür kapıyı göremiyor</span>
+</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-start">
+<div class="flex flex-col gap-space-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Rooms are nodes and doors are edges. A room too small to turn in can still be crossed in a straight line, if the door you enter by and the door you leave by are on opposite walls; on adjacent walls a 90° turn is needed and the rooms behind are cut off. That depends on two doors of the same room at once.</span>
+<span data-lang="tr">Odalar düğüm, kapılar kenar. Dönülemeyecek kadar küçük bir oda yine de düz bir çizgide geçilebilir: girdiğin ve çıktığın kapılar karşılıklı duvarlardaysa. Komşu duvarlardaysa 90° dönmek gerekir ve arkadaki odalara ulaşılamaz. Bu, aynı odanın iki kapısına birden bağlı.</span>
+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<span data-lang="en">Message passing along door edges got 28 of the 40 such test buildings wrong. On a transit graph, where a node is "entering a room through a door" and an edge is "crossing it from one door to the other" and carries both walls, it got 4 wrong. Door, room and route agents reach F1 0.926, 0.960 and 0.879 on the failing class.</span>
+<span data-lang="tr">Kapı kenarları boyunca mesaj geçirme, bu türden 40 test binasının 28'ini yanlış bildi. Düğümün "bir odaya bir kapıdan girmek", kenarın "odayı bir kapıdan öbürüne geçmek" olduğu ve iki duvarı birden taşıdığı transit graph'ta yanlış sayısı 4'e indi. Kapı, oda ve rota ajanları bozuk sınıfta F1 0.926, 0.960 ve 0.879'a ulaşıyor.</span>
+</p>
+</div>
+<div class="rounded-xl overflow-hidden bg-white" style="border: 1px solid rgba(255,255,255,0.1);">
+<img alt="Left, the room-door graph EXT, R1, R2 joined by D1 and D2; right, the transit graph where entering R1 by D1 connects to entering R2 by D2 through an edge that crosses R1 from the south wall to the east wall" class="w-full h-auto" data-alt-en="Left, the room-door graph EXT, R1, R2 joined by D1 and D2; right, the transit graph where entering R1 by D1 connects to entering R2 by D2 through an edge that crosses R1 from the south wall to the east wall" data-alt-tr="Solda D1 ve D2 ile bağlı EXT, R1, R2 oda-kapı graph'ı; sağda transit graph: R1'e D1'den girmek, R1'i güney duvarından doğu duvarına geçen bir kenarla R2'ye D2'den girmeye bağlanıyor" loading="lazy" src="/assets/img/ada-transit.png"/>
+</div>
+</div>
+</section>
+
+<!-- ============================ MAIN AGENT ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Does the judge need to be an LLM?</span>
+<span data-lang="tr">Hakemin LLM olması gerekiyor mu?</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">The main agent gets the three agents' findings and decides. All rows below see the same findings for the same 336 test buildings; the two groups differ only in how the agents were trained.</span>
+<span data-lang="tr">Ana ajan üç ajanın bulgularını alıp karar veriyor. Aşağıdaki bütün satırlar aynı 336 test binası için aynı bulguları görüyor; iki grup arasındaki tek fark ajanların nasıl eğitildiği.</span>
+</p>
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="overflow-x-auto">
+<table class="w-full font-body-md text-body-md min-w-[560px]">
+<thead>
+<tr class="bg-surface-container-low/60 text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<th class="text-left p-space-md font-normal"><span data-lang="en">main agent</span><span data-lang="tr">ana ajan</span></th>
+<th class="text-right p-space-md font-normal"><span data-lang="en">agents: complete data</span><span data-lang="tr">ajanlar: tam veri</span></th>
+<th class="text-right p-space-md font-normal"><span data-lang="en">agents: values deleted</span><span data-lang="tr">ajanlar: silinmiş değer</span></th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant font-label-code-md text-label-code-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">path tracing, no LLM</span><span data-lang="tr">yol izleme, LLM yok</span></td>
+<td class="p-space-md text-right">0.893</td><td class="p-space-md text-right text-primary">0.938</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">Qwen2.5-7B, fine-tuned on findings</span><span data-lang="tr">Qwen2.5-7B, bulgularla ince ayarlı</span></td>
+<td class="p-space-md text-right">0.916</td><td class="p-space-md text-right">0.921</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">GPT-OSS-20B, zero-shot</span><span data-lang="tr">GPT-OSS-20B, zero-shot</span></td>
+<td class="p-space-md text-right">0.899</td><td class="p-space-md text-right text-outline">–</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">Qwen2.5-7B, untuned, zero-shot</span><span data-lang="tr">Qwen2.5-7B, eğitilmemiş, zero-shot</span></td>
+<td class="p-space-md text-right text-error">0.569</td><td class="p-space-md text-right text-outline">–</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p class="font-body-md text-body-md text-outline max-w-3xl leading-relaxed">
+<span data-lang="en">Building verdict, macro F1. The untuned 7B model read the failing values correctly but called most accessible buildings inaccessible; four worked examples did not change that (0.566). Fine-tuned, it beat path tracing while the agents still erred near the limits (8 buildings to 1, McNemar p = 0.039): it re-checked the raw value. With better agents the gap closed (3 to 8, p = 0.23). Its explanations stay fluent and are sometimes wrong, as in "clear width 824 mm &lt; 815 mm".</span>
+<span data-lang="tr">Bina kararı, macro F1. Eğitilmemiş 7B model bozuk değerleri doğru okudu ama erişilebilir binaların çoğuna erişilemez dedi; dört örnek göstermek bunu değiştirmedi (0.566). İnce ayardan sonra, ajanlar sınıra yakın değerlerde hâlâ yanılırken yol izlemeyi geçti (8 binaya 1, McNemar p = 0.039): ham değeri kendisi yeniden kontrol ediyordu. Ajanlar iyileşince fark kapandı (3'e 8, p = 0.23). Açıklamaları akıcı kalıyor ama bazen yanlış, örneğin "clear width 824 mm &lt; 815 mm".</span>
+</p>
+</section>
+
+<!-- ============================ MISSING VALUES ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">When the file does not have the value</span>
+<span data-lang="tr">Değer dosyada yoksa</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+<span data-lang="en">A rule engine can only skip an unknown value, and miss broken buildings, or fail it, and raise false alarms. On the test set a share of the values was deleted at random after reading the file; every system saw the same deletions, three times over.</span>
+<span data-lang="tr">Bir kural motoru bilinmeyen bir değeri ya atlar, bozuk binaları kaçırır, ya da bozuk sayar, yanlış alarm verir. Test kümesinde dosya okunduktan sonra değerlerin bir kısmı rastgele silindi; her sistem aynı silmeleri gördü, üç kez tekrarlandı.</span>
+</p>
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest reveal" style="border: 1px solid rgba(255,255,255,0.1);">
+<div class="overflow-x-auto">
+<table class="w-full font-body-md text-body-md min-w-[560px]">
+<thead>
+<tr class="bg-surface-container-low/60 text-outline font-label-code-sm text-label-code-sm uppercase tracking-wider">
+<th class="text-left p-space-md font-normal"><span data-lang="en">30% of values deleted</span><span data-lang="tr">değerlerin %30'u silinmiş</span></th>
+<th class="text-right p-space-md font-normal">macro F1</th>
+<th class="text-right p-space-md font-normal"><span data-lang="en">missed / 225</span><span data-lang="tr">kaçan / 225</span></th>
+<th class="text-right p-space-md font-normal"><span data-lang="en">false alarms / 111</span><span data-lang="tr">yanlış alarm / 111</span></th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant font-label-code-md text-label-code-md">
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">rule engine, skip unknown</span><span data-lang="tr">kural motoru, bilinmeyeni atla</span></td>
+<td class="p-space-md text-right">0.782</td><td class="p-space-md text-right text-error">72</td><td class="p-space-md text-right">0</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">rule engine, unknown fails</span><span data-lang="tr">kural motoru, bilinmeyen bozuk</span></td>
+<td class="p-space-md text-right">0.423</td><td class="p-space-md text-right">0</td><td class="p-space-md text-right text-error">109</td>
+</tr>
+<tr style="border-top: 1px solid rgba(255,255,255,0.06);">
+<td class="p-space-md"><span data-lang="en">agents trained with deleted values</span><span data-lang="tr">silinmiş değerle eğitilen ajanlar</span></td>
+<td class="p-space-md text-right">0.756</td><td class="p-space-md text-right text-primary">3</td><td class="p-space-md text-right">58</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p class="font-body-md text-body-md text-outline max-w-3xl leading-relaxed">
+<span data-lang="en">On macro F1 the skipping rule engine stays ahead, and on complete data it is right by construction: it wrote the labels. What the agents offer is the middle: almost no missed buildings with half the false alarms. Training with deleted values also made them better on complete data (doors 0.901 to 0.926, rooms 0.925 to 0.960).</span>
+<span data-lang="tr">Macro F1'de atlayan kural motoru önde kalıyor; tam veride de tanım gereği haklı, çünkü etiketleri o yazdı. Ajanların sunduğu şey ortası: neredeyse hiç kaçan bina yok, yanlış alarm yarı yarıya. Silinmiş değerlerle eğitim ajanları tam veride de iyileştirdi (kapı 0.901'den 0.926'ya, oda 0.925'ten 0.960'a).</span>
+</p>
+</section>
+
+<!-- ============================ LIMITS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">What is not claimed here</span>
+<span data-lang="tr">Burada iddia edilmeyenler</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">NOT VALIDATED</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Real buildings</span>
+<span data-lang="tr">Gerçek binalar</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">20 public IFC models were read; 2 have no spaces and cannot be checked. All 18 others came out inaccessible, mostly on estimated door widths, and the width field means the leaf in Revit 2011 but includes the frame in Revit 2024. No verdict on a real file has been checked by hand.</span>
+<span data-lang="tr">20 açık IFC modeli okundu; 2'sinde oda yok, kontrol edilemiyor. Kalan 18'inin hepsi erişilemez çıktı, çoğu tahmini kapı genişliği yüzünden; o genişlik alanı Revit 2011'de kanadın kendisi, Revit 2024'te kasa dahil. Gerçek bir dosyadaki hiçbir karar elle kontrol edilmedi.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">OUT OF SCOPE</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Two rooms, one storey</span>
+<span data-lang="tr">İki oda, tek kat</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">Every building in training and test has two rooms. Corridors and larger plans are untested, and a multi-storey file is cut down to its entrance storey.</span>
+<span data-lang="tr">Eğitimdeki ve testteki her binada iki oda var. Koridorlar ve daha büyük planlar denenmedi; çok katlı bir dosya giriş katına indiriliyor.</span>
+</p>
+</div>
+
+<div class="flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50" style="border: 1px solid rgba(255,255,255,0.08);">
+<span class="font-label-code-sm text-label-code-sm text-outline tracking-widest uppercase">MY READING</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+<span data-lang="en">Labels from my own rules</span>
+<span data-lang="tr">Etiketler benim kurallarımdan</span>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<span data-lang="en">The rule engine is my reading of the standard: adjacent walls need a turn, ADA 404.2.4 is simplified to a front approach, clear floor space is bounded by the room's depth. No architect has reviewed it, and the agents learn exactly this reading.</span>
+<span data-lang="tr">Kural motoru standardı benim okuma biçimim: komşu duvarlar dönüş gerektirir, ADA 404.2.4 önden yaklaşmaya sadeleştirildi, kapı önü alan odanın derinliğiyle sınırlı. Hiçbir mimar bunu incelemedi ve ajanlar tam olarak bu okumayı öğreniyor.</span>
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- ============================ DOCS ============================ -->
+<section class="flex flex-col gap-space-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+<span data-lang="en">Read further</span>
+<span data-lang="tr">Devamını oku</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/ada-llm-gnn/blob/main/docs/paper/main.pdf" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-primary">description</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">main.pdf</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">The paper in IEEE format: generation and distillation, the agents, the main agents compared, the missing-value experiment and the test on public models.</span>
+<span data-lang="tr">IEEE biçiminde makale: üretim ve damıtma, ajanlar, ana ajanların kıyası, eksik değer deneyi ve açık modellerdeki test.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/ada-llm-gnn#readme" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim">table_chart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">README.md</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Results at a glance, the commands that reproduce each step, and what the project cannot do.</span>
+<span data-lang="tr">Sonuçlar bir bakışta, her adımı yeniden üreten komutlar ve projenin yapamadıkları.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+<a class="group flex flex-col gap-space-xs p-space-lg rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors" href="https://github.com/Byomer1021/ada-llm-gnn/blob/main/app/streamlit_app.py" rel="noreferrer" style="border: 1px solid rgba(255,255,255,0.08);" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-secondary">play_circle</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">streamlit_app.py</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span data-lang="en">Upload an IFC file, get the verdict, the broken rule, what could not be checked and a 3D view. Runs on a CPU; without a GPU the rule-based main agent decides and says so.</span>
+<span data-lang="tr">Bir IFC dosyası yükle; karar, bozulan kural, kontrol edilemeyenler ve 3B görünüm gelsin. İşlemcide çalışıyor; GPU yoksa kural tabanlı ana ajan karar veriyor ve bunu söylüyor.</span>
+</p>
+<span class="flex items-center gap-space-2xs font-label-code-sm text-label-code-sm text-primary tracking-widest uppercase mt-auto pt-space-xs">
+<span data-lang="en">OPEN</span><span data-lang="tr">AÇ</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+
+</div>
+</section>
+
+<!-- NEXT -->
+
+</div>
