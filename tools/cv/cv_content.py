@@ -202,8 +202,11 @@ OPEN_SOURCE = [
             "built two assignments later, and the two agree on every count.",
         ],
         "stack": "Verilog · MIPS assembly · Icarus Verilog · MARS",
-        # Same reason as above: the one-page CV has no room for it.
+        # Same reason as above: the one-page CV has no room for it. Since
+        # 2026-10-22 it is on the CV page only: ada-llm-gnn took its place in the
+        # three-page PDF, which is full.
         "short": None,
+        "in_pdf": False,
     },
     {
         "name": "floorplan-parser",
@@ -218,8 +221,9 @@ OPEN_SOURCE = [
             "0.770 under strict one-to-one matching.",
         ],
         "stack": "Python · OpenCV · scikit-image · NetworkX",
-        "short": "Floor plans to walls, doors, windows and a room graph, no learned models; "
-                 "door F1 0.904 on a held-out test split.",
+        # Off the one-page CV since 2026-10-22: ada-llm-gnn took its place, and two
+        # floor-plan projects on one page read as one.
+        "short": None,
     },
     {
         "name": "ada-llm-gnn",
@@ -234,10 +238,10 @@ OPEN_SOURCE = [
             "with 30% of the values deleted 3 of 225 inaccessible buildings are missed.",
         ],
         "stack": "Python · PyTorch Geometric · LoRA · vLLM · IfcOpenShell",
-        # Website only for now: the PDFs are at their page limits (three and one).
-        # Taking it into the PDF means taking something else out.
-        "short": None,
-        "in_pdf": False,
+        # In both PDFs since 2026-10-22, in place of cse331 (full) and floorplan-parser
+        # (one page).
+        "short": "Wheelchair accessibility of IFC buildings with LLM-generated data and GNN "
+                 "agents; verdict macro F1 0.938 on unseen buildings.",
     },
 ]
 
